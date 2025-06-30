@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="inner-wrap">
                     <div class="inner-logo">
-                        <img src="/assets/images/logo.webp" alt="">
+                        <a href=""><img src="/assets/images/logo.webp" alt=""></a>
                     </div>
 
                     <div class="inner-search">
@@ -138,6 +138,18 @@
         </div>
     </header>
     <!-- End Header -->
+
+    <!-- Section One -->
+    <div class="section-one">
+        <div class="inner-wrap">
+            <div class="inner-image">
+                <a href=""><img src="/assets/images/slider_1.webp" alt="backgroud-1">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- End Section One -->
+
 
 
 

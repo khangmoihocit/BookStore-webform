@@ -132,5 +132,15 @@
 .header-2 .inner-list-item .item .inner-icon{
     margin-right: 6px;
 }
+
+.header-2 .inner-list-item .item .inner-text:hover{
+    color: var(--color-primary);
+}
 /* End Header-2 */
+
+/* Section one */
+.section-one .inner-image img{
+    width: 100%;
+}
+/* End Section one */
 
