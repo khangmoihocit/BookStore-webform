@@ -67,13 +67,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\ManagerUsers.aspx" />
     <Content Include="assets\css\base.css" />
+    <Content Include="assets\css\book.css" />
     <Content Include="assets\css\home.css" />
     <Content Include="assets\css\reset.css" />
     <Content Include="assets\images\icon_service_1.svg" />
     <Content Include="assets\images\icon_service_2.svg" />
     <Content Include="assets\images\icon_service_3.svg" />
     <Content Include="assets\images\icon_service_4.svg" />
+    <Content Include="BookDetail.aspx" />
     <Content Include="Category.aspx" />
     <Content Include="Global.asax" />
     <Content Include="UserControls\Header.ascx" />
@@ -81,6 +84,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManagerUsers.aspx.cs">
+      <DependentUpon>ManagerUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManagerUsers.aspx.designer.cs">
+      <DependentUpon>ManagerUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookDetail.aspx.cs">
+      <DependentUpon>BookDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookDetail.aspx.designer.cs">
+      <DependentUpon>BookDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,6 +154,7 @@
     <Content Include="assets\images\image_237646.webp" />
     <Content Include="assets\images\img_people.webp" />
     <Content Include="assets\images\img_title.webp" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -138,9 +163,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
