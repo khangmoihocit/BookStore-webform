@@ -70,13 +70,36 @@
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\home.css" />
     <Content Include="assets\css\reset.css" />
+    <Content Include="assets\images\icon_service_1.svg" />
+    <Content Include="assets\images\icon_service_2.svg" />
+    <Content Include="assets\images\icon_service_3.svg" />
+    <Content Include="assets\images\icon_service_4.svg" />
+    <Content Include="Category.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="UserControls\Header.ascx" />
     <Content Include="Home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AppException.cs" />
+    <Compile Include="DAL\BookDAL.cs" />
+    <Compile Include="DAL\Connection.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -85,10 +108,28 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Publisher.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\logo.webp" />
+    <Content Include="assets\images\8935086857328_2.webp" />
+    <Content Include="assets\images\8935092825298.webp" />
+    <Content Include="assets\images\8935325011559.webp" />
+    <Content Include="assets\images\bg_dich_vu_chung_toi.webp" />
+    <Content Include="assets\images\bg_sp_noibat.webp" />
+    <Content Include="assets\images\bia-1_6_6.webp" />
+    <Content Include="assets\images\cate_1.webp" />
+    <Content Include="assets\images\cate_2.webp" />
+    <Content Include="assets\images\cate_3.webp" />
+    <Content Include="assets\images\cate_4.webp" />
+    <Content Include="assets\images\icon_after_title.webp" />
+    <Content Include="assets\images\image_237646.webp" />
+    <Content Include="assets\images\img_people.webp" />
+    <Content Include="assets\images\img_title.webp" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -98,7 +139,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Admin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

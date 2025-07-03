@@ -1,0 +1,25 @@
+.section{
+    margin-top: 20px;
+}
+
+.section .inner-wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.section .inner-filter{
+    width: 30%;
+}
+
+.section .inner-list-product{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    flex-wrap: wrap;
+}
+
+.section .inner-list-product .product{
+    width: calc(30%);
+    margin-bottom: 40px;
+}
