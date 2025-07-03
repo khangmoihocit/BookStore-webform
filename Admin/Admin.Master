@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="btl_laptrinhweb.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="admin-container">
+            <div class="admin-sidebar">
+                <div class="admin-logo">
+                    <a href="#">TRANG QUẢN TRỊ</a>
+                </div>
+                <ul class="admin-menu">
+                    <li><a href="#"><i class="fa fa-dashboard"></i>Tổng quan</a></li>
+                    <li><a href="#"><i class="fa fa-book"></i>Quản lý Sách</a></li>
+                    <li><a href="#"><i class="fa fa-shopping-cart"></i>Quản lý Đơn hàng</a></li>
+                    <li><a href="/Admin/ManageUsers.aspx"><i class="fa fa-users"></i>Quản lý Người dùng</a></li>
+                    <li><a href="/home.aspx"><i class="fa fa-sign-out"></i>Quay lại trang chính</a></li>
+                </ul>
+            </div>
+
+            <div class="admin-main-content">
+                <div class="admin-header">
+                    Xin chào, Admin!
+                </div>
+
+                <div class="admin-page-content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
