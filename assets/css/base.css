@@ -121,31 +121,36 @@ a {
 /* End Product */
 
 /* Pagination */
-.pagination{
+.pagination {
   display: flex;
   align-items: center;
   justify-content: center;
   list-style-type: none;
 }
 
-.pagination-item{
-
-}
-
-.pagination-item-active .pagination-item-link{
-  color: #fff;
-  background-color: var(--color-primary);
-}
-
-.pagination-item-link{
+.pagination-item {
+  margin-right: 10px;
   display: block;
-  font-size: 1.6em;
+  font-size: 18px;
   color: #000;
   min-width: 40px;
   height: 30px;
   line-height: 30px;
   text-align: center;
   border-radius: 50px;
+  background-color: #fff;
+  border: none;
+  transition: all 0.5s;
+}
+
+.pagination .pagination-item:hover {
+  color: #fff;
+  background-color: var(--color-primary);
+}
+
+.pagination .pagination-item-active {
+  color: #fff;
+  background-color: var(--color-primary);
 }
 /* End Pagination */
 

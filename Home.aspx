@@ -372,161 +372,13 @@
                         <div class="inner-category">Thiếu nhi</div>
                     </div>
 
-                    <div class="inner-list-product">
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935325011559.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935325011559.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935325011559.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935325011559.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/image_237646.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935325011559.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/image_237646.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935325011559.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/image_237646.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935325011559.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/image_237646.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/image_237646.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                        </div>
+                    <div id="list-product" class="inner-list-product">
+
                     </div>
 
                     <div class="inner-pagination">
-                        <ul class="pagination">
-                            <li class="pagination-item">
-                                <a href="" class="pagination-item-link">
-                                    <i class="pagination-item-icon fas fa-angle-left"></i>
-                                </a>
-                            </li>
+                        <ul id="pagination" class="pagination">
 
-                            <li class="pagination-item pagination-item-active">
-                                <a href="" class="pagination-item-link">
-                                    1
-                                </a>
-                            </li>
-                            <li class="pagination-item">
-                                <a href="" class="pagination-item-link">
-                                    2
-                                </a>
-                            </li>
-                            <li class="pagination-item">
-                                <a href="" class="pagination-item-link">
-                                    3
-                                </a>
-                            </li>
-                            <li class="pagination-item">
-                                <a href="" class="pagination-item-link">
-                                    4
-                                </a>
-                            </li>
-                            <li class="pagination-item">
-                                <a href="" class="pagination-item-link">
-                                    5
-                                </a>
-                            </li>
-                            <li class="pagination-item">
-                                <a href="" class="pagination-item-link">
-                                    ...
-                                </a>
-                            </li>
-
-                            <li class="pagination-item">
-                                <a href="" class="pagination-item-link">
-                                    <i class="pagination-item-icon fas fa-angle-right"></i>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -580,20 +432,104 @@
         <!-- End Section Six -->
 
         <!-- Section Seven -->
-         <div class="section-seven">
+        <div class="section-seven">
             <div class="container">
                 <div class="inner-wrap">
                     <div class="inner-title">Đăng ký email để nhận được ưu đãi mới nhất của chúng tôi</div>
-                    <div class="inner-sub-title">Rất hân hạnh được phục vụ bạn. Chúc bạn có trải nghiệm tuyệt vời về dịch vụ của Stationery</div>
-                    <form action="" method="get" class="inner-form">
+                    <div class="inner-sub-title">Rất hân hạnh được phục vụ bạn. Chúc bạn có trải nghiệm tuyệt vời về
+                        dịch vụ của Stationery</div>
+                    <form class="inner-form">
                         <input type="text" placeholder="Nhập email của bạn tại đây" />
-                        <button>ĐĂNG KÝ NGAY</button>
+                        <button type="button">ĐĂNG KÝ NGAY</button>
                     </form>
                 </div>
             </div>
-         </div>
+        </div>
         <!-- End Section Seven -->
 
     </body>
+
+    <script>
+        let products = [
+            { id: 1, image: "/assets/images/8935325011559.webp", title: "Vở viết 1", priceNew: 12000, priceOld: 47000 },
+            { id: 2, image: "/assets/images/8935325011559.webp", title: "Vở viết 2", priceNew: 12000, priceOld: 47000 },
+            { id: 3, image: "/assets/images/8935325011559.webp", title: "Vở viết 3", priceNew: 12000, priceOld: 47000 },
+            { id: 4, image: "/assets/images/8935325011559.webp", title: "Vở viết 4", priceNew: 12000, priceOld: 47000 },
+            { id: 5, image: "/assets/images/8935325011559.webp", title: "Vở viết 5", priceNew: 12000, priceOld: 47000 },
+            { id: 6, image: "/assets/images/8935325011559.webp", title: "Vở viết 6", priceNew: 12000, priceOld: 47000 },
+            { id: 7, image: "/assets/images/8935325011559.webp", title: "Vở viết 7", priceNew: 12000, priceOld: 47000 },
+            { id: 8, image: "/assets/images/8935325011559.webp", title: "Vở viết 8", priceNew: 12000, priceOld: 47000 },
+            { id: 9, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 10, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 11, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 9, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 9, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 9, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 9, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 9, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 9, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 9, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 },
+            { id: 9, image: "/assets/images/8935325011559.webp", title: "Vở viết 9", priceNew: 12000, priceOld: 47000 }
+        ];
+        let currentPage = 1;
+        let perPage = 8;
+        let totalPage = 0;
+        let perProduct = [];
+
+        const elementListProduct = document.getElementById("list-product");
+
+        const getProducts = () => {
+            // Tính toán vị trí cắt mảng
+            const start = (currentPage - 1) * perPage;
+            const end = start + perPage;
+
+            perProduct = products.slice(start, end);
+            renderProduct();
+        }
+
+        const renderProduct = () => {
+            let html = "";
+            perProduct.forEach((item) => {
+                html += `
+            <div class="product">
+                <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
+                <img class="inner-image" alt="ảnh" src="${item.image}">
+                <div class="inner-title">${item.title}</div>
+                <div class="inner-price">
+                    <div class="inner-price-new">${item.priceNew.toLocaleString()}đ</div>
+                    <div class="inner-price-old">${item.priceOld.toLocaleString()}đ</div>
+                </div>
+            </div>
+        `;
+            });
+            elementListProduct.innerHTML = html;
+        }
+
+        const renderPageNumber = () => {
+            totalPage = Math.ceil(products.length / perPage);
+            const elementPagination = document.getElementById("pagination");
+            elementPagination.innerHTML = "";
+            let html = "";
+            for (let i = 1; i <= totalPage; i++) {
+                html += `
+            <li 
+                onclick="handlePageNumber(${i})"
+                class="pagination-item ${i === currentPage ? 'pagination-item-active' : ''}">
+                ${i}
+            </li>
+        `;
+            }
+            elementPagination.innerHTML = html;
+        }
+
+        const handlePageNumber = (num) => {
+            currentPage = num;
+            getProducts();
+            renderPageNumber();
+        }
+
+        getProducts();
+        renderPageNumber();
+    </script>
 
     </html>
