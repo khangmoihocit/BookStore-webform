@@ -34,6 +34,7 @@ a {
   align-items: center;
   position: relative;
   overflow: hidden;
+  width: 242px;
 }
 
 .product .inner-icon-favourite {
@@ -154,7 +155,7 @@ a {
 }
 /* End Pagination */
 
-/* header-1 */
+/*header-1*/
 .header-1 {
   background-color: #000;
 }

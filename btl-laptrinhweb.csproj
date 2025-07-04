@@ -1,5 +1,4 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -43,6 +42,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -62,25 +64,28 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Admin\ManagerUsers.aspx" />
+    <Content Include="Admin\QuanLyDatHang.aspx" />
+    <Content Include="Admin\QuanLyNguoiDung.aspx" />
+    <Content Include="Admin\QuanLySach.aspx" />
     <Content Include="assets\css\base.css" />
-    <Content Include="assets\css\book.css" />
-    <Content Include="assets\css\home.css" />
+    <Content Include="assets\css\trangchu.css" />
+    <Content Include="assets\css\chitietsanpham.css" />
     <Content Include="assets\css\reset.css" />
+    <Content Include="assets\css\danhsachsanpham.css" />
     <Content Include="assets\images\icon_service_1.svg" />
     <Content Include="assets\images\icon_service_2.svg" />
     <Content Include="assets\images\icon_service_3.svg" />
     <Content Include="assets\images\icon_service_4.svg" />
-    <Content Include="BookDetail.aspx" />
-    <Content Include="Category.aspx" />
-    <Content Include="Global.asax" />
+    <Content Include="ChiTietSanPham.aspx" />
+    <Content Include="DangNhapDangKy.aspx" />
+    <Content Include="DanhSachSanPham.aspx" />
+    <Content Include="assets\css\dangnhapdangky.css" />
+    <Content Include="GioHang.aspx" />
+    <Content Include="KetQuaTimKiem.aspx" />
+    <Content Include="ThanhToan.aspx" />
+    <Content Include="ThongTinNguoiDung.aspx" />
     <Content Include="UserControls\Header.ascx" />
-    <Content Include="Home.aspx" />
+    <Content Include="TrangChu.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,32 +96,91 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ManagerUsers.aspx.cs">
-      <DependentUpon>ManagerUsers.aspx</DependentUpon>
+    <Compile Include="Admin\QuanLyDatHang.aspx.cs">
+      <DependentUpon>QuanLyDatHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ManagerUsers.aspx.designer.cs">
-      <DependentUpon>ManagerUsers.aspx</DependentUpon>
+    <Compile Include="Admin\QuanLyDatHang.aspx.designer.cs">
+      <DependentUpon>QuanLyDatHang.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BookDetail.aspx.cs">
-      <DependentUpon>BookDetail.aspx</DependentUpon>
+    <Compile Include="Admin\QuanLyNguoiDung.aspx.cs">
+      <DependentUpon>QuanLyNguoiDung.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BookDetail.aspx.designer.cs">
-      <DependentUpon>BookDetail.aspx</DependentUpon>
+    <Compile Include="Admin\QuanLyNguoiDung.aspx.designer.cs">
+      <DependentUpon>QuanLyNguoiDung.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Category.aspx.cs">
-      <DependentUpon>Category.aspx</DependentUpon>
+    <Compile Include="Admin\QuanLySach.aspx.cs">
+      <DependentUpon>QuanLySach.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Category.aspx.designer.cs">
-      <DependentUpon>Category.aspx</DependentUpon>
+    <Compile Include="Admin\QuanLySach.aspx.designer.cs">
+      <DependentUpon>QuanLySach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietSanPham.aspx.cs">
+      <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietSanPham.aspx.designer.cs">
+      <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\AppException.cs" />
-    <Compile Include="DAL\BookDAL.cs" />
+    <Compile Include="DAL\ChiTietDatHangDAL.cs" />
     <Compile Include="DAL\Connection.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
+    <Compile Include="DAL\DatHangDAL.cs" />
+    <Compile Include="DAL\NguoiDungDAL.cs" />
+    <Compile Include="DAL\NhaXuatBanDAL.cs" />
+    <Compile Include="DAL\SachDAL.cs" />
+    <Compile Include="DAL\TacGiaDAL.cs" />
+    <Compile Include="DAL\TheLoaiDAL.cs" />
+    <Compile Include="DangNhapDangKy.aspx.cs">
+      <DependentUpon>DangNhapDangKy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhapDangKy.aspx.designer.cs">
+      <DependentUpon>DangNhapDangKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachSanPham.aspx.cs">
+      <DependentUpon>DanhSachSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachSanPham.aspx.designer.cs">
+      <DependentUpon>DanhSachSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GioHang.aspx.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GioHang.aspx.designer.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KetQuaTimKiem.aspx.cs">
+      <DependentUpon>KetQuaTimKiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KetQuaTimKiem.aspx.designer.cs">
+      <DependentUpon>KetQuaTimKiem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietDatHang.cs" />
+    <Compile Include="Models\DatHang.cs" />
+    <Compile Include="Models\NguoiDung.cs" />
+    <Compile Include="Models\NhaXuatBan.cs" />
+    <Compile Include="Models\Sach.cs" />
+    <Compile Include="Models\TacGia.cs" />
+    <Compile Include="Models\TheLoai.cs" />
+    <Compile Include="ThanhToan.aspx.cs">
+      <DependentUpon>ThanhToan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThanhToan.aspx.designer.cs">
+      <DependentUpon>ThanhToan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinNguoiDung.aspx.cs">
+      <DependentUpon>ThongTinNguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinNguoiDung.aspx.designer.cs">
+      <DependentUpon>ThongTinNguoiDung.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Header.ascx.cs">
       <DependentUpon>Header.ascx</DependentUpon>
@@ -125,17 +189,13 @@
     <Compile Include="UserControls\Header.ascx.designer.cs">
       <DependentUpon>Header.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Author.cs" />
-    <Compile Include="Models\Book.cs" />
-    <Compile Include="Models\Publisher.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -189,11 +249,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
