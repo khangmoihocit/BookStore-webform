@@ -88,6 +88,7 @@
     <Content Include="KetQuaTimKiem.aspx" />
     <Content Include="ThanhToan.aspx" />
     <Content Include="ThongTinNguoiDung.aspx" />
+    <Content Include="UserControls\breadcrumb.html" />
     <Content Include="UserControls\Header.ascx" />
     <Content Include="TrangChu.aspx" />
     <Content Include="Web.config" />
@@ -219,6 +220,9 @@
     <Content Include="assets\images\img_people.webp" />
     <Content Include="assets\images\img_title.webp" />
     <Content Include="Admin\Admin.Master" />
+    <Content Include="assets\images\bg-breadcrumb.webp" />
+    <Content Include="assets\images\slider_1.webp" />
+    <Content Include="assets\images\img_aside_banner.webp" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
