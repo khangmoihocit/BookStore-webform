@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+
+<body>
+    <div class="section">
+        <div class="container-1">
+            <div class="inner-wrap">
+                <div class="admin-sidebar">
+                    <div class="admin-logo">
+                        <a href="#">TRANG QUẢN TRỊ</a>
+                    </div>
+                    <ul class="admin-menu">
+                        <li><a href="#">
+                                <i class="fa fa-dashboard"></i>
+                                <div class="inner-text">Tổng quan</div>
+                            </a></li>
+                        <li><a href="#"><i class="fa fa-book"></i>
+                                <div class="inner-text">Quản lý sách</div>
+                            </a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart"></i>
+                                <div class="inner-text">Quản lý đơn hàng</div>
+                            </a></li>
+                        <li><a href="/Admin/ManageUsers.aspx"><i class="fa fa-users"></i>
+                                <div class="inner-text">Quản lý người dùng</div>
+                            </a></li>
+                        <li><a href="/home.aspx" class="inner-back"><i class="fa fa-sign-out"></i>
+                                <div class="inner-text ">Quan lại trang chính</div>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <div class="admin-main-content">
+                    <div class="admin-header">
+                        Xin chào, Admin!
+                    </div>
+
+                    <div class="admin-page-content">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

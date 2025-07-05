@@ -9,6 +9,10 @@ namespace btl_laptrinhweb.DAL
 {
     public class SachDAL
     {
+        public SachDAL()
+        {
+        }
+
         public List<Sach> command(string query)
         {
             List<Sach> listSach = new List<Sach>();
@@ -24,16 +28,18 @@ namespace btl_laptrinhweb.DAL
                             while (reader.Read())
                             {
                                 Sach sach = new Sach();
-                                sach.MaSach = int.Parse(reader["PK_iSachID"].ToString());
-                                sach.MoTa = reader["sMota"].ToString();
-                                sach.TenSach = reader["sTensach"].ToString();
-                                sach.URLAnh = reader["sURLanh"].ToString();
-                                sach.GiaBanMoi = double.Parse(reader["fGiabanmoi"].ToString());
-                                sach.GiaBanCu = double.Parse(reader["fGiabancu"].ToString());
-                                sach.SoLuong = int.Parse(reader["iSoluong"].ToString());
-                                sach.MaTheLoai = int.Parse(reader["FK_iTheloaiID"].ToString());
-                                sach.MaTacGia = int.Parse(reader["FK_iTacgiaID"].ToString());
-                                sach.MaNhaXuatBan = int.Parse(reader["FK_iNhaxuatbanID"].ToString());
+                                sach.TenSach = reader["sTensach"] != DBNull.Value ? reader["sTensach"].ToString() : string.Empty;
+                                sach.MoTa = reader["sMota"] != DBNull.Value ? reader["sMota"].ToString() : string.Empty;
+                                sach.URLAnh = reader["sURLanh"] != DBNull.Value ? reader["sURLanh"].ToString() : string.Empty;
+
+                                sach.MaSach = reader["PK_iSachID"] != DBNull.Value ? Convert.ToInt32(reader["PK_iSachID"]) : 0;
+                                sach.SoLuong = reader["iSoluong"] != DBNull.Value ? Convert.ToInt32(reader["iSoluong"]) : 0;
+                                sach.MaTheLoai = reader["FK_iTheloaiID"] != DBNull.Value ? Convert.ToInt32(reader["FK_iTheloaiID"]) : 0;
+                                sach.MaTacGia = reader["FK_iTacgiaID"] != DBNull.Value ? Convert.ToInt32(reader["FK_iTacgiaID"]) : 0;
+                                sach.MaNhaXuatBan = reader["FK_iNhaxuatbanID"] != DBNull.Value ? Convert.ToInt32(reader["FK_iNhaxuatbanID"]) : 0;
+
+                                sach.GiaBanMoi = reader["fGiabanmoi"] != DBNull.Value ? Convert.ToDouble(reader["fGiabanmoi"]) : 0.0;
+                                sach.GiaBanCu = reader["fGiabancu"] != DBNull.Value ? Convert.ToDouble(reader["fGiabancu"]) : 0.0;
 
                                 listSach.Add(sach);
                             }
@@ -43,7 +49,7 @@ namespace btl_laptrinhweb.DAL
             }
             catch (Exception ex)
             {
-                throw new AppException("Lỗi khi thực hiện truy vấn: " + ex.Message);
+                throw new AppException("Lỗi khi thực hiện truy vấn sách: " + ex.Message);
             }
             return listSach;
         }//command

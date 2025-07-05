@@ -10,7 +10,7 @@ namespace btl_laptrinhweb.Models
         public int MaNhaXuatBan { get; set; }
         public string TenNhaXuatBan { get; set; }
         public string DiaChi { get; set; }
-        public int SoDienThoai { get; set; }
+        public string SoDienThoai { get; set; }
         public NhaXuatBan() { }
 
     }

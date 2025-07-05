@@ -7,5 +7,9 @@ namespace btl_laptrinhweb.DAL
 {
     public class TacGiaDAL
     {
+        public TacGiaDAL()
+        {
+        }
+        
     }
 }

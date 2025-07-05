@@ -1,254 +1,83 @@
-﻿/*body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-}*/
-
-/* Layout */
-.container-1 {
+﻿.inner-wrap {
     display: flex;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 20px 100px;
-    align-items: flex-start;
-    margin-top: 90px;
+    justify-content: space-between;
 }
 
-.connect, .connect:visited {
-    text-decoration: none;
-}
+
 
 /* Sidebar bộ lọc */
 .sidebar-filter {
-    width: 250px;
-    padding-right: 20px;
-    border-right: 1px solid #ddd;
-    flex-shrink: 0;
+    width: 233px;
+    margin-right: 40px;
 }
 
-    .sidebar-filter summary {
+.sidebar-image img{
+    width: 100%;
+}
+
+.inner-filter {
+    margin-bottom: 30px;
+    color: var(--color-text);
+    border-bottom: 1px solid #808080;
+}
+
+    .inner-filter .inner-title {
+        font-size: 17px;
         font-weight: bold;
+        color: var(--color-text);
+        margin-bottom: 13px;
         cursor: pointer;
-        font-size: 14px;
-        color: #333;
-        margin-bottom: 6px;
+        position: relative;
+        padding: 10px;
     }
 
-    .sidebar-filter h3 {
-        font-size: 16px;
+        .inner-filter .inner-title::after {
+            content: '▲';
+            font-size: 16px;
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+
+    /* Xoay mũi tên lên khi dropdown đang mở (có class .active) */
+    .inner-filter.active .inner-title::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* Mặc định ẩn nội dung của CheckBoxList và RadioButtonList */
+    .inner-filter > span {
+        display: none;
+    }
+
+    /* Hiển thị nội dung khi thẻ cha có class .active */
+    .inner-filter.active > span {
+        display: block;
+    }
+
+    .inner-filter span input[type="checkbox"] {
+        margin-right: 10px;
         margin-bottom: 10px;
     }
 
-    .sidebar-filter ul {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 20px;
+    .inner-filter span input[type="radio"] {
+        margin-right: 10px;
+        margin-bottom: 10px;
     }
 
-    .sidebar-filter li {
-        margin-bottom: 8px;
-    }
-
-/* Collapsible */
-.collapsible {
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    background: #fff;
-    overflow: hidden;
-}
-
-.collapsible-header {
-    padding: 10px;
-    background-color: #a57c34;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
-}
-
-.collapsible-content {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 10px;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-}
-
-.collapsible.open .collapsible-content {
-    max-height: 300px;
-    padding: 10px;
-}
-
-/* Sidebar hình ảnh */
-.sidebar-image {
-    margin-top: 30px;
-}
-
-    .sidebar-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 6px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .inner-filter span label {
+        margin-bottom: 10px;
     }
 
 /* Danh sách sản phẩm */
 .product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
-    min-height: 0;
-    flex:1;
-}
-
-    .product-list .product a,
-    .product-list .product a:visited,
-    .product-list .product a:hover,
-    .product-list .product a:active {
-        text-decoration: none;
-    }
-
-/* Sản phẩm */
-.product {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
     justify-content: space-between;
-    width: 220px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    background: #fff;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform;
 }
 
-    .product:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .product img {
-        width: 100%;
-        height: 220px;
-        border-radius: 3px;
-    }
-
-    .product h4 {
-        font-size: 14px;
-        margin: 10px 0 5px;
-        color: #333;
-    }
-
-/* Giá */
-.price-box {
-    margin: 10px 0;
-}
-
-.price-new {
-    font-size: 18px;
-    font-weight: bold;
-    color: #a57c34;
-    margin-right: 8px;
-}
-
-.price-old {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 14px;
-}
-
-/* Nút chọn */
-.select-btn {
-    margin-top: 10px;
-    padding: 8px 20px;
-    background-color: #a57c34;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    will-change: transform;
-}
-
-    .select-btn:hover {
-        background-color: #8a652a;
-        transform: scale(1.05);
-    }
-
-/* Phân trang */
-.pagination {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-    .pagination button {
-        padding: 6px 12px;
-        margin: 0 5px;
-        border: none;
-        background-color: #ddd;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-        .pagination button.active {
-            background-color: #a57c34;
-            color: white;
-        }
-
-
-
-/* Icon trái tim */
-.inner-icon-favourite {
-    width: 32px;
-    height: 32px;
-    background-color: var(--color-second);
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    will-change: transform, opacity;
-    z-index: 2;
-}
-
-.product:hover .inner-icon-favourite {
-    transform: scale(1.2);
-    background-color: red;
-    opacity: 1;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.inner-icon-favourite:hover {
-    transform: scale(1);
-    background-color: #e00000;
-}
-
-.inner-icon-favourite i.fa-solid {
-    color: red;
-}
-
-.inner-icon-favourite.active {
-    background-color: #fff;
-    color: white;
-    border: 1px solid var(--color-second);
-}
-
-    .inner-icon-favourite.active i {
-        color: var(--color-second);
+    .product-list .product {
+        margin-bottom: 30px;
     }

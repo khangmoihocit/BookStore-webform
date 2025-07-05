@@ -1,12 +1,13 @@
 ﻿
-.inner-wrap {
+
+.container-1 {
     display: flex;
     justify-content: center;
+    height: 100vh;
 }
 
 .login-container {
-    width: 400px;
-
+    width: 450px;
 }
 
 .tab {
@@ -141,7 +142,7 @@ input {
     cursor: pointer;
 }
 
-.tab-link.active {
-    color: #000;
-    border-bottom: 3px solid #000;
-}
+    .tab-link.active {
+        color: #000;
+        border-bottom: 3px solid #000;
+    }

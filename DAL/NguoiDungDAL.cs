@@ -7,5 +7,8 @@ namespace btl_laptrinhweb.DAL
 {
     public class NguoiDungDAL
     {
+        public NguoiDungDAL()
+        {
+        }
     }
 }

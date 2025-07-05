@@ -296,6 +296,53 @@ a {
 }
 /* End Header-2 */
 
+/* section-0 */
+.section-0 {
+  background-image: url(/assets/images/bg-breadcrumb.webp);
+  background-size: cover;
+  padding: 15px 0;
+  margin-bottom: 30px;
+  min-height: 120px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+    .section-0 .inner-title {
+        font-size: 22px;
+        color: #C4C4C4;
+        font-weight: bold;
+        text-align: center;
+    }
+
+.section-0 a {
+    color: #C4C4C4
+}
+
+.section-0 a:hover{
+  color: #ffc107;
+}
+
+    .section-0 .inner-wrap {
+        color: #fff;
+          display: flex;
+  justify-content: center;
+  align-items: center;
+    }
+
+.section-0 .inner-wrap li{
+  list-style-type: none;
+  color: #C4C4C4;
+  margin-right: 10px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.section-0 .inner-wrap .inner-text-active{
+  color: #ffc107;
+}
+/*end section-1 */
+
 @media (max-width: 1200px) {
   .container {
     max-width: 960px;
