@@ -13,5 +13,15 @@ namespace btl_laptrinhweb.Admin
         {
 
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlTheLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

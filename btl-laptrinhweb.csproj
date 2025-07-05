@@ -67,7 +67,11 @@
     <Content Include="Admin\QuanLyDatHang.aspx" />
     <Content Include="Admin\QuanLyNguoiDung.aspx" />
     <Content Include="Admin\QuanLySach.aspx" />
+    <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\base.css" />
+    <Content Include="assets\css\quanlydathang.css" />
+    <Content Include="assets\css\quanlynguoidung.css" />
+    <Content Include="assets\css\quanlysach.css" />
     <Content Include="assets\css\trangchu.css" />
     <Content Include="assets\css\chitietsanpham.css" />
     <Content Include="assets\css\reset.css" />

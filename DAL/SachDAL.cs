@@ -9,6 +9,10 @@ namespace btl_laptrinhweb.DAL
 {
     public class SachDAL
     {
+        public SachDAL()
+        {
+        }
+
         public List<Sach> command(string query)
         {
             List<Sach> listSach = new List<Sach>();
