@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrangChu.aspx.cs" Inherits="btl_laptrinhweb.Home" %>
 <%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc" TagName="Header" %>
+
     <!DOCTYPE html>
 
     <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,9 +12,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="/assets/css/reset.css">
-        <link rel="stylesheet" href="/assets/css/base.css">
-        <link rel="stylesheet" href="/assets/css/trangchu.css">
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/base.css" />
+        <link rel="stylesheet" href="/assets/css/trangchu.css" />
     </head>
 
     <body>
@@ -23,7 +24,7 @@
         <div class="section-one">
             <div class="inner-wrap">
                 <div class="inner-image">
-                    <a href=""><img src="/assets/images/slider_1.webp" alt="backgroud-1">
+                    <a href="#"><img src="/assets/images/slider_1.webp" alt="backgroud-1" />
                     </a>
                 </div>
             </div>
@@ -37,7 +38,7 @@
                     <div class="inner-list-item">
                         <div class="item">
                             <div class="inner-image">
-                                <img src="/assets/images/cate_1.webp" alt="ảnh">
+                                <img src="/assets/images/cate_1.webp" alt="ảnh" />
                             </div>
                             <div class="inner-title">
                                 Tâm lý kỹ năng
@@ -291,6 +292,10 @@
             </div>
         </div>
         <!-- End Section Seven -->
+
+        <!-- Footer -->
+
+        <!-- End Footer -->
 
     </body>
 

@@ -51,13 +51,13 @@ namespace btl_laptrinhweb
         protected global::System.Web.UI.WebControls.CheckBoxList cblNhaXuatBan;
 
         /// <summary>
-        /// cblSapXep control.
+        /// rblSapXep control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList cblSapXep;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblSapXep;
 
         /// <summary>
         /// rptSach control.
@@ -67,5 +67,14 @@ namespace btl_laptrinhweb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptSach;
+
+        /// <summary>
+        /// rptPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptPage;
     }
 }

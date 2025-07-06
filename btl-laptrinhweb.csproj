@@ -69,17 +69,19 @@
     <Content Include="Admin\QuanLySach.aspx" />
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\base.css" />
+    <Content Include="assets\css\chitietsanpham.css" />
     <Content Include="assets\css\quanlydathang.css" />
     <Content Include="assets\css\quanlynguoidung.css" />
     <Content Include="assets\css\quanlysach.css" />
     <Content Include="assets\css\trangchu.css" />
-    <Content Include="assets\css\chitietsanpham.css" />
+    <Content Include="assets\css\chitietsanpham-1.css" />
     <Content Include="assets\css\reset.css" />
     <Content Include="assets\css\danhsachsanpham.css" />
     <Content Include="assets\images\icon_service_1.svg" />
     <Content Include="assets\images\icon_service_2.svg" />
     <Content Include="assets\images\icon_service_3.svg" />
     <Content Include="assets\images\icon_service_4.svg" />
+    <Content Include="ChiTietSanPham-1.aspx" />
     <Content Include="ChiTietSanPham.aspx" />
     <Content Include="DangNhapDangKy.aspx" />
     <Content Include="DanhSachSanPham.aspx" />
@@ -88,7 +90,7 @@
     <Content Include="KetQuaTimKiem.aspx" />
     <Content Include="ThanhToan.aspx" />
     <Content Include="ThongTinNguoiDung.aspx" />
-    <Content Include="UserControls\breadcrumb.html" />
+    <Content Include="UserControls\Footer.ascx" />
     <Content Include="UserControls\Header.ascx" />
     <Content Include="TrangChu.aspx" />
     <Content Include="Web.config" />
@@ -121,6 +123,13 @@
     </Compile>
     <Compile Include="Admin\QuanLySach.aspx.designer.cs">
       <DependentUpon>QuanLySach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietSanPham-1.aspx.cs">
+      <DependentUpon>ChiTietSanPham-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietSanPham-1.aspx.designer.cs">
+      <DependentUpon>ChiTietSanPham-1.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChiTietSanPham.aspx.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
@@ -186,6 +195,13 @@
     </Compile>
     <Compile Include="ThongTinNguoiDung.aspx.designer.cs">
       <DependentUpon>ThongTinNguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Header.ascx.cs">
       <DependentUpon>Header.ascx</DependentUpon>

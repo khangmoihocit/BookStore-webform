@@ -50,5 +50,7 @@ namespace btl_laptrinhweb.DAL
             string query = "select * from tblNhaxuatban";
             return command(query);
         }
+
+        
     }
 }

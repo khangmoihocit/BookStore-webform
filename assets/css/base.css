@@ -20,11 +20,17 @@ a {
   text-decoration: none;
 }
 
+.message-error {
+    color: red;
+    font-size: 16px;
+    font-style: italic;
+}
+
 .container {
-  width: 100%;
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
+    width: 100%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* One Product */
@@ -296,6 +302,62 @@ a {
 }
 /* End Header-2 */
 
+/* Footer */
+.footer{
+  padding: 60px 0 100px 0;
+  background-image: url(/assets/images/backg-footer.webp);
+  color: #aba8a8;
+}
+
+.footer .inner-wrap{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.footer .inner-item{
+  margin-top: 20px;
+  display: flex;
+}
+
+.footer .inner-item .inner-icon{
+  margin-right: 10px;
+}
+
+.footer .inner-title{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #cfcece;
+}
+
+.footer .inner-text{
+  margin-top: 20px;
+}
+
+.footer .inner-text:hover{
+  color: var(--color-primary);
+}
+
+.footer .inner-list-icon{
+  display: flex;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.footer .inner-list-icon .inner-icon{
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.footer .inner-image{
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 10px 30px;
+  display: flex;
+}
+/* End Footer */
+
 /* section-0 */
 .section-0 {
   background-image: url(/assets/images/bg-breadcrumb.webp);
@@ -341,7 +403,7 @@ a {
 .section-0 .inner-wrap .inner-text-active{
   color: #ffc107;
 }
-/*end section-1 */
+/*end section-0 */
 
 @media (max-width: 1200px) {
   .container {

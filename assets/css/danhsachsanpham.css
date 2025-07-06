@@ -48,12 +48,12 @@
 
     /* Mặc định ẩn nội dung của CheckBoxList và RadioButtonList */
     .inner-filter > span {
-        display: none;
+        display: block;
     }
 
     /* Hiển thị nội dung khi thẻ cha có class .active */
     .inner-filter.active > span {
-        display: block;
+        display: none;
     }
 
     .inner-filter span input[type="checkbox"] {
@@ -71,11 +71,18 @@
     }
 
 /* Danh sách sản phẩm */
-.product-list {
+.inner-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
+.inner-main .product-list {
     display: flex;
     flex-wrap: wrap;
-    flex: 1;
     justify-content: space-between;
+    width: 100%;
 }
 
     .product-list .product {
