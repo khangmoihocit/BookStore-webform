@@ -19,7 +19,9 @@
     </head>
 
     <body>
+        <!-- Header-->
         <uc:Header runat="server" ID="header1"/>
+        <!-- End Header-->
 
         <!-- Section One -->
         <div class="section-one">

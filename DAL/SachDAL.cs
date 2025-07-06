@@ -73,11 +73,16 @@ namespace btl_laptrinhweb.DAL
             return sach;
         }
 
-        public List<Sach> getByTheLoai(List<int> ids)
+
+        public List<Sach> getByTheLoai(int idTheLoai)
         {
-            string query = "select * from tblSach " +
-                "where FK_iTheloaiID in (" + string.Join(",", ids) + ")";
-            return command(query);
+            string query = "select * from tblSach where FK_iTheLoaiID = " + idTheLoai;
+            List<Sach> sach = command(query);
+            if(sach.Count < 1)
+            {
+                throw new AppException("Không có sách liên quan");
+            }
+            return sach;
         }
 
         public List<Sach> getByNhaXuatBan(List<int> ids)

@@ -1,4 +1,5 @@
-﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChiTietSanPham.aspx.cs" Inherits="btl_laptrinhweb.ChiTietSanPham1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChiTietSanPham.aspx.cs" Inherits="btl_laptrinhweb.ChiTietSanPham1" %>
+
 <%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc" TagName="Header" %>
 <%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
@@ -24,79 +25,74 @@
             <ul class="inner-wrap">
                 <li><a href="TrangChu.aspx">Trang chủ</a></li>
                 <li>/</li>
-                <li class="inner-text-active">Sản phẩm</li>
+                <li class="inner-text-active"><a href="DanhSachSanPham.aspx">Tất cả sản phẩm</a></li>
             </ul>
-            <div class="inner-title">TẤT CẢ SẢN PHẨM</div>
+            <div class="inner-title">
+                <asp:Label ID="lblHeader" runat="server" Text="Tên sản phẩm"></asp:Label>
+            </div>
         </div>
     </div>
     <form id="form1" runat="server">
+        <asp:Label ID="lblMessage" runat="server" Text="" Visible="false" CssClass="message-error"></asp:Label>
         <!-- Section One -->
         <div class="section-one">
             <div class="container">
                 <div class="inner-wrap">
                     <div class="product-info">
                         <div class="inner-row">
-                            <img src="/assets/images/8935325011559.webp" alt="">
+                            <asp:Image ID="img" runat="server" />
                             <div class="inner-info-detail">
-                                <div class="inner-title">
-                                    Vo viet ke ngang nhieu hinh sieu ngo
-                                </div>
+                                <asp:Label ID="lblTenSanPham" runat="server" Text="Label" CssClass="inner-title"></asp:Label>
                                 <div class="inner-price">
-                                    <div class="inner-price-new">12000đ</div>
-                                    <div class="inner-price-old">41000đ</div>
+                                    <asp:Label ID="lblGiaBanMoi" runat="server" Text="Label" CssClass="inner-price-new"></asp:Label>
+                                    <asp:Label ID="lblGiaBanCu" runat="server" Text="Label" CssClass="inner-price-old"></asp:Label>
                                 </div>
                                 <div class="inner-text">
-                                    Mã san pham: dang cap nhat
+                                    Mã sản phẩm: Đang cập nhật
                                 </div>
                                 <div class="inner-text inner-author">
-                                    tac gia: dang cap nhat
+                                    Tác giả:
+                                    <asp:Label ID="lblTenTacGia" runat="server" Text="Label"></asp:Label>
                                 </div>
-                                <span class="inner-text">tinh trang: con hang</span>
-                                <div class="inner-text inner-quantity">so luong :
-                                    <input type="text" />
+                                <span class="inner-text">Tình trạng:
+                                    <asp:Label ID="lblTinhTrang" runat="server" Text="Label"></asp:Label></span>
+                                <div class="inner-text inner-quantity">
+                                    <div>Số lượng: </div>
+                                    <asp:TextBox ID="txtSoLuong" runat="server" TextMode="Number" min="1"></asp:TextBox>
                                 </div>
                                 <div class="button-row">
-                                    <div class="button button-add-to-cart-1">Thêm vào giỏ hàng</div>
-                                    <div class="button button-pay">Mua ngay</div>
+                                    <asp:Button ID="btnThemGioHang2" runat="server" Text="Thêm vào giỏ hàng" CssClass="button button-add-to-cart" />
+                                    <asp:Button ID="btnMuaNgay" runat="server" Text="Mua ngay" CssClass="button button-pay" />
                                 </div>
                                 <div class="inner-uu-dai">
                                     <div class="inner-desc-title">Ưu đãi liên quan:</div>
                                     <div class="inner-desc-item">
                                         <img class="inner-icon-1" src="/assets/images/icon-favorite.webp" />
-                                        <div class="inner-desc">Nhập mã <b><i></i>QRDAY”, Giảm ngay 30%, đơn hàng từ 59k
-                                                thanh toán Vnpay</i></b></div>
+                                        <div class="inner-desc">
+                                            Nhập mã <b><i>QRDAY”, Giảm ngay 30%, đơn hàng từ 59k
+                                                thanh toán Vnpay</i></b>
+                                        </div>
                                     </div>
                                     <div class="inner-desc-item">
                                         <img class="inner-icon-1" src="/assets/images/icon-favorite.webp" />
-                                        <div class="inner-desc"><b><i></i>Hoàn 30%, tối đa 50k, thanh toán qua ví
-                                                Moca</i></b></div>
+                                        <div class="inner-desc">
+                                            <b><i>Hoàn 30%, tối đa 50k, thanh toán qua ví
+                                                Moca</i></b>
+                                        </div>
                                     </div>
                                     <div class="inner-desc-item">
                                         <img class="inner-icon-1" src="/assets/images/icon-favorite.webp" />
-                                        <div class="inner-desc">Nhập mã <b><i></i>AIRPAY024, giảm ngay 10%, đơn hàng từ
-                                                0đ, thanh toán qua ví AirPay</i></b></div>
+                                        <div class="inner-desc">
+                                            Nhập mã <b><i>AIRPAY024, giảm ngay 10%, đơn hàng từ
+                                                0đ, thanh toán qua ví AirPay</i></b>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="inner-product-desc">
                             <div class="inner-title">THÔNG TIN CHI TIẾT</div>
-                            <div class="inner-desc">
-                                🌿🌿🌿 SỔ VỞ ĐÁNG YÊU - HỌC TẬP THÊM PHIÊUUUUU 💕💕💕
-
-                                ✔Size: Khổ A5( 20,7cm * 14cm) gồm 120 trang giấy dày dặn
-                                ✔ Chất liệu: giấy chống lóa mắt cao cấp, không gây mỏi mắt khi nhìn lâu
-                                ✔Bìa của quyển sổ/vở là bìa giấy cứng cáp, chắc chắn. Đặc biệt được in hình thù siêu dễ
-                                thương kết hợp màu sắc tươi sáng, trẻ trung
-
-                                👉👉đảm bảo giúp chúng mình có hứng thú, động lực hơn cũng như giảm Stress khi học tập
-                                và làm việc các
-
-                                ❎❎ Mỗi phân loại sản phẩm có 4 hình, các cậu muốn chọn hình theo sở thích có thể inbox
-                                báo shop mẫu nhaaaa😘
-
-                                👉👉 Sổ/vở xinh giá lại siêu hạt dẻ... Các cậu nhanh tay rinh em ấy về nhà thui nàoooo😘
-                            </div>
+                            <asp:Label ID="lblThongTinChiTiet" runat="server" Text="..." CssClass="inner-desc"></asp:Label>
                         </div>
                     </div>
                     <div class="inner-content-right">
@@ -182,65 +178,40 @@
                 <div class="inner-wrap">
                     <div class="inner-title-1">SẢN PHẨM LIÊN QUAN</div>
                     <div class="list-product">
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935092825298.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                            <div class="inner-add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                Thêm vào giỏ
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935092825298.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                            <div class="inner-add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                Thêm vào giỏ
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935092825298.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                            <div class="inner-add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                Thêm vào giỏ
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" alt="ảnh" src="/assets/images/8935092825298.webp">
-                            <div class="inner-title">Vở viết kẻ ngang nhiều hình siêu nghộ nghĩnh</div>
-                            <div class="inner-price">
-                                <div class="inner-price-new">12.000đ</div>
-                                <div class="inner-price-old">41.000đ</div>
-                            </div>
-                            <div class="inner-add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                Thêm vào giỏ
-                            </div>
-                        </div>
+                        <asp:Repeater ID="rptSach" runat="server">
+                            <ItemTemplate>
+                                <div class="product">
+                                    <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
+                                    <asp:HyperLink runat="server"
+                                        NavigateUrl='<%# String.Format("ChiTietSanPham.aspx?MaSach={0}", Eval("MaSach")) %>'>
+                        <img class="inner-image" src='<%# Eval("URLAnh") %>' alt="ảnh sản phẩm">
+                                    </asp:HyperLink>
+                                    <div class="inner-title">
+                                        <%# Eval("TenSach") %>
+                                    </div>
+                                    <div class="inner-price">
+                                        <div class="inner-price-new">
+                                            <%# Eval("GiaBanMoi") %>
+                                        </div>
+                                        <div class="inner-price-old">
+                                            <%# Eval("GiaBanCu") %>
+                                        </div>
+                                    </div>
+                                    <asp:LinkButton ID="btnThemGioHang" runat="server"
+                                        CssClass="inner-add-to-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Thêm giỏ hàng
+                                    </asp:LinkButton>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Section Two -->
     </form>
-    <uc:Footer runat="server" ID="footer"/>
+    <uc:Footer runat="server" ID="footer" />
 </body>
 
 </html>

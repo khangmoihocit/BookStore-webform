@@ -81,10 +81,11 @@
 .inner-main .product-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
 }
 
-    .product-list .product {
-        margin-bottom: 30px;
-    }
+.product-list .product {
+    width: calc(40% - 101px);
+    margin: 17px 21.5px;
+}
