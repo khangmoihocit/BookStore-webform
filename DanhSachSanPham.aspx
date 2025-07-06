@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DanhSachSanPham.aspx.cs"
     Inherits="btl_laptrinhweb.DanhSachSanPham" %>
+
 <%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc" TagName="Header" %>
 <%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
@@ -52,7 +53,7 @@
                             AutoPostBack="true" OnSelectedIndexChanged="rblSapXep_SelectedIndexChanged">
                             <asp:ListItem Value="ASC">Giá thấp đến cao</asp:ListItem>
                             <asp:ListItem Value="DESC">Giá cao đến thấp</asp:ListItem>
-                            <asp:ListItem >Bỏ sắp xếp</asp:ListItem>
+                            <asp:ListItem>Bỏ sắp xếp</asp:ListItem>
                         </asp:RadioButtonList>
                     </div>
 
@@ -66,7 +67,7 @@
                     <!-- Danh sách sản phẩm -->
                     <div class="product-list">
                         <asp:Label CssClass="message-error" ID="lblMessage" runat="server" Text="Label" Visible="false"></asp:Label>
-                        <asp:Repeater ID="rptSach" runat="server">
+                        <asp:Repeater ID="rptSach" runat="server" OnItemCommand="rptSach_ItemCommand">
                             <ItemTemplate>
                                 <div class="product">
                                     <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
@@ -85,8 +86,12 @@
                                             <%# Eval("GiaBanCu") %>
                                         </div>
                                     </div>
-                                    <asp:LinkButton ID="btnThemGioHang" runat="server"
+                                    <asp:LinkButton ID="btnThemGioHang"
+                                        CommandName="ThemGioHang"
+                                        CommandArgument='<%# Eval("MaSach") %>'
+                                        runat="server"
                                         CssClass="inner-add-to-cart">
+                                        
                                                 <i class="fa-solid fa-cart-shopping"></i>
                                                 Thêm giỏ hàng
                                     </asp:LinkButton>
@@ -111,7 +116,7 @@
         </div>
     </form>
 
-    <uc:Footer runat="server" ID="footer"/>
+    <uc:Footer runat="server" ID="footer" />
 </body>
 
 <script>

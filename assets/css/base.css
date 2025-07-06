@@ -288,6 +288,7 @@ a {
 .header-2 .inner-list-item {
   display: flex;
   align-items: center;
+  color: var(--color-text)
 }
 
 .header-2 .inner-list-item .item a {

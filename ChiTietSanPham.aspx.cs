@@ -29,12 +29,13 @@ namespace btl_laptrinhweb
 
         public void loadData()
         {
+            lblMessage.Visible = false;
+            lbltext.Visible = false;
             string maSach = Request.QueryString["MaSach"];
             if (maSach != null && maSach != "")
             {
                 try
                 {
-                    lblMessage.Visible = false;
                     Sach sach = sachDAL.getByMaSach(int.Parse(maSach));
                     lblHeader.Text = sach.TenSach;
                     lblTenSanPham.Text = sach.TenSach;
@@ -43,7 +44,7 @@ namespace btl_laptrinhweb
                     lblTenTacGia.Text = tacGiaDAL.getByMaTacGia(sach.MaTacGia).TenTacGia;
                     lblThongTinChiTiet.Text = sach.MoTa;
                     img.ImageUrl = sach.URLAnh;
-                    if(sach.SoLuong > 1)
+                    if (sach.SoLuong > 1)
                     {
                         lblTinhTrang.Text = "Còn hàng";
                         btnMuaNgay.Enabled = true;
@@ -57,12 +58,20 @@ namespace btl_laptrinhweb
 
                     //loại bỏ sách đang hiện
                     List<Sach> listSach = sachDAL.getByTheLoai(sach.MaTheLoai);
-                    var dataSach = listSach.Where(item=> item.MaSach != sach.MaSach).ToList();
-
-                    rptSach.DataSource = dataSach;
-                    rptSach.DataBind();
-
-                }catch (AppException ex)
+                    var dataSach = listSach.Where(item => item.MaSach != sach.MaSach).ToList();
+                    if (dataSach.Count < 1)
+                    {
+                        lbltext.Text = "Không có sách liên quan";
+                        lbltext.ForeColor = Color.Red;
+                        lbltext.Visible = true;
+                    }
+                    else
+                    {
+                        rptSach.DataSource = dataSach;
+                        rptSach.DataBind();
+                    }
+                }
+                catch (AppException ex)
                 {
                     lblMessage.Text = ex.Message;
                     lblMessage.Visible = true;
@@ -77,6 +86,44 @@ namespace btl_laptrinhweb
             {
                 lblMessage.Text = "Lỗi mã sách không tìm thấy";
                 lblMessage.Visible = true;
+            }
+        }
+
+        protected void btnThemGioHang2_Click(object sender, EventArgs e)
+        {
+            string maSach = Request.QueryString["MaSach"];
+            if (!string.IsNullOrEmpty(maSach))
+            {
+                List<Sach> gioHang = Session["GioHang"] as List<Sach>;
+                if (gioHang == null)
+                {
+                    gioHang = new List<Sach>();
+                }
+                try
+                {
+                    Sach sach = sachDAL.getByMaSach(int.Parse(maSach));
+                    Sach sachExits = gioHang.Find(item => item.MaSach == sach.MaSach);
+                    if ((sachExits != null))
+                    {
+                        sachExits.SoLuong += int.Parse(txtSoLuong.Text);
+                    }
+                    else
+                    {
+                        sach.SoLuong = int.Parse(txtSoLuong.Text);
+                        gioHang.Add(sach);
+                    }
+                    Session["GioHang"] = gioHang;
+                }
+                catch (AppException ex)
+                {
+                    lblMessage.Text = ex.Message;
+                    lblMessage.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    lblMessage.Text = ex.Message;
+                    lblMessage.Visible = true;
+                }
             }
         }
     }

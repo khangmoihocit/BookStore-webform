@@ -78,10 +78,6 @@ namespace btl_laptrinhweb.DAL
         {
             string query = "select * from tblSach where FK_iTheLoaiID = " + idTheLoai;
             List<Sach> sach = command(query);
-            if(sach.Count < 1)
-            {
-                throw new AppException("Không có sách liên quan");
-            }
             return sach;
         }
 

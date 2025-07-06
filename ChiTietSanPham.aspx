@@ -25,7 +25,9 @@
             <ul class="inner-wrap">
                 <li><a href="TrangChu.aspx">Trang chủ</a></li>
                 <li>/</li>
-                <li class="inner-text-active"><a href="DanhSachSanPham.aspx">Tất cả sản phẩm</a></li>
+                <li ><a href="DanhSachSanPham.aspx">Tất cả sản phẩm</a></li>
+                <li>/</li>
+<li class="inner-text-active"><a href="DanhSachSanPham.aspx" class="inner-text-active">Sản phẩm</a></li>
             </ul>
             <div class="inner-title">
                 <asp:Label ID="lblHeader" runat="server" Text="Tên sản phẩm"></asp:Label>
@@ -58,10 +60,10 @@
                                     <asp:Label ID="lblTinhTrang" runat="server" Text="Label"></asp:Label></span>
                                 <div class="inner-text inner-quantity">
                                     <div>Số lượng: </div>
-                                    <asp:TextBox ID="txtSoLuong" runat="server" TextMode="Number" min="1"></asp:TextBox>
+                                    <asp:TextBox ID="txtSoLuong" runat="server" TextMode="Number" min="1" Text="1"></asp:TextBox>
                                 </div>
                                 <div class="button-row">
-                                    <asp:Button ID="btnThemGioHang2" runat="server" Text="Thêm vào giỏ hàng" CssClass="button button-add-to-cart" />
+                                    <asp:Button ID="btnThemGioHang2" runat="server" Text="Thêm vào giỏ hàng" CssClass="button button-add-to-cart" OnClick="btnThemGioHang2_Click" />
                                     <asp:Button ID="btnMuaNgay" runat="server" Text="Mua ngay" CssClass="button button-pay" />
                                 </div>
                                 <div class="inner-uu-dai">
@@ -178,6 +180,7 @@
                 <div class="inner-wrap">
                     <div class="inner-title-1">SẢN PHẨM LIÊN QUAN</div>
                     <div class="list-product">
+                        <asp:Label ID="lbltext" runat="server" Text="" Visible="false"></asp:Label>
                         <asp:Repeater ID="rptSach" runat="server">
                             <ItemTemplate>
                                 <div class="product">

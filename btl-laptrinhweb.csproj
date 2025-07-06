@@ -70,11 +70,11 @@
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\chitietsanpham.css" />
+    <Content Include="assets\css\giohang.css" />
     <Content Include="assets\css\quanlydathang.css" />
     <Content Include="assets\css\quanlynguoidung.css" />
     <Content Include="assets\css\quanlysach.css" />
     <Content Include="assets\css\trangchu.css" />
-    <Content Include="assets\css\chitietsanpham-1.css" />
     <Content Include="assets\css\reset.css" />
     <Content Include="assets\css\danhsachsanpham.css" />
     <Content Include="assets\images\icon_service_1.svg" />
