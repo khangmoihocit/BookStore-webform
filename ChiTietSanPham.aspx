@@ -1,4 +1,6 @@
 ﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChiTietSanPham.aspx.cs" Inherits="btl_laptrinhweb.ChiTietSanPham1" %>
+<%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc" TagName="Header" %>
+<%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
 <!DOCTYPE html>
 
@@ -16,6 +18,7 @@
 </head>
 
 <body>
+    <uc:Header runat="server" ID="header1" />
     <div class="section-0">
         <div class="container">
             <ul class="inner-wrap">
@@ -237,6 +240,7 @@
         </div>
         <!-- End Section Two -->
     </form>
+    <uc:Footer runat="server" ID="footer"/>
 </body>
 
 </html>

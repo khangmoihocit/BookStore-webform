@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrangChu.aspx.cs" Inherits="btl_laptrinhweb.Home" %>
 <%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc" TagName="Header" %>
+<%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
     <!DOCTYPE html>
 
@@ -294,7 +295,7 @@
         <!-- End Section Seven -->
 
         <!-- Footer -->
-
+        <uc:Footer runat="server" ID="footer"/>
         <!-- End Footer -->
 
     </body>

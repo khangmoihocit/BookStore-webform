@@ -111,21 +111,27 @@ namespace btl_laptrinhweb
                     rptSach.DataSource = listSach;
                     rptSach.DataBind();
                     renderPageNumber(tongsobanghi, currentPage);
+                    lblMessage.Visible = false;
                 }
                 else
                 {
-                    Response.Write( "Không có sản phẩm nào.");
+                    lblMessage.Visible = true;
+                    lblMessage.Text = "Không có sản phẩm nào phù hợp với thông tin tìm kiếm của bạn.";
+                    rptSach.DataSource = null;
+                    rptSach.DataBind();
+                    rptPage.DataSource = null;
+                    rptPage.DataBind();
                 }
-
-
             }
             catch (AppException ex)
             {
-                Response.Write("Lỗi khi tải dữ liệu: " + ex.Message);
+                lblMessage.Visible = true;
+                lblMessage.Text = "Lỗi khi tải dữ liệu: " + ex.Message;
             }
             catch (Exception ex)
             {
-                Response.Write("Lỗi loaddata: " + ex.Message);
+                lblMessage.Visible = true;
+                lblMessage.Text = "Lỗi loaddata: " + ex.Message;
             }
         }
 

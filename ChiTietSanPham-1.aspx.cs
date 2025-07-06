@@ -18,7 +18,7 @@ namespace btl_laptrinhweb
         {
             if (!IsPostBack)
             {
-               
+
             }
         }
 
@@ -32,9 +32,11 @@ namespace btl_laptrinhweb
                     Sach sach = sachDAL.getByMaSach(int.Parse(maSach));
 
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Response.Write("<script>alert('lỗi: " + ex.Message + "');</script>");
             }
+        }
     }
 }

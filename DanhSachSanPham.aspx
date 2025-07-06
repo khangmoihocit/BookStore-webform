@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DanhSachSanPham.aspx.cs"
     Inherits="btl_laptrinhweb.DanhSachSanPham" %>
-
 <%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc" TagName="Header" %>
+<%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
 <!DOCTYPE html>
 
@@ -65,6 +65,7 @@
                 <div class="inner-main">
                     <!-- Danh sách sản phẩm -->
                     <div class="product-list">
+                        <asp:Label CssClass="message-error" ID="lblMessage" runat="server" Text="Label" Visible="false"></asp:Label>
                         <asp:Repeater ID="rptSach" runat="server">
                             <ItemTemplate>
                                 <div class="product">
@@ -109,6 +110,8 @@
             </div>
         </div>
     </form>
+
+    <uc:Footer runat="server" ID="footer"/>
 </body>
 
 <script>
