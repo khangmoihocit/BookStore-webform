@@ -43,7 +43,7 @@ namespace btl_laptrinhweb
 
                     loadData();
                 }
-                catch(AppException ex)
+                catch (AppException ex)
                 {
                     Response.Write("Lỗi khi tải dữ liệu: " + ex.Message);
                 }
@@ -67,7 +67,7 @@ namespace btl_laptrinhweb
                     listTheLoaiID.Add(int.Parse(item.Value));
                 }
             }
-            if(listTheLoaiID.Count > 0)
+            if (listTheLoaiID.Count > 0)
             {
                 stringTheLoaiID = string.Join(",", listTheLoaiID);
             }
@@ -82,14 +82,14 @@ namespace btl_laptrinhweb
                     listNhaXuaBanIDs.Add(int.Parse(item.Value));
                 }
             }
-            if(listNhaXuaBanIDs.Count > 0)
+            if (listNhaXuaBanIDs.Count > 0)
             {
                 stringNhaXuaBanIDs = string.Join(",", listNhaXuaBanIDs);
             }
 
             //lấy value sắp xếp đang được chọn (value = ASC hoặc DESC)
             string sort = null;
-            if(rblSapXep.SelectedIndex != -1)
+            if (rblSapXep.SelectedIndex != -1)
             {
                 sort = rblSapXep.SelectedValue;
             }
@@ -142,9 +142,10 @@ namespace btl_laptrinhweb
             // Thêm các link số trang
             for (int i = 1; i <= totalPage; i++)
             {
-                pageLinks.Add(new { 
-                    Text = i.ToString(), 
-                    Value = i ,
+                pageLinks.Add(new
+                {
+                    Text = i.ToString(),
+                    Value = i,
                     CssClass = (i == currentPage) ? "pagination-item-active" : ""
                 });
             }
@@ -165,6 +166,41 @@ namespace btl_laptrinhweb
         protected void rblSapXep_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadData();
+        }
+
+        protected void rptSach_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            lblMessage.Visible = false;
+            if (e.CommandName == "ThemGioHang")
+            {
+                int maSach = int.Parse(e.CommandArgument.ToString());
+                Sach sach = sachDAL.getByMaSach(maSach);
+                if (sach != null)
+                {
+                    List<Sach> gioHang = Session["GioHang"] as List<Sach>;
+                    if (gioHang == null)
+                    {
+                        gioHang = new List<Sach>();
+                    }
+
+                    Sach sachExisted = gioHang.Find(item => item.MaSach == sach.MaSach);
+                    if (sachExisted != null)
+                    {
+                        sachExisted.SoLuong++;
+                    }
+                    else
+                    {
+                        sach.SoLuong = 1;
+                        gioHang.Add(sach);
+                    }
+                    Session["GioHang"] = gioHang;
+                }
+                else
+                {
+                    lblMessage.Text = "Sản phẩm không tồn tại.";
+                    lblMessage.Visible = true;
+                }
+            }
         }
     }
 }

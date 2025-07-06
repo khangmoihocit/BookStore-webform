@@ -26,8 +26,12 @@
 
                 <div class="inner-list-item">
                     <div class="item"><i class="fa-regular fa-heart"></i></div>
-                    <div class="item"><i class="fa-solid fa-cart-shopping"></i></div>
-                    <div class="item"><i class="fa-regular fa-circle-user"></i></div>
+                    <div class="item">
+                        <a href="../GioHang.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    <div class="item">
+                        <a href="../DangNhapDangKy.aspx"><i class="fa-regular fa-circle-user"></i></a>
+                    </div>
                 </div>
 
             </div>
@@ -39,10 +43,10 @@
         <div class="container">
             <div class="inner-wrap">
                 <a class="inner-menu" href="../DanhSachSanPham.aspx">
-                        <div class="inner-icon">
-                            <i class="fa-solid fa-list"></i>
-                        </div>
-                        <div class="inner-desc">Danh mục sản phẩm</div>
+                    <div class="inner-icon">
+                        <i class="fa-solid fa-list"></i>
+                    </div>
+                    <div class="inner-desc">Danh mục sản phẩm</div>
                 </a>
 
                 <div class="inner-content">

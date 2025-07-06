@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DangNhapDangKy.aspx.cs" Inherits="btl_laptrinhweb.DangNhapDangKy" %>
 
 <%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc" TagName="Header" %>
+<%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
 
 <!DOCTYPE html>
@@ -79,5 +80,7 @@
             </div>
         </div>
     </form>
+    <uc:Footer runat="server" ID="footer" />
+
 </body>
 </html>
