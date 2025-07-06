@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -58,6 +59,84 @@ namespace btl_laptrinhweb.DAL
         {
             string query = "select * from tblSach";
             return command(query);
+        }
+
+        public Sach getByMaSach(int id)
+        {
+            string query = "select * from tblSach where PK_iSachID = " + id;
+            Sach sach = command(query)[0];
+
+            if (sach == null)
+            {
+                throw new AppException("Không tìm thấy sách với mã: " + id);
+            }
+            return sach;
+        }
+
+
+        public List<Sach> getByTheLoai(int idTheLoai)
+        {
+            string query = "select * from tblSach where FK_iTheLoaiID = " + idTheLoai;
+            List<Sach> sach = command(query);
+            if(sach.Count < 1)
+            {
+                throw new AppException("Không có sách liên quan");
+            }
+            return sach;
+        }
+
+        public List<Sach> getByNhaXuatBan(List<int> ids)
+        {
+            string query = "select * from tblSach " +
+                "where FK_iNhaxuatbanID in (" + string.Join(",", ids) + ")";
+            return command(query);
+        }
+
+        //trả về số lượng sách nhất định theo trang, vd: 1 trang có 8 sản phẩm
+        public List<Sach> filterSach(string theLoaiIDs, string nhaXuaBanIDs, string sortByPrice, int currentPage, int pageSize, out int tongSoBanGhi)
+        {
+            List<Sach> listSach = new List<Sach>();
+            tongSoBanGhi = 0;
+            string query = "spSach_GetByFilter";
+
+            try
+            {
+                using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+                {
+                    sqlConnection.Open();
+                    using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                    {
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+                        sqlCommand.Parameters.AddWithValue("@TheloaiIDs", !string.IsNullOrEmpty(theLoaiIDs) ? (object)theLoaiIDs : DBNull.Value);
+                        sqlCommand.Parameters.AddWithValue("@NXB_IDs", !string.IsNullOrEmpty(nhaXuaBanIDs) ? (object)nhaXuaBanIDs : DBNull.Value);
+                        sqlCommand.Parameters.AddWithValue("@SortByPrice", !string.IsNullOrEmpty(sortByPrice) ? (object)sortByPrice : DBNull.Value);
+                        sqlCommand.Parameters.AddWithValue("@CurrentPage", currentPage);
+                        sqlCommand.Parameters.AddWithValue("@PageSize", pageSize);
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                if (tongSoBanGhi == 0)
+                                {
+                                    tongSoBanGhi = int.Parse(reader["tongsobanghi"].ToString());
+                                }
+                                Sach sach = new Sach();
+                                sach.MaSach = reader["PK_iSachID"] != DBNull.Value ? Convert.ToInt32(reader["PK_iSachID"]) : 0;
+                                sach.TenSach = reader["sTensach"] != DBNull.Value ? reader["sTensach"].ToString() : string.Empty;
+                                sach.URLAnh = reader["sURLanh"] != DBNull.Value ? reader["sURLanh"].ToString() : string.Empty;
+                                sach.GiaBanMoi = reader["fGiabanmoi"] != DBNull.Value ? Convert.ToDouble(reader["fGiabanmoi"]) : 0.0;
+                                sach.GiaBanCu = reader["fGiabancu"] != DBNull.Value ? Convert.ToDouble(reader["fGiabancu"]) : 0.0;
+                                listSach.Add(sach);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                new AppException("lỗi lọc sách: " + ex.Message);
+            }
+            return listSach;
         }
 
     }

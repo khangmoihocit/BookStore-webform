@@ -1,294 +1,217 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChiTietSanPham.aspx.cs" Inherits="btl_laptrinhweb.ChiTietSanPham" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChiTietSanPham.aspx.cs" Inherits="btl_laptrinhweb.ChiTietSanPham1" %>
 
 <%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc" TagName="Header" %>
+<%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/chitietsanpham.css" />
-    <link rel="stylesheet" href="/assets/css/base.css">
-
     <title>Chi tiết sản phẩm</title>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/chitietsanpham.css">
 </head>
+
 <body>
-
     <uc:Header runat="server" ID="header1" />
+    <div class="section-0">
+        <div class="container">
+            <ul class="inner-wrap">
+                <li><a href="TrangChu.aspx">Trang chủ</a></li>
+                <li>/</li>
+                <li class="inner-text-active"><a href="DanhSachSanPham.aspx">Tất cả sản phẩm</a></li>
+            </ul>
+            <div class="inner-title">
+                <asp:Label ID="lblHeader" runat="server" Text="Tên sản phẩm"></asp:Label>
+            </div>
+        </div>
+    </div>
     <form id="form1" runat="server">
-        <div class="container-1">
-            <div class="product-gallery">
-                <div class="image-slider">
-                    <span class="arrow left" onclick="prevImage()">&#10094;</span>
-                    <asp:Image ID="imgMain" runat="server" CssClass="main-image" />
-                    <span class="arrow right" onclick="nextImage()">&#10095;</span>
-                </div>
-
-                <div class="thumbnails">
-                    <asp:Repeater ID="rptThumbnails" runat="server">
-                        <ItemTemplate>
-                            <img src='<%# Eval("ImageUrl") %>' alt="" />
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </div>
-            </div>
-
-            <div class="product-info">
-                <h1>
-                    <asp:Label ID="lblProductName" runat="server" /></h1>
-                <div class="price">
-                    <span class="new-price">
-                        <asp:Label ID="lblNewPrice" runat="server" /></span>
-                    <span class="old-price">
-                        <asp:Label ID="lblOldPrice" runat="server" /></span>
-                </div>
-                <p>
-                    Mã sản phẩm: <span class="id">
-                        <asp:Label ID="lblProductId" runat="server" /></span>
-                </p>
-                <p>
-                    Tác giả: <span class="artis">
-                        <asp:Label ID="lblAuthor" runat="server" /></span>
-                </p>
-                <p>
-                    Tình trạng: <span class="status">
-                        <asp:Label ID="lblStatus" runat="server" /></span>
-                </p>
-
-                <div class="quantity-wrapper">
-                    <label for="quantity">Số lượng:</label>
-                    <div class="quantity-box">
-                        <button type="button" class="qty-btn" onclick="changeQty(-1)">−</button>
-                        <input type="number" id="quantity" value="1" min="1" oninput="validateQty(this)" />
-                        <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
-                    </div>
-
-                </div>
-
-                <div class="buttons">
-                    <button class="add-cart">Thêm vào giỏ hàng</button>
-                    <button class="buy-now">Mua ngay</button>
-                </div>
-
-                <div class="offers">
-                    <p><strong>Ưu đãi luên quan:</strong></p>
-                    <ul>
-                        <li>Nhập mã <b>QRPAY</b>, giảm ngay 30%</li>
-                        <li>Hoàn 30%, tối đa 50k, thanh toán ví <b>Moca</b></li>
-                        <li>Giảm 10%, đơn từ 0đ khi thanh toán <b>Airpay</b></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="sidebar">
-                <div class="support-box">
-                    <div class="support-item">
-                        <img src="as/delivery-truck-truck-svgrepo-com.svg" alt="" />
-                        <div>
-                            <strong>GIAO HÀNG FREE NỘI THÀNH</strong><br />
-                            <span>Giao free trong nội thành HN và HCM</span>
-                        </div>
-                    </div>
-
-                    <div class="support-item">
-                        <img src="as/hours_service_day_express_shipment_icon_187250.svg" alt="" />
-                        <div>
-                            <strong>TRẢ HÀNG TRONG VÒNG 24H</strong><br />
-                            <span>Hỗ trợ trả hàng cho khách khi sản phẩm có lỗi</span>
-                        </div>
-                    </div>
-
-                    <div class="support-item">
-                        <img src="as/package_box_container_parcel_shipping_icon_187264.svg" alt="" />
-                        <div>
-                            <strong>KIỂM TRA HÀNG KHI NHẬN HÀNG</strong><br />
-                            <span>Khách hàng kiểm tra hàng trước khi nhận</span>
-                        </div>
-                    </div>
-
-                    <div class="support-item">
-                        <img src="as/delivery_courier_man_people_avatar_shipping_icon_225197.svg" alt="" />
-                        <div>
-                            <strong>THANH TOÁN COD</strong><br />
-                            <span>Hỗ trợ khách hàng thanh toán cod</span>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="hot-products">
-                    <h3>DANH SÁCH NỔI BẬT</h3>
-                    <asp:Repeater ID="rptHotProducts" runat="server">
-                        <ItemTemplate>
-                            <li class="hot-product-item">
-                                <a href='ChiTietSanPham.aspx?id=<%# Eval("Id") %>'>
-                                    <img class="hot-product-img" src='<%# Eval("MainImage") %>' alt="" />
-                                    <div class="hot-product-info">
-                                        <div class="title"><%# Eval("Name") %></div>
-                                        <div class="price">
-                                            <%# Eval("NewPrice") %>
-                                            <span class="old"><%# Eval("OldPrice") %></span>
+        <asp:Label ID="lblMessage" runat="server" Text="" Visible="false" CssClass="message-error"></asp:Label>
+        <!-- Section One -->
+        <div class="section-one">
+            <div class="container">
+                <div class="inner-wrap">
+                    <div class="product-info">
+                        <div class="inner-row">
+                            <asp:Image ID="img" runat="server" />
+                            <div class="inner-info-detail">
+                                <asp:Label ID="lblTenSanPham" runat="server" Text="Label" CssClass="inner-title"></asp:Label>
+                                <div class="inner-price">
+                                    <asp:Label ID="lblGiaBanMoi" runat="server" Text="Label" CssClass="inner-price-new"></asp:Label>
+                                    <asp:Label ID="lblGiaBanCu" runat="server" Text="Label" CssClass="inner-price-old"></asp:Label>
+                                </div>
+                                <div class="inner-text">
+                                    Mã sản phẩm: Đang cập nhật
+                                </div>
+                                <div class="inner-text inner-author">
+                                    Tác giả:
+                                    <asp:Label ID="lblTenTacGia" runat="server" Text="Label"></asp:Label>
+                                </div>
+                                <span class="inner-text">Tình trạng:
+                                    <asp:Label ID="lblTinhTrang" runat="server" Text="Label"></asp:Label></span>
+                                <div class="inner-text inner-quantity">
+                                    <div>Số lượng: </div>
+                                    <asp:TextBox ID="txtSoLuong" runat="server" TextMode="Number" min="1"></asp:TextBox>
+                                </div>
+                                <div class="button-row">
+                                    <asp:Button ID="btnThemGioHang2" runat="server" Text="Thêm vào giỏ hàng" CssClass="button button-add-to-cart" />
+                                    <asp:Button ID="btnMuaNgay" runat="server" Text="Mua ngay" CssClass="button button-pay" />
+                                </div>
+                                <div class="inner-uu-dai">
+                                    <div class="inner-desc-title">Ưu đãi liên quan:</div>
+                                    <div class="inner-desc-item">
+                                        <img class="inner-icon-1" src="/assets/images/icon-favorite.webp" />
+                                        <div class="inner-desc">
+                                            Nhập mã <b><i>QRDAY”, Giảm ngay 30%, đơn hàng từ 59k
+                                                thanh toán Vnpay</i></b>
                                         </div>
                                     </div>
-                                </a>
-                            </li>
-                        </ItemTemplate>
-
-                    </asp:Repeater>
-                </div>
-
-            </div>
-        </div>
-
-
-        <div class="details">
-            <h2>THÔNG TIN CHI TIẾT</h2>
-            <ul>
-                <li>Loại:
-                    <asp:Label ID="lblCategory" runat="server" /></li>
-                <li>Kích thước bao bì:
-                    <asp:Label ID="lblSize" runat="server" /></li>
-                <li>Số trang:
-                    <asp:Label ID="lblPages" runat="server" /></li>
-                <li>Hình thức:
-                    <asp:Label ID="lblFormat" runat="server" /></li>
-            </ul>
-        </div>
-
-
-        <div class="related-products">
-            <h2>SẢN PHẨM LIÊN QUAN</h2>
-            <div class="product-list">
-                <asp:Repeater ID="rptRelatedProducts" runat="server">
-                    <ItemTemplate>
-                        <div class="product-card">
-                            <a href='ChiTietSanPham.aspx?id=<%# Eval("Id") %>'>
-                                <img src='<%# Eval("MainImage") %>' alt="" />
-                                <div class="product-title"><%# Eval("Name") %></div>
-                                <div class="price"><strong><%# Eval("NewPrice") %></strong><span class="old-price"><%# Eval("OldPrice") %></span></div>
-                            </a>
-                            <button class="button">Thêm vào giỏ hàng</button>
+                                    <div class="inner-desc-item">
+                                        <img class="inner-icon-1" src="/assets/images/icon-favorite.webp" />
+                                        <div class="inner-desc">
+                                            <b><i>Hoàn 30%, tối đa 50k, thanh toán qua ví
+                                                Moca</i></b>
+                                        </div>
+                                    </div>
+                                    <div class="inner-desc-item">
+                                        <img class="inner-icon-1" src="/assets/images/icon-favorite.webp" />
+                                        <div class="inner-desc">
+                                            Nhập mã <b><i>AIRPAY024, giảm ngay 10%, đơn hàng từ
+                                                0đ, thanh toán qua ví AirPay</i></b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </ItemTemplate>
-                </asp:Repeater>
+                        <div class="inner-product-desc">
+                            <div class="inner-title">THÔNG TIN CHI TIẾT</div>
+                            <asp:Label ID="lblThongTinChiTiet" runat="server" Text="..." CssClass="inner-desc"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="inner-content-right">
+                        <div class="inner-service">
+                            <div class="inner-group">
+                                <img src="/assets/images/icon_service_1.svg" alt="icon-1">
+                                <div class="inner-desc">
+                                    <h5>GIAO HÀNG FREE NỘI THÀNH</h5>
+                                    <p>Giao free trong nội thành HN và HCM</p>
+                                </div>
+                            </div>
+                            <div class="inner-group">
+                                <img src="/assets/images/icon_service_2.svg" alt="icon-2">
+                                <div class="inner-desc">
+                                    <h5>TRẢ HÀNG TRONG VÒNG 24H</h5>
+                                    <p>Hỗ trợ trả hàng cho khách khi sản phẩm có lỗi</p>
+                                </div>
+                            </div>
+                            <div class="inner-group">
+                                <img src="/assets/images/icon_service_3.svg" alt="icon-3">
+                                <div class="inner-desc">
+                                    <h5>KIỂM TRA HÀNG KHI NHẬN HÀNG</h5>
+                                    <p>Khách hàng kiểm tra hàng trước khi nhận</p>
+                                </div>
+                            </div>
+                            <div class="inner-group">
+                                <img src="/assets/images/icon_service_4.svg" alt="icon-4">
+                                <div class="inner-desc">
+                                    <h5>THANH TOÁN COD</h5>
+                                    <p>Hỗ trợ khách hàng thanh toán cod</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inner-product-hot">
+                            <div class="inner-title">
+                                DANH SÁCH NỔI BẬT
+                            </div>
+                            <div class="list-product">
+                                <div class="inner-product">
+                                    <img src="/assets/images/8935325011559.webp" alt="">
+                                    <div class="inner-info">
+                                        <div class="inner-name">
+                                            Vo viet ke nag
+                                        </div>
+                                        <div class="inner-price">
+                                            12000
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inner-product">
+                                    <img src="/assets/images/8935325011559.webp" alt="">
+                                    <div class="inner-info">
+                                        <div class="inner-name">
+                                            Vo viet ke nag
+                                        </div>
+                                        <div class="inner-price">
+                                            12000
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inner-product">
+                                    <img src="/assets/images/8935325011559.webp" alt="">
+                                    <div class="inner-info">
+                                        <div class="inner-name">
+                                            Vo viet ke nag
+                                        </div>
+                                        <div class="inner-price">
+                                            12000
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- End Section One -->
 
-
+        <!-- Section Two -->
+        <div class="section-two">
+            <div class="container">
+                <div class="inner-wrap">
+                    <div class="inner-title-1">SẢN PHẨM LIÊN QUAN</div>
+                    <div class="list-product">
+                        <asp:Repeater ID="rptSach" runat="server">
+                            <ItemTemplate>
+                                <div class="product">
+                                    <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
+                                    <asp:HyperLink runat="server"
+                                        NavigateUrl='<%# String.Format("ChiTietSanPham.aspx?MaSach={0}", Eval("MaSach")) %>'>
+                        <img class="inner-image" src='<%# Eval("URLAnh") %>' alt="ảnh sản phẩm">
+                                    </asp:HyperLink>
+                                    <div class="inner-title">
+                                        <%# Eval("TenSach") %>
+                                    </div>
+                                    <div class="inner-price">
+                                        <div class="inner-price-new">
+                                            <%# Eval("GiaBanMoi") %>
+                                        </div>
+                                        <div class="inner-price-old">
+                                            <%# Eval("GiaBanCu") %>
+                                        </div>
+                                    </div>
+                                    <asp:LinkButton ID="btnThemGioHang" runat="server"
+                                        CssClass="inner-add-to-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Thêm giỏ hàng
+                                    </asp:LinkButton>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Section Two -->
     </form>
-    <!--pop up-->
-    <div class="lightbox" id="lightbox">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-img" id="lightboxImg" />
-        <span class="prev" onclick="prevImage()">&#10094;</span>
-        <span class="next" onclick="nextImage()">&#10095;</span>
-    </div>
-    <script>
-        /* tang giam so luong*/
-        function changeQty(delta) {
-            const qtyInput = document.getElementById('quantity');
-            let current = parseInt(qtyInput.value) || 1;
-            current += delta;
-            if (current < 1) current = 1;
-            qtyInput.value = current;
-        }
-
-        // Đảm bảo không cho nhập số nhỏ hơn 1
-        function validateQty(input) {
-            if (input.value === "" || parseInt(input.value) < 1) {
-                input.value = 1;
-            }
-        }
-
-        /* pop up*/
-        const images = Array.from(document.querySelectorAll('.thumbnails img'));
-        let mainImg = document.querySelector('.main-image');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-
-        let currentIndex = 0;
-
-        // Mở ảnh chính khi click
-        mainImg.addEventListener('click', () => {
-            lightbox.style.display = 'block';
-            lightboxImg.src = images[currentIndex].src;
-        });
-
-
-
-        function closeLightbox() {
-            lightbox.style.display = 'none';
-        }
-
-        function slideToImage(newIndex, direction) {
-            if (newIndex === currentIndex) return;
-
-            const oldImg = mainImg;
-            const newImg = oldImg.cloneNode();
-            newImg.src = images[newIndex].src;
-            newImg.classList.remove('slide-left', 'slide-right', 'slide-in-left', 'slide-in-right', 'active');
-            newImg.style.zIndex = 2;
-
-            // Đặt class cho hiệu ứng vào
-            if (direction === 'left') {
-                oldImg.classList.add('slide-left');
-                newImg.classList.add('slide-in-right');
-            } else {
-                oldImg.classList.add('slide-right');
-                newImg.classList.add('slide-in-left');
-            }
-
-            // Thêm ảnh mới vào DOM
-            oldImg.parentNode.appendChild(newImg);
-
-            // Kích hoạt hiệu ứng trượt vào
-            setTimeout(function () {
-                newImg.classList.add('active');
-                newImg.classList.remove('slide-in-left', 'slide-in-right');
-            }, 10);
-
-            // Sau khi hiệu ứng xong, xóa ảnh cũ, cập nhật biến mainImg
-            setTimeout(function () {
-                oldImg.parentNode.removeChild(oldImg);
-                mainImg = newImg;
-                currentIndex = newIndex;
-                updateActiveThumbnail();
-            }, 500);
-        }
-
-        function prevImage() {
-            let newIndex = (currentIndex - 1 + images.length) % images.length;
-            slideToImage(newIndex, 'right');
-            lightboxImg.src = images[newIndex].src;
-        }
-
-        function nextImage() {
-            let newIndex = (currentIndex + 1) % images.length;
-            slideToImage(newIndex, 'left');
-            lightboxImg.src = images[newIndex].src;
-        }
-
-        // Đóng khi ấn ngoài ảnh
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-
-        // xu ly active 
-        images.forEach((img, index) => {
-            img.addEventListener('click', () => {
-                if (index === currentIndex) return;
-                // Xác định hướng trượt
-                let direction = (index > currentIndex) ? 'left' : 'right';
-                slideToImage(index, direction);
-                lightboxImg.src = images[index].src;
-            });
-        });
-
-        images[0].classList.add('active');
-        function updateActiveThumbnail() {
-            images.forEach(i => i.classList.remove('active'));
-            images[currentIndex].classList.add('active');
-        }
-
-    </script>
+    <uc:Footer runat="server" ID="footer" />
 </body>
+
 </html>

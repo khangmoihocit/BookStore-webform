@@ -11,7 +11,7 @@ namespace btl_laptrinhweb
 {
 
 
-    public partial class ChiTietSanPham1
+    public partial class ChiTietSanPham
     {
 
         /// <summary>
@@ -24,15 +24,6 @@ namespace btl_laptrinhweb
         protected global::btl_laptrinhweb.Header header1;
 
         /// <summary>
-        /// lblHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHeader;
-
-        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -42,120 +33,129 @@ namespace btl_laptrinhweb
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblMessage control.
+        /// imgMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Image imgMain;
 
         /// <summary>
-        /// img control.
+        /// rptThumbnails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img;
+        protected global::System.Web.UI.WebControls.Repeater rptThumbnails;
 
         /// <summary>
-        /// lblTenSanPham control.
+        /// lblProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTenSanPham;
+        protected global::System.Web.UI.WebControls.Label lblProductName;
 
         /// <summary>
-        /// lblGiaBanMoi control.
+        /// lblNewPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGiaBanMoi;
+        protected global::System.Web.UI.WebControls.Label lblNewPrice;
 
         /// <summary>
-        /// lblGiaBanCu control.
+        /// lblOldPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGiaBanCu;
+        protected global::System.Web.UI.WebControls.Label lblOldPrice;
 
         /// <summary>
-        /// lblTenTacGia control.
+        /// lblProductId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTenTacGia;
+        protected global::System.Web.UI.WebControls.Label lblProductId;
 
         /// <summary>
-        /// lblTinhTrang control.
+        /// lblAuthor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTinhTrang;
+        protected global::System.Web.UI.WebControls.Label lblAuthor;
 
         /// <summary>
-        /// txtSoLuong control.
+        /// lblStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSoLuong;
+        protected global::System.Web.UI.WebControls.Label lblStatus;
 
         /// <summary>
-        /// btnThemGioHang2 control.
+        /// rptHotProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnThemGioHang2;
+        protected global::System.Web.UI.WebControls.Repeater rptHotProducts;
 
         /// <summary>
-        /// btnMuaNgay control.
+        /// lblCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMuaNgay;
+        protected global::System.Web.UI.WebControls.Label lblCategory;
 
         /// <summary>
-        /// lblThongTinChiTiet control.
+        /// lblSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblThongTinChiTiet;
+        protected global::System.Web.UI.WebControls.Label lblSize;
 
         /// <summary>
-        /// rptSach control.
+        /// lblPages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSach;
+        protected global::System.Web.UI.WebControls.Label lblPages;
 
         /// <summary>
-        /// footer control.
+        /// lblFormat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::btl_laptrinhweb.UserControls.Footer footer;
+        protected global::System.Web.UI.WebControls.Label lblFormat;
+
+        /// <summary>
+        /// rptRelatedProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptRelatedProducts;
     }
 }

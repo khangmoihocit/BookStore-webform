@@ -1,3 +1,5 @@
+D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.csproj.AssemblyReference.cache
+D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.csproj.CoreCompileInputs.cache
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\btl-laptrinhweb.dll.config
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\btl-laptrinhweb.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\btl-laptrinhweb.pdb
@@ -16,10 +18,15 @@ D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\Microsoft.CodeAnalysis.Visu
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\Microsoft.CSharp.Core.targets
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\Microsoft.Managed.Core.targets
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Buffers.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Collections.Immutable.dll
+D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Memory.dll
+D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Numerics.Vectors.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Reflection.Metadata.dll
+D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Text.Encoding.CodePages.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Threading.Tasks.Extensions.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\vbc.exe
@@ -29,13 +36,6 @@ D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\VBCSCompiler.exe
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\VBCSCompiler.exe.config
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.csproj.AssemblyReference.cache
-D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.csproj.CoreCompileInputs.cache
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-lapt.FA7370BF.Up2Date
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.pdb
-D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
-D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Buffers.dll
-D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Memory.dll
-D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Numerics.Vectors.dll
-D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll

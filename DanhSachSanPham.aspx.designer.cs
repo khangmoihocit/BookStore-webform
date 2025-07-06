@@ -51,13 +51,22 @@ namespace btl_laptrinhweb
         protected global::System.Web.UI.WebControls.CheckBoxList cblNhaXuatBan;
 
         /// <summary>
-        /// cblSapXep control.
+        /// rblSapXep control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList cblSapXep;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblSapXep;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// rptSach control.
@@ -67,5 +76,23 @@ namespace btl_laptrinhweb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptSach;
+
+        /// <summary>
+        /// rptPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptPage;
+
+        /// <summary>
+        /// footer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::btl_laptrinhweb.UserControls.Footer footer;
     }
 }
