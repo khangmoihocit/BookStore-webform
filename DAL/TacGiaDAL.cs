@@ -52,5 +52,10 @@ namespace btl_laptrinhweb.DAL
             if (listTacGia.Count < 0) throw new AppException("Tác giả không tồn tại");
             return listTacGia[0];
         }
+
+        public List<TacGia> getAll()
+        {
+            return command("select * from tblTacgia");
+        }
     }
 }

@@ -49,6 +49,26 @@ namespace btl_laptrinhweb.DAL
             return command(query);
         }
 
+        public void add(TheLoai theLoai)
+        {
+            string query = "INSERT INTO tblTheloai (sTentheloai) VALUES (@sTentheloai)";
+            try
+            {
+                using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+                {
+                    sqlConnection.Open();
+                    using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@sTentheloai", theLoai.TenTheLoai);
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new AppException("Lỗi khi thêm thể loại sách: " + ex.Message);
+            }
+        }
 
     }
 }

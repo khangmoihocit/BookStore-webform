@@ -20,13 +20,9 @@ namespace btl_laptrinhweb
             string password = txtPassword.Text;
 
             // TODO: Xác thực tài khoản
-            if (email == "admin@example.com" && password == "123")
+            if (email == "admin@gmail.com" && password == "admin")
             {
-                Response.Write("<script>alert('Đăng nhập thành công!');</script>");
-            }
-            else
-            {
-                Response.Write("<script>alert('Sai tài khoản hoặc mật khẩu');</script>");
+                Response.Redirect("Admin/QuanLySach.aspx");
             }
         }
 

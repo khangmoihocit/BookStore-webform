@@ -7,26 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace btl_laptrinhweb.Admin
 {
-    public partial class QuanLyNguoiDung : System.Web.UI.Page
+    public partial class QuanLyTacGia : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-            }
-        }
-
-        private void LoadData()
-        { 
-            
-        }
-
-
-
-
-
-
-
 
         }
+    }
 }

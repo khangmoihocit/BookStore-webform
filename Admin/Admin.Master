@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/admin.css">
-    <link rel="stylesheet" href="/assets/css/quanlysach.css">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -33,13 +32,22 @@
                             <li><a href="/Admin/QuanLySach.aspx"><i class="fa fa-book"></i>
                                 <div class="inner-text">Quản lý sách</div>
                             </a></li>
+                            <li><a href="/Admin/QuanLyTheLoai.aspx"><i class="fa-solid fa-layer-group"></i>
+                                <div class="inner-text">Quản lý thể loại</div>
+                            </a></li>
+                            <li><a href="/Admin/QuanLyNhaXuatBan.aspx"><i class="fa-solid fa-truck"></i>
+                                <div class="inner-text">Quản lý nhà xuất bản</div>
+                            </a></li>
+                            <li><a href="/Admin/QuanLyTacGia.aspx"><i class="fa-solid fa-at"></i>
+                                <div class="inner-text">Quản lý tác giả</div>
+                            </a></li>
                             <li><a href="/Admin/QuanLyDatHang.aspx"><i class="fa fa-shopping-cart"></i>
                                 <div class="inner-text">Quản lý đơn hàng</div>
                             </a></li>
                             <li><a href="/Admin/QuanLyNguoiDung.aspx"><i class="fa fa-users"></i>
                                 <div class="inner-text">Quản lý người dùng</div>
                             </a></li>
-                            <li><a href="/TrangChu.aspx" class="inner-back"><i class="fa fa-sign-out"></i>
+                            <li class="inner-back"><a href="/TrangChu.aspx" ><i class="fa fa-sign-out"></i>
                                 <div class="inner-text ">Quan lại trang chính</div>
                             </a></li>
                         </ul>
