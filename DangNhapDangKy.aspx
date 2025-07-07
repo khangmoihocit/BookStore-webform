@@ -17,6 +17,7 @@
 
     <uc:Header runat="server" ID="header1" />
     <form id="form1" runat="server">
+        <asp:Label ID="lblMessage" runat="server" Text="Label" CssClass="message-error" Visible="false"></asp:Label>
         <div class="container-1">
             <div class="login-container">
                 <div class="tab">

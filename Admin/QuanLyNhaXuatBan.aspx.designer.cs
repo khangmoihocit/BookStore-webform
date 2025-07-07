@@ -11,107 +11,80 @@ namespace btl_laptrinhweb.Admin
 {
 
 
-    public partial class QuanLySach
+    public partial class QuanLyNhaXuatBan
     {
 
         /// <summary>
-        /// imgPreview control.
+        /// lblMaNXB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPreview;
+        protected global::System.Web.UI.WebControls.Label lblMaNXB;
 
         /// <summary>
-        /// FileUpload1 control.
+        /// txtMaNXB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.TextBox txtMaNXB;
 
         /// <summary>
-        /// txtMaSach control.
+        /// lblTenNXB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaSach;
+        protected global::System.Web.UI.WebControls.Label lblTenNXB;
 
         /// <summary>
-        /// txtTenSach control.
+        /// txtTenNXB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTenSach;
+        protected global::System.Web.UI.WebControls.TextBox txtTenNXB;
 
         /// <summary>
-        /// ddlTheLoai control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTheLoai;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// ddlTacGia control.
+        /// txtDiaChi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTacGia;
+        protected global::System.Web.UI.WebControls.TextBox txtDiaChi;
 
         /// <summary>
-        /// ddlNhaXuatBan control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlNhaXuatBan;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// txtGiaBanMoi control.
+        /// txtSoDienThoai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGiaBanMoi;
-
-        /// <summary>
-        /// txtGiaBanCu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGiaBanCu;
-
-        /// <summary>
-        /// txtSoLuong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSoLuong;
-
-        /// <summary>
-        /// txtMoTa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMoTa;
+        protected global::System.Web.UI.WebControls.TextBox txtSoDienThoai;
 
         /// <summary>
         /// btnThemMoi control.
@@ -159,12 +132,12 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
-        /// gvSach control.
+        /// gvNhaXuaBan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvSach;
+        protected global::System.Web.UI.WebControls.GridView gvNhaXuaBan;
     }
 }

@@ -66,14 +66,16 @@
   <ItemGroup>
     <Content Include="Admin\QuanLyDatHang.aspx" />
     <Content Include="Admin\QuanLyNguoiDung.aspx" />
+    <Content Include="Admin\QuanLyNhaXuatBan.aspx" />
     <Content Include="Admin\QuanLySach.aspx" />
+    <Content Include="Admin\QuanLyTacGia.aspx" />
+    <Content Include="Admin\QuanLyTheLoai.aspx" />
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\chitietsanpham.css" />
     <Content Include="assets\css\giohang.css" />
     <Content Include="assets\css\quanlydathang.css" />
     <Content Include="assets\css\quanlynguoidung.css" />
-    <Content Include="assets\css\quanlysach.css" />
     <Content Include="assets\css\trangchu.css" />
     <Content Include="assets\css\reset.css" />
     <Content Include="assets\css\danhsachsanpham.css" />
@@ -116,12 +118,33 @@
     <Compile Include="Admin\QuanLyNguoiDung.aspx.designer.cs">
       <DependentUpon>QuanLyNguoiDung.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\QuanLyNhaXuatBan.aspx.cs">
+      <DependentUpon>QuanLyNhaXuatBan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyNhaXuatBan.aspx.designer.cs">
+      <DependentUpon>QuanLyNhaXuatBan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\QuanLySach.aspx.cs">
       <DependentUpon>QuanLySach.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\QuanLySach.aspx.designer.cs">
       <DependentUpon>QuanLySach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QuanLyTacGia.aspx.cs">
+      <DependentUpon>QuanLyTacGia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyTacGia.aspx.designer.cs">
+      <DependentUpon>QuanLyTacGia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QuanLyTheLoai.aspx.cs">
+      <DependentUpon>QuanLyTheLoai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyTheLoai.aspx.designer.cs">
+      <DependentUpon>QuanLyTheLoai.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChiTietSanPham.aspx.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>

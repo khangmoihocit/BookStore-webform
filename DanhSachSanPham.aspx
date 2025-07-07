@@ -30,6 +30,7 @@
         </div>
     </div>
     <form id="form1" runat="server">
+        <asp:HiddenField ID="HiddenField1" runat="server" />
         <div class="container">
             <div class="inner-wrap">
                 <!-- Sidebar bộ lọc -->
@@ -91,7 +92,6 @@
                                         CommandArgument='<%# Eval("MaSach") %>'
                                         runat="server"
                                         CssClass="inner-add-to-cart">
-                                        
                                                 <i class="fa-solid fa-cart-shopping"></i>
                                                 Thêm giỏ hàng
                                     </asp:LinkButton>

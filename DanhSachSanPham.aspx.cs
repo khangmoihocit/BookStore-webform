@@ -97,10 +97,21 @@ namespace btl_laptrinhweb
             try
             {
                 int currentPage = 1;
-                if (Request.QueryString["page"] != null)
+
+                // Kiểm tra nếu có query string "page" thì lấy giá trị của nó
+                // Nếu có hidden field và giá trị là "true", reset currentPage về 1
+                if (HiddenField1.Value == "true")
                 {
-                    currentPage = int.Parse(Request.QueryString["page"]);
-                    if (currentPage < 1) currentPage = 1;
+                    currentPage = 1; 
+                    HiddenField1.Value = "false";
+                }
+                else
+                {
+                    if (Request.QueryString["page"] != null)
+                    {
+                        currentPage = int.Parse(Request.QueryString["page"]);
+                        if (currentPage < 1) currentPage = 1;
+                    }
                 }
 
                 int tongsobanghi;
@@ -155,16 +166,19 @@ namespace btl_laptrinhweb
 
         protected void cblTheLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
+            HiddenField1.Value = "true";
             loadData();
         }
 
         protected void cblNhaXuatBan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            HiddenField1.Value = "true";
             loadData();
         }
 
         protected void rblSapXep_SelectedIndexChanged(object sender, EventArgs e)
         {
+            HiddenField1.Value = "true";
             loadData();
         }
 
