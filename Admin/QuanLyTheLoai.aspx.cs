@@ -50,5 +50,21 @@ namespace btl_laptrinhweb.Admin
                 txtTenTheLoai.Text = gvr.Cells[2].Text;
             }
         }
+
+        protected void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            
+            TheLoai newTheLoai = new TheLoai();
+            if (string.IsNullOrEmpty(txtTenTheLoai.Text))
+            {
+                lblMessage.Text = "Tên thể loại không được để trống.";
+                return;
+            }
+            newTheLoai.TenTheLoai = txtTenTheLoai.Text.Trim();
+            theLoaiDAL.add(newTheLoai);
+            lblMessage.Text = "Thêm thể loại thành công.";
+            lblMessage.Visible = true;
+            LoadData();
+        }
     }
 }
