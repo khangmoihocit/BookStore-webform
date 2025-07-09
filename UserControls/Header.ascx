@@ -7,7 +7,12 @@
             <div class="inner-wrap">
                 <div class="inner-logo">
                     <a href="TrangChu.aspx">
-                        <img src="/assets/images/logo.webp" alt="">
+                             <picture>
+							<source media="(max-width: 1200px)" srcset="//bizweb.dktcdn.net/100/434/558/themes/894884/assets/logo.png?1676278234490">
+							<source media="(max-width: 576px)" srcset="//bizweb.dktcdn.net/100/434/558/themes/894884/assets/logo_mb.png?1676278234490">
+							                        <img src="/assets/images/logo.webp" alt="">
+
+						</picture>
                     </a>
                 </div>
 
