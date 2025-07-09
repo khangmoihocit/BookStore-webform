@@ -254,19 +254,7 @@ a {
   color: #fff;
 }
 
-@media (max-width: 576px) {
-    .header-1{
-        max-width: 100%;
-    }
 
-    .container {
-    max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-
-}
 /* end header-1 */
 
 /* Header-2 */
