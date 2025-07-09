@@ -135,5 +135,41 @@ namespace btl_laptrinhweb.DAL
             return listSach;
         }
 
+        public void add(Sach sach)
+        {
+            string query = "insert into tblSach(sTensach, sMota, sURLanh, fGiabanmoi, fGiabancu, iSoluong, FK_iTheloaiID, FK_iTacgiaID, FK_iNhaxuatbanID) " +
+                
+                "values (@TenSach, @MoTa, @URLAnh, @GiaBanMoi, @GiaBanCu, @SoLuong, @MaTheLoai, @MaTacGia, @MaNhaXuatBan)";
+            try
+            {
+                using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+                {
+                    sqlConnection.Open();
+                    using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                    {
+                        sqlCommand.CommandType = CommandType.Text;
+                        sqlCommand.Parameters.AddWithValue("@TenSach", sach.TenSach);
+                        sqlCommand.Parameters.AddWithValue("@MoTa", sach.MoTa);
+                        sqlCommand.Parameters.AddWithValue("@URLAnh", sach.URLAnh);
+                        sqlCommand.Parameters.AddWithValue("@GiaBanMoi", sach.GiaBanMoi);
+                        sqlCommand.Parameters.AddWithValue("@GiaBanCu", sach.GiaBanCu);
+                        sqlCommand.Parameters.AddWithValue("@SoLuong", sach.SoLuong);
+                        sqlCommand.Parameters.AddWithValue("@MaTheLoai", sach.MaTheLoai);
+                        sqlCommand.Parameters.AddWithValue("@MaTacGia", sach.MaTacGia);
+                        sqlCommand.Parameters.AddWithValue("@MaNhaXuatBan", sach.MaNhaXuatBan);
+                        int rowsAffected = sqlCommand.ExecuteNonQuery();
+                        if (rowsAffected <= 0)
+                        {
+                            throw new AppException("Không thể thêm sách mới.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new AppException("Lỗi khi thêm sách: " + ex.Message);
+            }
+        }
+
     }
 }

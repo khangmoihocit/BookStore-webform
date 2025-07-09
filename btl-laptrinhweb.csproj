@@ -73,9 +73,12 @@
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\chitietsanpham.css" />
+    <Content Include="assets\css\chitiettintuc.css" />
     <Content Include="assets\css\giohang.css" />
+    <Content Include="assets\css\LienHe.css" />
     <Content Include="assets\css\quanlydathang.css" />
     <Content Include="assets\css\quanlynguoidung.css" />
+    <Content Include="assets\css\TinTuc.css" />
     <Content Include="assets\css\trangchu.css" />
     <Content Include="assets\css\reset.css" />
     <Content Include="assets\css\danhsachsanpham.css" />
@@ -83,14 +86,18 @@
     <Content Include="assets\images\icon_service_2.svg" />
     <Content Include="assets\images\icon_service_3.svg" />
     <Content Include="assets\images\icon_service_4.svg" />
+    <Content Include="assets\js\TinTuc.js" />
     <Content Include="ChiTietSanPham.aspx" />
+    <Content Include="ChiTietTinTuc.aspx" />
     <Content Include="DangNhapDangKy.aspx" />
     <Content Include="DanhSachSanPham.aspx" />
     <Content Include="assets\css\dangnhapdangky.css" />
     <Content Include="GioHang.aspx" />
     <Content Include="KetQuaTimKiem.aspx" />
+    <Content Include="LienHe.aspx" />
     <Content Include="ThanhToan.aspx" />
     <Content Include="ThongTinNguoiDung.aspx" />
+    <Content Include="TinTuc.aspx" />
     <Content Include="UserControls\Footer.ascx" />
     <Content Include="UserControls\Header.ascx" />
     <Content Include="TrangChu.aspx" />
@@ -153,6 +160,13 @@
     <Compile Include="ChiTietSanPham.aspx.designer.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietTinTuc.aspx.cs">
+      <DependentUpon>ChiTietTinTuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietTinTuc.aspx.designer.cs">
+      <DependentUpon>ChiTietTinTuc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\AppException.cs" />
     <Compile Include="DAL\ChiTietDatHangDAL.cs" />
     <Compile Include="DAL\Connection.cs" />
@@ -190,6 +204,13 @@
     <Compile Include="KetQuaTimKiem.aspx.designer.cs">
       <DependentUpon>KetQuaTimKiem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LienHe.aspx.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LienHe.aspx.designer.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ChiTietDatHang.cs" />
     <Compile Include="Models\DatHang.cs" />
     <Compile Include="Models\NguoiDung.cs" />
@@ -210,6 +231,13 @@
     </Compile>
     <Compile Include="ThongTinNguoiDung.aspx.designer.cs">
       <DependentUpon>ThongTinNguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TinTuc.aspx.cs">
+      <DependentUpon>TinTuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TinTuc.aspx.designer.cs">
+      <DependentUpon>TinTuc.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
@@ -254,6 +282,12 @@
     <Content Include="assets\images\bg-breadcrumb.webp" />
     <Content Include="assets\images\slider_1.webp" />
     <Content Include="assets\images\img_aside_banner.webp" />
+    <Content Include="assets\images\t1.webp" />
+    <Content Include="assets\images\t2.webp" />
+    <Content Include="assets\images\t3.webp" />
+    <Content Include="assets\images\t4.webp" />
+    <Content Include="assets\images\t5.webp" />
+    <Content Include="assets\images\t6.webp" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

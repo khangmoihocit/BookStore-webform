@@ -89,3 +89,15 @@
     width: calc(40% - 101px);
     margin: 17px 21.5px;
 }
+
+.product-list-result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+    .product-list-result .product {
+        width: calc(30% - 101px);
+        margin: 17px 21.5px;
+    }

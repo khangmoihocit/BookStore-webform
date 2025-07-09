@@ -261,6 +261,10 @@ a {
     font-size: 14px;
 }
 
+    .header-2 a{
+        color: var(--color-text);
+    }
+
     .header-2 .inner-wrap {
         display: flex;
         align-items: center;
@@ -299,6 +303,8 @@ a {
 
         .header-2 .inner-list-item .item .inner-icon {
             margin-right: 6px;
+            color: var(--color-primary);
+            font-size: 18px;
         }
 
         .header-2 .inner-list-item .item .inner-text:hover {

@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace btl_laptrinhweb.Admin
+namespace btl_laptrinhweb
 {
-    public partial class Admin : System.Web.UI.MasterPage
+    public partial class ChiTietTinTuc : System.Web.UI.Page
     {
+        protected string ids;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            ids = Request.QueryString["id"];
         }
     }
 }

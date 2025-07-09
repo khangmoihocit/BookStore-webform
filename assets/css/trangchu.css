@@ -87,7 +87,7 @@
 }
 
 .section-three .product{
-  width: calc(30% - 100px);
+  width: calc(30% - 50px);
 }
 
 .section-three .product .inner-price-new{
