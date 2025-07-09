@@ -1,0 +1,23 @@
+.inner-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: var(--color-primary); */
+}
+
+.inner-wrap .inner-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+
+.inner-wrap .form-group{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.inner-wrap .form-group .inner-title{
+    margin-right: 150px;
+}

@@ -21,11 +21,11 @@
 
         <div class="form-buttons">
             <asp:Button ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn" OnClick="btnThemMoi_Click" />
-            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn" />
-            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn" />
+            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn" OnClick="btnCapNhat_Click" />
+            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn" OnClick="btnXoa_Click" />
             <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn" />
         </div>
-        <asp:Label ID="lblMessage" runat="server" CssClass="message-error"></asp:Label>
+        <asp:Label ID="lblMessage" runat="server" Visible="false" CssClass="message-error"></asp:Label>
     </div>
 
 

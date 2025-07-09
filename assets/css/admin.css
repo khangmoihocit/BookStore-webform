@@ -80,8 +80,9 @@
     flex: 1;
 }
 
-/*Form quản lý*/
 
+
+/*Form quản lý*/
 .form-container {
     background-color: #f9f9f9;
     padding: 20px;
@@ -128,11 +129,18 @@
     flex: 1;
 }
 
-    .form-group span {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
+    .form-group .error {
+        color: red;
+        font-size: 13px;
+        margin-top: 5px;
     }
+
+
+.form-group span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
 
     .form-group .form-control {
         width: 100%;

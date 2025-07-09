@@ -1,4 +1,5 @@
 ﻿using btl_laptrinhweb.DAL;
+using btl_laptrinhweb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,6 +80,35 @@ namespace btl_laptrinhweb
         private void loadData()
         {
 
+        }
+
+        protected void rptSach_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "ThemGioHang")
+            {
+                int maSach = int.Parse(e.CommandArgument.ToString());
+                Sach sach = sachDAL.getByMaSach(maSach);
+                if (sach != null)
+                {
+                    List<Sach> gioHang = Session["GioHang"] as List<Sach>;
+                    if (gioHang == null)
+                    {
+                        gioHang = new List<Sach>();
+                    }
+
+                    Sach sachExisted = gioHang.Find(item => item.MaSach == sach.MaSach);
+                    if (sachExisted != null)
+                    {
+                        sachExisted.SoLuong++;
+                    }
+                    else
+                    {
+                        sach.SoLuong = 1;
+                        gioHang.Add(sach);
+                    }
+                    Session["GioHang"] = gioHang;
+                }
+            }
         }
     }
 }

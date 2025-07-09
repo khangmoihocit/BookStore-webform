@@ -25,8 +25,27 @@ namespace btl_laptrinhweb.Admin
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Kiểm tra quyền truy cập của người dùng
+            if (Session["User"] != null)
+            {
+                NguoiDung nguoiDung = Session["User"] as NguoiDung;
+                if (nguoiDung.Quyen.Equals("ADMIN"))
+                {
+
+                }
+                else
+                {
+                    Response.Redirect("~/DangNhapDangKy.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/DangNhapDangKy.aspx");
+
+            }
             if (!IsPostBack)
             {
+                
                 loadData();
             }
         }
@@ -45,17 +64,21 @@ namespace btl_laptrinhweb.Admin
                 ddlTheLoai.DataTextField = "TenTheLoai";
                 ddlTheLoai.DataValueField = "MaTheLoai";
                 ddlTheLoai.DataBind();
+                ddlTheLoai.Items.Insert(0, new ListItem("-- Chọn thể loại --", "0"));
+
 
                 ddlNhaXuatBan.DataSource = listNhaXuatBan;
                 ddlNhaXuatBan.DataTextField = "TenNhaXuatBan";
                 ddlNhaXuatBan.DataValueField = "MaNhaXuatBan";
                 ddlNhaXuatBan.DataBind();
+                ddlNhaXuatBan.Items.Insert(0, new ListItem("-- Chọn nhà xuất bản --", "0"));
 
 
                 ddlTacGia.DataSource = listTacGia;
                 ddlTacGia.DataTextField = "TenTacGia";
                 ddlTacGia.DataValueField = "MaTacGia";
                 ddlTacGia.DataBind();
+                ddlTacGia.Items.Insert(0, new ListItem("-- Chọn tác giả --", "0"));
 
                 gvSach.DataSource = listSach;
                 gvSach.DataBind();
@@ -143,21 +166,21 @@ namespace btl_laptrinhweb.Admin
                 }
             }
 
-            Sach sach = new Sach();
-            sach.TenSach = txtTenSach.Text.Trim();
-            sach.MoTa = txtMoTa.Text.Trim();
-            sach.URLAnh = imageUrl != "" && imageUrl != null ? imageUrl : "/assets/images/mac_dinh.jpg" ;
-            sach.GiaBanMoi = double.Parse(txtGiaBanMoi.Text.Trim());
-            sach.GiaBanCu = double.Parse(txtGiaBanCu.Text.Trim());
-            sach.SoLuong = int.Parse(txtSoLuong.Text.Trim());
-            sach.MaTheLoai = int.Parse(ddlTheLoai.SelectedValue);
-            sach.MaTacGia = int.Parse(ddlTacGia.SelectedValue);
-            sach.MaNhaXuatBan = int.Parse(ddlNhaXuatBan.SelectedValue);
-
-            imgPreview.ImageUrl = sach.URLAnh;
             try
             {
+                Sach sach = new Sach();
+                sach.TenSach = txtTenSach.Text.Trim();
+                sach.MoTa = txtMoTa.Text.Trim();
+                sach.URLAnh = imageUrl != "" && imageUrl != null ? imageUrl : "/assets/images/mac_dinh.jpg";
+                sach.GiaBanMoi = double.Parse(txtGiaBanMoi.Text.Trim());
+                sach.GiaBanCu = double.Parse(txtGiaBanCu.Text.Trim());
+                sach.SoLuong = int.Parse(txtSoLuong.Text.Trim());
+                sach.MaTheLoai = int.Parse(ddlTheLoai.SelectedValue);
+                sach.MaTacGia = int.Parse(ddlTacGia.SelectedValue);
+                sach.MaNhaXuatBan = int.Parse(ddlNhaXuatBan.SelectedValue);
                 sachDAL.add(sach);
+
+                imgPreview.ImageUrl = sach.URLAnh;
                 lblMessage.Text = "Thêm sách thành công!";
                 lblMessage.Visible = true;
                 loadData();
@@ -173,6 +196,35 @@ namespace btl_laptrinhweb.Admin
                 lblMessage.Text = "Lỗi khi thêm sách: " + ex.Message;
                 lblMessage.Visible = true;
             }
+        }
+
+        private bool validateInput()
+        {
+            if (string.IsNullOrEmpty(txtTenSach.Text.Trim()))
+            {
+                lblMessage.Text = "Tên sách không được để trống.";
+                lblMessage.Visible = true;
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtGiaBanMoi.Text.Trim()) || !double.TryParse(txtGiaBanMoi.Text.Trim(), out _))
+            {
+                lblMessage.Text = "Giá bán mới không hợp lệ.";
+                lblMessage.Visible = true;
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtGiaBanCu.Text.Trim()) || !double.TryParse(txtGiaBanCu.Text.Trim(), out _))
+            {
+                lblMessage.Text = "Giá bán cũ không hợp lệ.";
+                lblMessage.Visible = true;
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtSoLuong.Text.Trim()) || !int.TryParse(txtSoLuong.Text.Trim(), out _))
+            {
+                lblMessage.Text = "Số lượng không hợp lệ.";
+                lblMessage.Visible = true;
+                return false;
+            }
+            return true;
         }
 
         protected void btnHuy_Click(object sender, EventArgs e)
@@ -194,6 +246,99 @@ namespace btl_laptrinhweb.Admin
             ddlNhaXuatBan.SelectedIndex = 0;
 
             lblMessage.Visible = false;
+        }
+
+        protected void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra đầu vào
+                if (string.IsNullOrWhiteSpace(txtMaSach.Text))
+                {
+                    lblMessage.Text = " Vui lòng chọn sách cần cập nhật";
+                    return;
+                }
+
+                // Xử lý ảnh
+                string anhUrl = imgPreview.ImageUrl;
+                if (FileUpload1.HasFile)
+                {
+                    string fileName = Path.GetFileName(FileUpload1.FileName);
+                    string savePath = Server.MapPath("~/assets/images/") + fileName;
+                    FileUpload1.SaveAs(savePath);
+                    anhUrl = "/assets/images/" + fileName;
+                    imgPreview.ImageUrl = anhUrl;
+                }
+
+                // Tạo đối tượng Sach
+                Sach sach = new Sach
+                {
+                    MaSach = int.Parse(txtMaSach.Text),
+                    TenSach = txtTenSach.Text,
+                    MoTa = txtMoTa.Text,
+                    URLAnh = anhUrl,
+                    GiaBanMoi = float.TryParse(txtGiaBanMoi.Text, out float giaMoi) ? giaMoi : 0,
+                    GiaBanCu = float.TryParse(txtGiaBanCu.Text, out float giaCu) ? giaCu : 0,
+                    SoLuong = int.TryParse(txtSoLuong.Text, out int soLuong) ? soLuong : 0,
+                    MaTheLoai = int.TryParse(ddlTheLoai.SelectedValue, out int maTL) ? maTL : 0,
+                    MaTacGia = int.TryParse(ddlTacGia.SelectedValue, out int maTG) ? maTG : 0,
+                    MaNhaXuatBan = int.TryParse(ddlNhaXuatBan.SelectedValue, out int maNXB) ? maNXB : 0
+                };
+
+                // Kiểm tra các khóa ngoại hợp lệ
+                if (sach.MaTheLoai == 0 || sach.MaTacGia == 0 || sach.MaNhaXuatBan == 0)
+                {
+                    Response.Write("<script>alert('Vui lòng chọn thể loại, tác giả và nhà xuất bản hợp lệ.')</script>");
+                    return;
+                }
+
+                // Gọi hàm cập nhật DAL
+                bool kq = sachDAL.CapNhatSach(sach);
+                if (kq)
+                {
+                    loadData();
+                    lamMoi();
+                }
+                else
+                {
+                    Response.Write("<script>alert('Không tìm thấy sách để cập nhật.')</script>");
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = "Lỗi cập nhật: " + ex.Message;
+                lblMessage.Visible = true;
+            }
+        }
+
+        protected void btnXoa_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtMaSach.Text))
+                {
+                    Response.Write("<script>alert('Vui lòng chọn sách để xóa.')</script>");
+                    return;
+                }
+
+                int maSach = int.Parse(txtMaSach.Text);
+                bool kq = sachDAL.XoaSach(maSach);
+                if (kq)
+                {
+                    lamMoi();
+                    loadData(); // hoặc GVBind();
+                }
+                else
+                {
+                    Response.Write("<script>alert('Không tìm thấy sách để xóa.')</script>");
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = "Lỗi khi xóa sách: " + ex.Message;
+                lblMessage.Visible = true;
+            }
         }
     }
 }

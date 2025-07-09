@@ -51,6 +51,15 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.TextBox txtTenSach;
 
         /// <summary>
+        /// lblTenSachError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTenSachError;
+
+        /// <summary>
         /// ddlTheLoai control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace btl_laptrinhweb.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTheLoai;
+
+        /// <summary>
+        /// lblTheLoaiError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTheLoaiError;
 
         /// <summary>
         /// ddlTacGia control.
@@ -69,6 +87,15 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.DropDownList ddlTacGia;
 
         /// <summary>
+        /// lblTacGiaError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTacGiaError;
+
+        /// <summary>
         /// ddlNhaXuatBan control.
         /// </summary>
         /// <remarks>
@@ -76,6 +103,15 @@ namespace btl_laptrinhweb.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlNhaXuatBan;
+
+        /// <summary>
+        /// lblNhaXuatBanError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNhaXuatBanError;
 
         /// <summary>
         /// txtGiaBanMoi control.
@@ -87,6 +123,15 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.TextBox txtGiaBanMoi;
 
         /// <summary>
+        /// lblGiaBanMoiError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGiaBanMoiError;
+
+        /// <summary>
         /// txtGiaBanCu control.
         /// </summary>
         /// <remarks>
@@ -96,6 +141,15 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.TextBox txtGiaBanCu;
 
         /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+
+        /// <summary>
         /// txtSoLuong control.
         /// </summary>
         /// <remarks>
@@ -103,6 +157,15 @@ namespace btl_laptrinhweb.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSoLuong;
+
+        /// <summary>
+        /// lblSoLuongError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSoLuongError;
 
         /// <summary>
         /// txtMoTa control.

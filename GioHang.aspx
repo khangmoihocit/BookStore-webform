@@ -33,8 +33,7 @@
         <div class="section">
             <div class="container">
                 <div class="inner-wrap">
-                    <asp:Label ID="lblMessage" runat="server" CssClass="message-error" Visibel="false" Text=""></asp:Label>
-                    <asp:Repeater ID="rptGioHang" runat="server">
+                    <asp:Repeater ID="rptGioHang" runat="server" OnItemCommand="rptGioHang_ItemCommand">
                         <ItemTemplate>
                             <div class="inner-item">
                                 <asp:Image ID="img" runat="server" ImageUrl='<%# Eval("URLAnh") %>' />
@@ -46,14 +45,17 @@
                                     </div>
                                     <div class="inner-quantity">
                                         <div>Số lượng: </div>
-                                        <asp:TextBox ID="txtSoLuong" Text='<%# Eval("SoLuong") %>' TextMode="Number" min="1" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtSoLuong" Text='<%# Eval("SoLuong") %>'
+                                            TextMode="Number" min="1" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                <asp:Button ID="btnXoa" CssClass="inner-delete" runat="server" Text="Xóa" />
+                                <asp:Button ID="btnXoa"
+                                    CssClass="inner-delete" runat="server" Text="Xóa" />
                             </div>
 
                         </ItemTemplate>
                     </asp:Repeater>
+                    <asp:Label ID="lblMessage" runat="server" CssClass="message-error" Visibel="false" Text=""></asp:Label>
                 </div>
             </div>
         </div>
