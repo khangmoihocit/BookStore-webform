@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -121,16 +122,39 @@ namespace btl_laptrinhweb.Admin
         protected void btnThemMoi_Click(object sender, EventArgs e)
         {
             lblMessage.Visible = false;
+            string imageUrl = "";
+            if (FileUpload1.HasFile)
+            {
+                try
+                {
+                    string fileName = Path.GetFileName(FileUpload1.FileName);
+                    //Tránh trùng tên tệp bằng cách thêm Guid
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + fileName;
+                    string filePath = Server.MapPath("~/assets/images/") + uniqueFileName;
+                    //lưu ảnh vào trong project
+                    FileUpload1.SaveAs(filePath);
+
+                    imageUrl = "/assets/images/" + uniqueFileName;
+                }
+                catch(Exception ex)
+                {
+                    lblMessage.Text = "Lỗi khi tải lên hình ảnh: " + ex.Message;
+                    lblMessage.Visible = true;
+                }
+            }
+
             Sach sach = new Sach();
             sach.TenSach = txtTenSach.Text.Trim();
             sach.MoTa = txtMoTa.Text.Trim();
-            sach.URLAnh = imgPreview.ImageUrl != null ? imgPreview.ImageUrl : "";
+            sach.URLAnh = imageUrl != "" && imageUrl != null ? imageUrl : "/assets/images/mac_dinh.jpg" ;
             sach.GiaBanMoi = double.Parse(txtGiaBanMoi.Text.Trim());
             sach.GiaBanCu = double.Parse(txtGiaBanCu.Text.Trim());
             sach.SoLuong = int.Parse(txtSoLuong.Text.Trim());
             sach.MaTheLoai = int.Parse(ddlTheLoai.SelectedValue);
             sach.MaTacGia = int.Parse(ddlTacGia.SelectedValue);
             sach.MaNhaXuatBan = int.Parse(ddlNhaXuatBan.SelectedValue);
+
+            imgPreview.ImageUrl = sach.URLAnh;
             try
             {
                 sachDAL.add(sach);
