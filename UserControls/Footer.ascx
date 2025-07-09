@@ -3,7 +3,7 @@
 <div class="footer">
     <div class="container">
         <div class="inner-wrap">
-            <div class="inner-row">
+            <div class="inner-row inner-row-1">
                 <img src="/assets/images/logo.webp" alt="">
                 <div class="inner-item">
                     <div class="inner-icon"><i class="fa-solid fa-location-dot"></i></div>

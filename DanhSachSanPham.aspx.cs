@@ -17,6 +17,8 @@ namespace btl_laptrinhweb
         private TheLoaiDAL theLoaiDAL;
         private NhaXuatBanDAL nhaXuatBanDAL;
         private int pageSize = 9;
+
+
         public DanhSachSanPham()
         {
             sachDAL = new SachDAL();
@@ -41,6 +43,43 @@ namespace btl_laptrinhweb
                     cblNhaXuatBan.DataValueField = "MaNhaXuatBan";
                     cblNhaXuatBan.DataBind();
 
+                    //tích lại bộ lọc
+                    if (Session["listTheLoaiID"] != null)
+                    {
+                        List<int> listTheLoaiID = (List<int>)Session["listTheLoaiID"];
+                        foreach (ListItem item in cblTheLoai.Items)
+                        {
+                            if (listTheLoaiID.Contains(int.Parse(item.Value)))
+                            {
+                                item.Selected = true;
+                            }
+                        }
+                    }
+
+                    if (Session["listNhaXuatBanID"] != null)
+                    {
+                        List<int> listNhaXuatBanID = (List<int>)Session["listNhaXuatBanID"];
+                        foreach (ListItem item in cblNhaXuatBan.Items)
+                        {
+                            if (listNhaXuatBanID.Contains(int.Parse(item.Value)))
+                            {
+                                item.Selected = true;
+                            }
+                        }
+                    }
+
+                    if (Session["sortID"] != null)
+                    {
+                        string sortID = Session["sortID"].ToString();
+                        foreach (ListItem item in rblSapXep.Items)
+                        {
+                            if (sortID == item.Value)
+                            {
+                                item.Selected = true;
+                            }
+                        }
+                    }
+
                     loadData();
                 }
                 catch (AppException ex)
@@ -51,58 +90,44 @@ namespace btl_laptrinhweb
                 {
                     Response.Write("Lỗi: " + ex.Message);
                 }
+
             }
         }
 
         private void loadData()
         {
-            //lấy id thể loại đang được chọn
-            List<int> listTheLoaiID = new List<int>();
-            string stringTheLoaiID = null;
-
-            foreach (ListItem item in cblTheLoai.Items)
-            {
-                if (item.Selected)
-                {
-                    listTheLoaiID.Add(int.Parse(item.Value));
-                }
-            }
-            if (listTheLoaiID.Count > 0)
-            {
-                stringTheLoaiID = string.Join(",", listTheLoaiID);
-            }
-
-            //lấy id nhà xuất bản đang được chọn
-            List<int> listNhaXuaBanIDs = new List<int>();
-            string stringNhaXuaBanIDs = null;
-            foreach (ListItem item in cblNhaXuatBan.Items)
-            {
-                if (item.Selected)
-                {
-                    listNhaXuaBanIDs.Add(int.Parse(item.Value));
-                }
-            }
-            if (listNhaXuaBanIDs.Count > 0)
-            {
-                stringNhaXuaBanIDs = string.Join(",", listNhaXuaBanIDs);
-            }
-
-            //lấy value sắp xếp đang được chọn (value = ASC hoặc DESC)
-            string sort = null;
-            if (rblSapXep.SelectedIndex != -1)
-            {
-                sort = rblSapXep.SelectedValue;
-            }
-
             try
             {
-                int currentPage = 1;
+                string stringTheLoaiIDs = null;
+                string stringNhaXuatBanIDs = null;
+                string sorts = null;
+                if (Session["listTheLoaiID"] != null)
+                {
+                    List<int> listTheLoaiID = (List<int>)Session["listTheLoaiID"];
+                    if (listTheLoaiID.Count > 0)
+                        stringTheLoaiIDs = string.Join(",", listTheLoaiID);
+                }
 
-                // Kiểm tra nếu có query string "page" thì lấy giá trị của nó
+                if (Session["listNhaXuatBanID"] != null)
+                {
+                    List<int> listNhaXuatBanID = (List<int>)Session["listNhaXuatBanID"];
+                    if (listNhaXuatBanID.Count > 0)
+
+                        stringNhaXuatBanIDs = string.Join(",", listNhaXuatBanID);
+                }
+
+                if (Session["sortID"] != null)
+                {
+                    string sortID = Session["sortID"].ToString();
+                    sorts = sortID;
+                }
+
+                int currentPage = 1;
+             
                 // Nếu có hidden field và giá trị là "true", reset currentPage về 1
                 if (HiddenField1.Value == "true")
                 {
-                    currentPage = 1; 
+                    currentPage = 1;
                     HiddenField1.Value = "false";
                 }
                 else
@@ -115,7 +140,7 @@ namespace btl_laptrinhweb
                 }
 
                 int tongsobanghi;
-                List<Sach> listSach = sachDAL.filterSach(stringTheLoaiID, stringNhaXuaBanIDs, sort, currentPage, pageSize, out tongsobanghi);
+                List<Sach> listSach = sachDAL.filterSach(stringTheLoaiIDs, stringNhaXuatBanIDs, sorts, currentPage, pageSize, out tongsobanghi);
                 Console.WriteLine(listSach);
                 if (listSach.Count > 0)
                 {
@@ -167,18 +192,46 @@ namespace btl_laptrinhweb
         protected void cblTheLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
             HiddenField1.Value = "true";
+            //lấy id thể loại đang được chọn
+            List<int> listTheLoaiID = new List<int>();
+
+            foreach (ListItem item in cblTheLoai.Items)
+            {
+                if (item.Selected)
+                {
+                    listTheLoaiID.Add(int.Parse(item.Value));
+                }
+            }
+            Session["listTheLoaiID"] = listTheLoaiID;
             loadData();
         }
 
         protected void cblNhaXuatBan_SelectedIndexChanged(object sender, EventArgs e)
         {
             HiddenField1.Value = "true";
+            //lấy id nhà xuất bản đang được chọn
+            List<int> listNhaXuaBanIDs = new List<int>();
+            foreach (ListItem item in cblNhaXuatBan.Items)
+            {
+                if (item.Selected)
+                {
+                    listNhaXuaBanIDs.Add(int.Parse(item.Value));
+                }
+            }
+
+            Session["listNhaXuatBanID"] = listNhaXuaBanIDs;
+
             loadData();
         }
 
         protected void rblSapXep_SelectedIndexChanged(object sender, EventArgs e)
         {
             HiddenField1.Value = "true";
+            //lấy value sắp xếp đang được chọn (value = ASC hoặc DESC)
+            if (rblSapXep.SelectedIndex != -1)
+            {
+                Session["sortID"] = rblSapXep.SelectedValue;
+            }
             loadData();
         }
 

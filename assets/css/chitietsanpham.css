@@ -191,11 +191,14 @@
     .section-one .inner-product-desc .inner-title {
         font-size: 18px;
         font-weight: 600;
+        margin-bottom: 20px;
     }
 
     .section-one .inner-product-desc .inner-desc {
         padding: 10px 10px 0 0;
         line-height: 1.5;
+        white-space: pre-wrap;
+        text-align: justify;
     }
 /* End Product info */
 

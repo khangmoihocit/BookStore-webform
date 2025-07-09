@@ -24,20 +24,33 @@
             <h2 class="search-title">Kết quả tìm kiếm cho: <span id="search-keyword"></span></h2>
             <!-- Danh sách sản phẩm -->
             <div class="product-list-result">
-                <asp:Repeater ID="rptSach" runat="server">
+                <asp:Repeater ID="rptSach" runat="server" OnItemCommand="rptSach_ItemCommand">
                     <ItemTemplate>
                         <div class="product">
                             <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                            <img class="inner-image" src='<%# Eval("URLAnh") %>' alt="ảnh sản phẩm">
-                            <div class="inner-title"><%# Eval("TenSach") %></div>
+                            <asp:HyperLink runat="server"
+                                NavigateUrl='<%# String.Format("ChiTietSanPham.aspx?MaSach={0}", Eval("MaSach")) %>'>
+                     <img class="inner-image" src='<%# Eval("URLAnh") %>' alt="ảnh sản phẩm">
+                            </asp:HyperLink>
+                            <div class="inner-title">
+                                <%# Eval("TenSach") %>
+                            </div>
                             <div class="inner-price">
-                                <div class="inner-price-new"><%# Eval("GiaBanMoi", "{0:N0}đ") %></div>
-                                <div class="inner-price-old"><%# Eval("GiaBanCu", "{0:N0}đ") %></div>
+                                <div class="inner-price-new">
+                                    <%# Eval("GiaBanMoi") %>
+                                </div>
+                                <div class="inner-price-old">
+                                    <%# Eval("GiaBanCu") %>
+                                </div>
                             </div>
-                            <div class="inner-add-to-cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                Thêm giỏ hàng
-                            </div>
+                            <asp:LinkButton ID="btnThemGioHang"
+                                CommandName="ThemGioHang"
+                                CommandArgument='<%# Eval("MaSach") %>'
+                                runat="server"
+                                CssClass="inner-add-to-cart">
+                     <i class="fa-solid fa-cart-shopping"></i>
+                     Thêm giỏ hàng
+                            </asp:LinkButton>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>

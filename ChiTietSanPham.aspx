@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <div class="inner-product-desc">
-                            <div class="inner-title">THÔNG TIN CHI TIẾT</div>
+                            <div class="inner-title">MÔ TẢ SẢN PHẨM</div>
                             <asp:Label ID="lblThongTinChiTiet" runat="server" Text="..." CssClass="inner-desc"></asp:Label>
                         </div>
                     </div>

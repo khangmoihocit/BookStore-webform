@@ -29,7 +29,6 @@
                     <asp:LinkButton ID="btnSwitchRegister" runat="server" CssClass="tab-link" OnClick="SwitchToRegister">Đăng ký</asp:LinkButton>
                 </div>
 
-
                 <!-- Panel Đăng nhập -->
                 <asp:Panel ID="pnlLogin" runat="server">
                     <div class="form-group">

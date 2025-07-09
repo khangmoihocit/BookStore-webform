@@ -86,6 +86,9 @@
     <Content Include="assets\images\icon_service_2.svg" />
     <Content Include="assets\images\icon_service_3.svg" />
     <Content Include="assets\images\icon_service_4.svg" />
+    <Content Include="assets\images\logo_acb.svg" />
+    <Content Include="assets\images\logo_msb.svg" />
+    <Content Include="assets\images\mac_dinh.jpg" />
     <Content Include="assets\js\TinTuc.js" />
     <Content Include="ChiTietSanPham.aspx" />
     <Content Include="ChiTietTinTuc.aspx" />
@@ -288,6 +291,9 @@
     <Content Include="assets\images\t4.webp" />
     <Content Include="assets\images\t5.webp" />
     <Content Include="assets\images\t6.webp" />
+    <Content Include="assets\images\backg-footer.webp" />
+    <Content Include="assets\images\icon-favorite.webp" />
+    <Content Include="assets\images\logo_mb.webp" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

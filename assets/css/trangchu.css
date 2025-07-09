@@ -39,6 +39,18 @@
 .section-two .inner-list-item .item .inner-title:hover {
   color: var(--color-primary);
 }
+
+@media (max-width: 576px) {
+    .section-two .inner-list-item {
+        flex-wrap: wrap;
+    }
+
+        .section-two .inner-list-item .item {
+            width: 50%;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+}
 /* End Section Two */
 
 /* Section Three */
@@ -98,6 +110,22 @@
 .section-three .product .inner-add-to-cart{
   background-color: var(--color-second);
 }
+
+@media (max-width: 576px) {
+    .section-three .inner-title img {
+        width: 120px;
+    }
+
+    .section-three .inner-list-product {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .section-three .product {
+        width: calc(50% - 30px);
+        padding: 20px 0;
+    }
+}
 /* End Section Three */
 
 /* Section Four */
@@ -141,6 +169,16 @@
 
 .section-four .product .inner-add-to-cart{
   background-color: var(--color-second);
+}
+
+@media (max-width: 576px) {
+    .section-four .inner-list-product {
+        flex-wrap: wrap;
+    }
+
+    .section-four .product {
+        width: calc(50% - 30px);
+    }
 }
 /* End Section Four*/
 
@@ -200,6 +238,15 @@
   margin: 17px 21.5px;
 }
 
+@media (max-width: 576px) {
+    .section-five .inner-list-product {
+        flex-wrap: wrap;
+    }
+
+        .section-five .inner-list-product .product {
+            width: calc(50% - 50px);
+        }
+}
 /* End Section Five */
 
 /* Section Six */
@@ -243,6 +290,16 @@
 
 .section-six .inner-image{
   margin-top: -120px;
+}
+
+@media (max-width: 576px) {
+    .section-six .inner-wrap {
+        flex-direction: column;
+    }
+
+    .section-six .inner-image {
+        margin: 0;
+    }
 }
 /* End Section Six */
 
@@ -297,6 +354,44 @@
   background-color: #FFD57E;
   color: #000;
   border: none;
+}
+
+@media (max-width: 576px) {
+    .section-seven {
+        margin-top: 220px;
+        position: relative;
+        z-index: 20;
+    }
+
+        .section-seven .inner-wrap {
+            border-radius: 50px 0 50px 0;
+        }
+
+        .section-seven .inner-title {
+            font-size: 17px;
+        }
+
+        .section-seven .inner-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+            .section-seven .inner-form input {
+                border: none;
+                width: 80%;
+            }
+
+                .section-seven .inner-form input::placeholder {
+                    text-align: left;
+                }
+
+            .section-seven .inner-form button {
+                margin-top: 20px;
+                padding: 10px;
+                width: 100%;
+            }
 }
 /* End Section Seven */
 

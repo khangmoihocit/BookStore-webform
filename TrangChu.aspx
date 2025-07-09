@@ -314,7 +314,7 @@
             html += `
     <div class="product">
         <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-        <img class="inner-image" alt="ảnh" src="${item.image}">
+        <a href="ChiTietSanPham.aspx?MaSach=${item.id}"><img class="inner-image" alt="ảnh" src="${item.image}"></a>
         <div class="inner-title">${item.title}</div>
         <div class="inner-price">
             <div class="inner-price-new">${Number(item.priceNew).toLocaleString()}đ</div>

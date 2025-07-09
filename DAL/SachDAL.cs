@@ -74,6 +74,7 @@ namespace btl_laptrinhweb.DAL
         }
 
 
+
         public List<Sach> getByTheLoai(int idTheLoai)
         {
             string query = "select * from tblSach where FK_iTheLoaiID = " + idTheLoai;
@@ -168,6 +169,70 @@ namespace btl_laptrinhweb.DAL
             catch (Exception ex)
             {
                 throw new AppException("Lỗi khi thêm sách: " + ex.Message);
+            }
+        }
+
+        public bool CapNhatSach(Sach sach)
+        {
+            try
+            {
+                using (SqlConnection conn = Connection.GetSqlConnection())
+                {
+                    conn.Open();
+                    string query = @"UPDATE tblSach SET 
+                sTensach = @TenSach,
+                sMota = @MoTa,
+                sURLanh = @AnhBia,
+                fGiabanmoi = @GiaMoi,
+                fGiabancu = @GiaCu,
+                iSoluong = @SoLuong,
+                FK_iTheloaiID = @MaTheLoai,
+                FK_iTacgiaID = @MaTacGia,
+                FK_iNhaxuatbanID = @MaNXB
+                WHERE PK_iSachID = @SachID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@TenSach", sach.TenSach);
+                        cmd.Parameters.AddWithValue("@MoTa", sach.MoTa ?? "");
+                        cmd.Parameters.AddWithValue("@AnhBia", sach.URLAnh ?? "");
+                        cmd.Parameters.AddWithValue("@GiaMoi", sach.GiaBanMoi);
+                        cmd.Parameters.AddWithValue("@GiaCu", sach.GiaBanCu);
+                        cmd.Parameters.AddWithValue("@SoLuong", sach.SoLuong);
+                        cmd.Parameters.AddWithValue("@MaTheLoai", sach.MaTheLoai);
+                        cmd.Parameters.AddWithValue("@MaTacGia", sach.MaTacGia);
+                        cmd.Parameters.AddWithValue("@MaNXB", sach.MaNhaXuatBan);
+                        cmd.Parameters.AddWithValue("@SachID", sach.MaSach);
+
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new AppException("Lỗi cập nhật sách: " + ex.Message);
+            }
+        }
+
+        public bool XoaSach(int maSach)
+        {
+            try
+            {
+                using (SqlConnection conn = Connection.GetSqlConnection())
+                {
+                    conn.Open();
+                    string query = "DELETE FROM tblSach WHERE PK_iSachID = @MaSach";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaSach", maSach);
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new AppException("Lỗi xóa sách: " + ex.Message);
             }
         }
 

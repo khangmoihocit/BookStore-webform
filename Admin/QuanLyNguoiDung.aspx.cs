@@ -1,4 +1,5 @@
-﻿using System;
+﻿using btl_laptrinhweb.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,9 +12,8 @@ namespace btl_laptrinhweb.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-            }
+            
+    
         }
 
         private void LoadData()
