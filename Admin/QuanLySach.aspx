@@ -68,10 +68,10 @@
         </div>
 
         <div class="form-buttons">
-            <asp:Button ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn btn-primary" />
+            <asp:Button ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn btn-primary" OnClick="btnThemMoi_Click" />
             <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn btn-success" />
             <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn btn-danger" />
-            <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn btn-secondary" />
+            <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn btn-secondary" OnClick="btnHuy_Click" />
         </div>
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
     </div>
@@ -85,7 +85,7 @@
             <Columns>
                 <asp:CommandField ShowSelectButton="True" SelectText="chọn"
                     ItemStyle-Width="30px" ControlStyle-CssClass="select-button" />
-                <asp:BoundField DataField="MaSach" HeaderText="ID" />
+                <asp:BoundField DataField="MaSach" HeaderText="Mã sách" />
                 <asp:BoundField DataField="TenSach" HeaderText="Tên Sách" />
                 <asp:BoundField DataField="URLAnh" HeaderText="Ảnh" />
                 <asp:BoundField DataField="GiaBanMoi" HeaderText="Giá mới" />

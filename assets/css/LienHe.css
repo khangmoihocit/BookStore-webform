@@ -1,0 +1,86 @@
+﻿
+.container-1{
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto 10px;
+    overflow: hidden;
+}
+
+.map {
+    margin-right: 8px;
+    margin-top: 10px;
+    width: 50%;
+    position: relative;
+}
+
+.khoiinput {
+    margin-top: -10px;
+    margin-left: 8px;
+    width: 50%;
+    display: block;
+}
+
+    .khoiinput h2 {
+        margin-bottom: 0px;
+    }
+
+    .khoiinput p {
+        margin-bottom: 20px;
+    }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group input,
+    .form-group textarea {
+        width: calc(100% );
+        border-radius: 10px;
+        margin-top: 10px;
+        border: 1px solid rgb(119, 113, 113);
+        padding: 10px;
+        box-sizing: border-box
+    }
+
+input::placeholder,
+textarea::placeholder {
+    font-style: italic;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.map iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.dau {
+    color: red;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 150px;
+    min-height: 40px;
+}
+
+.submit-button {
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: 1px solid;
+    background-color: rgb(244, 183, 93);
+    border-radius: 20px;
+}
+
+    .submit-button:hover {
+        background-color: rgb(0, 0, 0);
+        cursor: pointer;
+    }

@@ -117,5 +117,59 @@ namespace btl_laptrinhweb.Admin
         {
 
         }
+
+        protected void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            lblMessage.Visible = false;
+            Sach sach = new Sach();
+            sach.TenSach = txtTenSach.Text.Trim();
+            sach.MoTa = txtMoTa.Text.Trim();
+            sach.URLAnh = imgPreview.ImageUrl != null ? imgPreview.ImageUrl : "";
+            sach.GiaBanMoi = double.Parse(txtGiaBanMoi.Text.Trim());
+            sach.GiaBanCu = double.Parse(txtGiaBanCu.Text.Trim());
+            sach.SoLuong = int.Parse(txtSoLuong.Text.Trim());
+            sach.MaTheLoai = int.Parse(ddlTheLoai.SelectedValue);
+            sach.MaTacGia = int.Parse(ddlTacGia.SelectedValue);
+            sach.MaNhaXuatBan = int.Parse(ddlNhaXuatBan.SelectedValue);
+            try
+            {
+                sachDAL.add(sach);
+                lblMessage.Text = "Thêm sách thành công!";
+                lblMessage.Visible = true;
+                loadData();
+                lamMoi();
+            }
+            catch (AppException ex)
+            {
+                lblMessage.Text =  ex.Message;
+                lblMessage.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = "Lỗi khi thêm sách: " + ex.Message;
+                lblMessage.Visible = true;
+            }
+        }
+
+        protected void btnHuy_Click(object sender, EventArgs e)
+        {
+            lamMoi();
+        }
+        
+        private void lamMoi()
+        {
+            txtMaSach.Text = string.Empty;
+            txtTenSach.Text = string.Empty;
+            txtMoTa.Text = string.Empty;
+            imgPreview.ImageUrl = string.Empty;
+            txtGiaBanMoi.Text = string.Empty;
+            txtGiaBanCu.Text = string.Empty;
+            txtSoLuong.Text = string.Empty;
+            ddlTheLoai.SelectedIndex = 0;
+            ddlTacGia.SelectedIndex = 0;
+            ddlNhaXuatBan.SelectedIndex = 0;
+
+            lblMessage.Visible = false;
+        }
     }
 }
