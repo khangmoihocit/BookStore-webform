@@ -294,6 +294,8 @@
     <Content Include="assets\images\icon-favorite.webp" />
     <Content Include="assets\images\logo_mb.webp" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\khangmoihocit-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\khangmoihocit-001-site1 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

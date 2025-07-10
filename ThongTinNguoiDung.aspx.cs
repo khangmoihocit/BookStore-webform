@@ -26,17 +26,46 @@ namespace btl_laptrinhweb
                     txtSoDienThoai.Text = user.SoDienThoai;
                     txtQuyen.Text = user.Quyen;
                     txtNgayDangKy.Text = user.NgayDangKy.ToString("yyyy-MM-dd");
+                    if (user.Quyen == "ADMIN")
+                    {
+                        btnAdmin.Visible = true;
+                        btnAdmin.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAdmin.Visible = false;
+                        btnAdmin.Enabled = false;
+                    }
                 }
             }
         }
 
         protected void btnDangXuat_Click(object sender, EventArgs e)
         {
-            if (Session["User"] != null)
-            {
-                Session.Remove("User");
-            }
+            Session.Clear();
             Response.Redirect("DangNhapDangKy.aspx");
+        }
+
+        protected void btnAdmin_Click(object sender, EventArgs e)
+        {
+            if(Session["User"] != null)
+            {
+                NguoiDung user = (NguoiDung)Session["User"];
+                if (user.Quyen == "ADMIN")
+                {
+                    Response.Redirect("/Admin/QuanLySach.aspx");
+                }
+                else
+                {
+                    lblTitle.Text = "Bạn không có quyền truy cập vào trang quản trị.";
+                    lblTitle.ForeColor = System.Drawing.Color.Red;
+                    lblTitle.Visible = true;
+                }
+            }
+            else
+            {
+                Response.Redirect("DangNhapDangKy.aspx");
+            }
         }
     }
 }

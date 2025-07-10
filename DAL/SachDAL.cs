@@ -236,5 +236,16 @@ namespace btl_laptrinhweb.DAL
             }
         }
 
+        public List<Sach> findByName(string name)
+        {
+            string query = "select * from tblSach where sTensach like '%" + name + "%'";
+            List<Sach> listSach = command(query);
+            if(listSach == null || listSach.Count == 0)
+            {
+                throw new AppException("Không tìm thấy sách với tên: " + name);
+            }
+            return listSach;
+        }
+
     }
 }

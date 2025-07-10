@@ -121,7 +121,7 @@ namespace btl_laptrinhweb.DAL
 
         public NguoiDung login(string username, string password)
         {
-            string query = "SELECT * FROM tblNguoidung WHERE sEmail = '" + username + "'  AND sMatkhau = '" + password + "'";
+            string query = "SELECT * FROM tblNguoidung WHERE sEmail = '" + username + "'  AND sMatkhau = '" + password + "' ";
             List<NguoiDung> nguoiDungs = command(query);
             if(nguoiDungs.Count < 1){
                 throw new AppException("Tài khoản hoặc mật khẩu không đúng.");

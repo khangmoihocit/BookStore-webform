@@ -64,8 +64,8 @@ namespace btl_laptrinhweb
 
         private bool isValid()
         {
-            bool isValid = false    ;
-            if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            bool isValid = false;
+            if (string.IsNullOrEmpty(txtEmailRegister.Text) || string.IsNullOrEmpty(txtPasswordRegister.Text))
             {
                 lblMessage.Text = "Vui lòng nhập đầy đủ thông tin.";
                 lblMessage.Visible = true;
@@ -101,7 +101,7 @@ namespace btl_laptrinhweb
                 nguoiDungDAL.add(nguoiDung);
                 lblMessage.Text = "Đăng ký thành công!";
                 lblMessage.Visible = true;
-
+                SwitchToLogin(sender, e);
             }
             catch (AppException ex)
             {

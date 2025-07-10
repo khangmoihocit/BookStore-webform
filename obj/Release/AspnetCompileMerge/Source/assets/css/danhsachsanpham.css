@@ -1,0 +1,103 @@
+﻿.inner-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* Sidebar bộ lọc */
+.sidebar-filter {
+    width: 233px;
+    margin-right: 40px;
+}
+
+.sidebar-image img{
+    width: 100%;
+}
+
+.inner-filter {
+    margin-bottom: 30px;
+    color: var(--color-text);
+    border-bottom: 1px solid #808080;
+}
+
+    .inner-filter .inner-title {
+        font-size: 17px;
+        font-weight: bold;
+        color: var(--color-text);
+        margin-bottom: 13px;
+        cursor: pointer;
+        position: relative;
+        padding: 10px;
+    }
+
+        .inner-filter .inner-title::after {
+            content: '▲';
+            font-size: 16px;
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+
+    /* Xoay mũi tên lên khi dropdown đang mở (có class .active) */
+    .inner-filter.active .inner-title::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* Mặc định ẩn nội dung của CheckBoxList và RadioButtonList */
+    .inner-filter > span {
+        display: block;
+    }
+
+    /* Hiển thị nội dung khi thẻ cha có class .active */
+    .inner-filter.active > span {
+        display: none;
+    }
+
+    .inner-filter span input[type="checkbox"] {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .inner-filter span input[type="radio"] {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .inner-filter span label {
+        margin-bottom: 10px;
+    }
+
+/* Danh sách sản phẩm */
+.inner-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
+.inner-main .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.product-list .product {
+    width: calc(40% - 101px);
+    margin: 17px 21.5px;
+}
+
+.product-list-result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+    .product-list-result .product {
+        width: calc(30% - 101px);
+        margin: 17px 21.5px;
+    }

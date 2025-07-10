@@ -141,13 +141,13 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.TextBox txtGiaBanCu;
 
         /// <summary>
-        /// Label6 control.
+        /// lblGiaBanCuError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label lblGiaBanCuError;
 
         /// <summary>
         /// txtSoLuong control.
@@ -211,6 +211,33 @@ namespace btl_laptrinhweb.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnHuy;
+
+        /// <summary>
+        /// pnlTimKiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlTimKiem;
+
+        /// <summary>
+        /// txtTimKiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTimKiem;
+
+        /// <summary>
+        /// btnTimKiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnTimKiem;
 
         /// <summary>
         /// lblMessage control.
