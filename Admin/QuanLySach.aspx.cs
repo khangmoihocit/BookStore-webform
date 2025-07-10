@@ -256,6 +256,7 @@ namespace btl_laptrinhweb.Admin
                 if (string.IsNullOrWhiteSpace(txtMaSach.Text))
                 {
                     lblMessage.Text = " Vui lòng chọn sách cần cập nhật";
+                    lblMessage.Visible = true;
                     return;
                 }
 
@@ -288,7 +289,8 @@ namespace btl_laptrinhweb.Admin
                 // Kiểm tra các khóa ngoại hợp lệ
                 if (sach.MaTheLoai == 0 || sach.MaTacGia == 0 || sach.MaNhaXuatBan == 0)
                 {
-                    Response.Write("<script>alert('Vui lòng chọn thể loại, tác giả và nhà xuất bản hợp lệ.')</script>");
+                    lblMessage.Text=" Vui lòng chọn thể loại, tác giả và nhà xuất bản hợp lệ.";
+                    lblMessage.Visible = true;
                     return;
                 }
 
@@ -301,7 +303,8 @@ namespace btl_laptrinhweb.Admin
                 }
                 else
                 {
-                    Response.Write("<script>alert('Không tìm thấy sách để cập nhật.')</script>");
+                    lblMessage.Text = "Không tìm thấy sách để cập nhật.";
+                    lblMessage.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -318,7 +321,8 @@ namespace btl_laptrinhweb.Admin
             {
                 if (string.IsNullOrWhiteSpace(txtMaSach.Text))
                 {
-                    Response.Write("<script>alert('Vui lòng chọn sách để xóa.')</script>");
+                    lblMessage.Text = "Vui lòng chọn sách để xóa.";
+                    lblMessage.Visible = true;
                     return;
                 }
 
@@ -331,7 +335,8 @@ namespace btl_laptrinhweb.Admin
                 }
                 else
                 {
-                    Response.Write("<script>alert('Không tìm thấy sách để xóa.')</script>");
+                    lblMessage.Text = "Không tìm thấy sách để xóa.";
+                    lblMessage.Visible = true;
                 }
             }
             catch (Exception ex)
