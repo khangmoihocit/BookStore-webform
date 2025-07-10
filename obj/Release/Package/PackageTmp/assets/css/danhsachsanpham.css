@@ -86,7 +86,6 @@
 }
 
 .product-list .product {
-    width: calc(40% - 101px);
     margin: 17px 21.5px;
 }
 
