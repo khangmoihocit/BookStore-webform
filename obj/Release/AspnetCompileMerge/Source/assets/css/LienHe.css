@@ -1,5 +1,5 @@
 ﻿
-.container-1{
+.container-1 {
     display: flex;
     justify-content: center;
     max-width: 1200px;
@@ -84,3 +84,29 @@ textarea::placeholder {
         background-color: rgb(0, 0, 0);
         cursor: pointer;
     }
+
+@media (max-width: 768px) {
+    .container {
+        /* Chuyển sang bố cục cột, các phần tử sẽ xếp chồng lên nhau */
+        flex-direction: column;
+        margin: 10px; /* Giảm margin cho màn hình nhỏ */
+    }
+
+    .khoiinput,
+    .map {
+        /* Cho cả form và bản đồ chiếm toàn bộ chiều rộng */
+        width: 100%;
+        margin: 0; /* Xóa margin cũ để căn giữa */
+    }
+
+    .khoiinput {
+        /* Đặt form lên trước bản đồ */
+        order: 1;
+        margin-bottom: 20px; /* Tạo khoảng cách giữa form và bản đồ */
+    }
+
+    .map {
+        /* Đặt bản đồ ở sau */
+        order: 2;
+    }
+}

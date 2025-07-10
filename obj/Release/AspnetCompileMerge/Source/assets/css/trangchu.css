@@ -34,6 +34,7 @@
             .section-two .inner-list-item .item .inner-title {
                 margin-top: 8px;
                 font-weight: 600;
+                color: var(--color-text);
             }
 
                 .section-two .inner-list-item .item .inner-title:hover {
@@ -176,6 +177,7 @@
     margin-top: -200px;
     position: relative;
     z-index: 1;
+    background-color: #000;
 }
 
     .section-four .inner-wrap {

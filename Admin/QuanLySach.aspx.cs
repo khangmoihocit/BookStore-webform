@@ -41,7 +41,6 @@ namespace btl_laptrinhweb.Admin
             else
             {
                 Response.Redirect("~/DangNhapDangKy.aspx");
-
             }
             if (!IsPostBack)
             {
@@ -454,6 +453,8 @@ namespace btl_laptrinhweb.Admin
             {
                 lblMessage.Text = ex.Message;
                 lblMessage.Visible = true;
+                gvSach.DataSource = null;
+                gvSach.DataBind();
             }
             catch (Exception ex)
             {

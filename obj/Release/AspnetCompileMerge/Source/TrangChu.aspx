@@ -45,7 +45,7 @@
                             <img src="/assets/images/cate_1.webp" alt="ảnh">
                         </div>
                         <div class="inner-title">
-                            Tâm lý kỹ năng
+                            Kỹ năng sống
                         </div>
                     </div>
                     <div class="item">
@@ -61,7 +61,7 @@
                             <img src="/assets/images/cate_3.webp" alt="ảnh">
                         </div>
                         <div class="inner-title">
-                            Thiếu nhi
+                            Công nghệ
                         </div>
                     </div>
                     <div class="item">
@@ -85,7 +85,7 @@
             <div class="inner-wrap">
                 <div class="inner-title">
                     <img src="/assets/images/img_title.webp" alt="" />
-                </div> 
+                </div>
                 <div class="inner-main">
                     <div id="list-product-section-three" class="inner-list-product"></div>
                     <div class="inner-button-prev inner-button">
@@ -101,7 +101,7 @@
     <!-- End Section Three -->
 
     <!-- Section Four -->
-    <div class="section-four">
+    <div class="section-four" style="background-image: url(/assets/images/bg_sp_noibat.webp); background-size: cover; background-position: center; height: 800px; margin-top: -200px; position: relative; z-index: 1; background-color: #000;">
         <div class="container">
             <div class="inner-wrap">
                 <div class="inner-sub-title">SẢN PHẨM NỔI BẬT</div>
@@ -243,20 +243,20 @@
         let html = "";
         products.slice(0, 4).forEach((item) => {
             html += `
-            <div class="product">
-                <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-                <img class="inner-image" src="${item.image}" alt="ảnh sản phẩm">
-                <div class="inner-title">${item.title}</div>
-                <div class="inner-price">
-                    <div class="inner-price-new">${Number(item.priceNew).toLocaleString()}đ</div>
-                    <div class="inner-price-old">${Number(item.priceOld).toLocaleString()}đ</div>
-                </div>
-                <div class="inner-add-to-cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    Thêm giỏ hàng
-                </div>
+        <div class="product">
+            <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
+            <a href="ChiTietSanPham.aspx?MaSach=${item.id}"><img class="inner-image" alt="ảnh" src="${item.image}"></a>
+            <div class="inner-title">${item.title}</div>
+            <div class="inner-price">
+                <div class="inner-price-new">${Number(item.priceNew).toLocaleString()}đ</div>
+                <div class="inner-price-old">${Number(item.priceOld).toLocaleString()}đ</div>
             </div>
-        `;
+            <div class="inner-add-to-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Thêm giỏ hàng
+            </div>
+        </div>
+    `;
         });
         element.innerHTML = html;
     }
@@ -270,21 +270,21 @@
         // Lấy 3 sản phẩm bán chạy nhất
         sorted.slice(0, 3).forEach((item) => {
             html += `
-    <div class="product">
-        <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-        <img class="inner-image" alt="ảnh" src="${item.image}">
-        <div class="inner-title">${item.title}</div>
-        <div class="inner-price">
-            <div class="inner-price-new">${Number(item.priceNew).toLocaleString()}đ</div>
-            <div class="inner-price-old">${Number(item.priceOld).toLocaleString()}đ</div>
-        </div>
-        <div class="inner-add-to-cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-            Thêm vào giỏ
-        </div>
-        <div class="inner-sold">Đã bán: ${item.sold || 0}</div>
+<div class="product">
+    <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
+   <a href="ChiTietSanPham.aspx?MaSach=${item.id}"><img class="inner-image" alt="ảnh" src="${item.image}"></a>
+    <div class="inner-title">${item.title}</div>
+    <div class="inner-price">
+        <div class="inner-price-new">${Number(item.priceNew).toLocaleString()}đ</div>
+        <div class="inner-price-old">${Number(item.priceOld).toLocaleString()}đ</div>
     </div>
-    `;
+    <div class="inner-add-to-cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Thêm vào giỏ
+    </div>
+    <div class="inner-sold">Đã bán: ${item.sold || 0}</div>
+</div>
+`;
         });
         element.innerHTML = html;
     }
@@ -302,49 +302,52 @@
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
         perProduct = filtered.slice(start, end);
-        renderProduct();
+        renderProduct(perProduct); // Truyền danh sách sản phẩm trang hiện tại
     }
 
 
-    const renderProduct = () => {
+
+    const renderProduct = (list) => {
         let html = "";
-        // Lọc sản phẩm: chỉ cần category chứa selectedCategory (không phân biệt hoa thường)
-        const filtered = products.filter(item =>
-            item.category && item.category.toLowerCase().includes(selectedCategory.toLowerCase())
-        );
-        filtered.forEach((item) => {
+        list.forEach((item) => {
             html += `
-    <div class="product">
-        <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
-        <a href="ChiTietSanPham.aspx?MaSach=${item.id}"><img class="inner-image" alt="ảnh" src="${item.image}"></a>
-        <div class="inner-title">${item.title}</div>
-        <div class="inner-price">
-            <div class="inner-price-new">${Number(item.priceNew).toLocaleString()}đ</div>
-            <div class="inner-price-old">${Number(item.priceOld).toLocaleString()}đ</div>
-        </div>
+<div class="product">
+    <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
+    <a href="ChiTietSanPham.aspx?MaSach=${item.id}"><img class="inner-image" alt="ảnh" src="${item.image}"></a>
+    <div class="inner-title">${item.title}</div>
+    <div class="inner-price">
+        <div class="inner-price-new">${Number(item.priceNew).toLocaleString()}đ</div>
+        <div class="inner-price-old">${Number(item.priceOld).toLocaleString()}đ</div>
     </div>
-    `;
+</div>
+`;
         });
         elementListProduct.innerHTML = html;
     }
 
 
+
     const renderPageNumber = () => {
-        totalPage = Math.ceil(products.length / perPage);
+        const filtered = products.filter(item =>
+            item.category && item.category.toLowerCase().includes(selectedCategory.toLowerCase())
+        );
+        totalPage = Math.ceil(filtered.length / perPage);
         const elementPagination = document.getElementById("pagination");
         elementPagination.innerHTML = "";
         let html = "";
         for (let i = 1; i <= totalPage; i++) {
             html += `
-            <li 
-                onclick="handlePageNumber(${i})"
-                class="pagination-item ${i === currentPage ? 'pagination-item-active' : ''}">
-                ${i}
-            </li>
-        `;
+        <li 
+            onclick="handlePageNumber(${i})"
+            class="pagination-item ${i === currentPage ? 'pagination-item-active' : ''}">
+            ${i}
+        </li>
+    `;
         }
         elementPagination.innerHTML = html;
     }
+
+
 
     const handlePageNumber = (num) => {
         currentPage = num;
