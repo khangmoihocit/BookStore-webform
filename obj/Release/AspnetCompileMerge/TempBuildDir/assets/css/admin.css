@@ -131,8 +131,9 @@
 
     .form-group .error {
         color: red;
-        font-size: 13px;
+        font-size: 14px;
         margin-top: 5px;
+        font-style: italic;
     }
 
 
@@ -152,6 +153,7 @@
 
 .form-buttons {
     margin-top: 20px;
+    display: flex;
 }
 
     .form-buttons .btn {

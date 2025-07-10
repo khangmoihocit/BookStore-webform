@@ -4,7 +4,42 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+        .inner-search {
+            display: flex;
+            align-items: center;
+            position: relative;
+            right: -350px;
+            top: 0px;
+        }
 
+            .inner-search input {
+                padding: 21px;
+                width: 383px;
+                height: 42px;
+                border-radius: 50px;
+                outline: none;
+                border: 1px solid var(--color-primary);
+            }
+
+                .inner-search input::placeholder {
+                    opacity: 50%;
+                    font-size: 14px;
+                    font-style: italic;
+                }
+
+            .inner-search .inner-icon {
+                position: absolute;
+                right: 8px;
+                background: none;
+                border: none;
+                color: var(--color-primary);
+            }
+
+                .inner-search .inner-icon:hover {
+                    color: #000;
+                }
+    </style>
     <div class="form-container">
         <div class="form-inner-wrap">
             <div>
@@ -25,7 +60,7 @@
                     <div class="form-group">
                         <label for="txtTenSach">Tên sách</label>
                         <asp:TextBox ID="txtTenSach" runat="server" CssClass="form-control"></asp:TextBox>
-                    <asp:Label ID="lblTenSachError" runat="server" Text="Label" CssClass="error" Visible="false"></asp:Label>
+                        <asp:Label ID="lblTenSachError" runat="server" Text="Label" CssClass="error" Visible="false"></asp:Label>
                     </div>
                 </div>
 
@@ -56,7 +91,7 @@
                     <div class="form-group">
                         <label for="txtGiaBanCu">Giá bán cũ (nếu có)</label>
                         <asp:TextBox ID="txtGiaBanCu" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
-                        <asp:Label ID="Label6" runat="server" Visible="false" Text="Label" CssClass="error"></asp:Label>
+                        <asp:Label ID="lblGiaBanCuError" runat="server" Visible="false" Text="Label" CssClass="error"></asp:Label>
                     </div>
                     <div class="form-group">
                         <label for="txtSoLuong">Số lượng</label>
@@ -75,10 +110,18 @@
         </div>
 
         <div class="form-buttons">
-            <asp:Button ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn btn-primary" OnClick="btnThemMoi_Click" />
-            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn btn-success" OnClick="btnCapNhat_Click" />
-            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn btn-danger" OnClick="btnXoa_Click" />
-            <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn btn-secondary" OnClick="btnHuy_Click" />
+            <asp:Button ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn " OnClick="btnThemMoi_Click" />
+            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn" OnClick="btnCapNhat_Click" />
+            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn" OnClick="btnXoa_Click" />
+            <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn" OnClick="btnHuy_Click" />
+            <asp:Panel ID="pnlTimKiem" runat="server" DefaultButton="btnTimKiem">
+                <div class="inner-search">
+                    <asp:TextBox ID="txtTimKiem" runat="server" placeholder="Tìm kiếm sản phẩm"></asp:TextBox>
+                    <asp:LinkButton ID="btnTimKiem" runat="server" CssClass="inner-icon" OnClick="btnTimKiem_Click">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                     </asp:LinkButton>
+                </div>
+            </asp:Panel>
         </div>
         <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
     </div>

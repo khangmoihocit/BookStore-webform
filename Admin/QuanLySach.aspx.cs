@@ -99,6 +99,7 @@ namespace btl_laptrinhweb.Admin
         {
             try
             {
+                resetMessageValid();
                 lblMessage.Visible = false;
                 GridViewRow row = gvSach.SelectedRow;
                 if (row != null)
@@ -145,7 +146,7 @@ namespace btl_laptrinhweb.Admin
         protected void btnThemMoi_Click(object sender, EventArgs e)
         {
             lblMessage.Visible = false;
-
+            
             if (!checkInput())
             {
                 return;
@@ -313,6 +314,28 @@ namespace btl_laptrinhweb.Admin
             gvSach.DataSource = sachDAL.getAll();
             gvSach.DataBind();
             txtTimKiem.Text = string.Empty;
+
+            resetMessageValid();
+            gvSach.SelectedIndex = -1; // Bỏ chọn dòng trong GridView
+
+        }
+
+        private void resetMessageValid()
+        {
+            lblTenSachError.Text = string.Empty;
+            lblTenSachError.Visible = false;
+            lblGiaBanMoiError.Text = string.Empty;
+            lblGiaBanMoiError.Visible = false;
+            lblGiaBanCuError.Text = string.Empty;
+            lblGiaBanCuError.Visible = false;
+            lblSoLuongError.Text = string.Empty;
+            lblSoLuongError.Visible = false;
+            lblTheLoaiError.Text = string.Empty;
+            lblTheLoaiError.Visible = false;
+            lblNhaXuatBanError.Text = string.Empty;
+            lblNhaXuatBanError.Visible = false;
+            lblTacGiaError.Text = string.Empty;
+            lblTacGiaError.Visible = false;
         }
 
         protected void btnCapNhat_Click(object sender, EventArgs e)
@@ -324,6 +347,11 @@ namespace btl_laptrinhweb.Admin
                 {
                     lblMessage.Text = " Vui lòng chọn sách cần cập nhật";
                     lblMessage.Visible = true;
+                    return;
+                }
+
+                if (!checkInput())
+                {
                     return;
                 }
 
@@ -352,14 +380,6 @@ namespace btl_laptrinhweb.Admin
                     MaTacGia = int.TryParse(ddlTacGia.SelectedValue, out int maTG) ? maTG : 0,
                     MaNhaXuatBan = int.TryParse(ddlNhaXuatBan.SelectedValue, out int maNXB) ? maNXB : 0
                 };
-
-                // Kiểm tra các khóa ngoại hợp lệ
-                if (sach.MaTheLoai == 0 || sach.MaTacGia == 0 || sach.MaNhaXuatBan == 0)
-                {
-                    lblMessage.Text=" Vui lòng chọn thể loại, tác giả và nhà xuất bản hợp lệ.";
-                    lblMessage.Visible = true;
-                    return;
-                }
 
                 // Gọi hàm cập nhật DAL
                 bool kq = sachDAL.CapNhatSach(sach);

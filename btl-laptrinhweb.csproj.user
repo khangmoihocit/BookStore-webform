@@ -8,7 +8,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+    <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
     <ProjectView>ProjectFiles</ProjectView>
     <NameOfLastUsedPublishProfile>D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\Properties\PublishProfiles\khangmoihocit-001-site1 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>

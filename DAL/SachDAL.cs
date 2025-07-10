@@ -238,7 +238,8 @@ namespace btl_laptrinhweb.DAL
 
         public List<Sach> findByName(string name)
         {
-            string query = "select * from tblSach where sTensach like '%" + name + "%'";
+            string query = "select * from tblSach " +
+                "where sTensach COLLATE Latin1_General_CI_AS LIKE N'%" + name + "%'";
             List<Sach> listSach = command(query);
             if(listSach == null || listSach.Count == 0)
             {
