@@ -51,6 +51,15 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.TextBox txtTenNguoiDung;
 
         /// <summary>
+        /// lblTenNguoiDungError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTenNguoiDungError;
+
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -69,6 +78,15 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.TextBox txtEnail;
 
         /// <summary>
+        /// lblEmailError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEmailError;
+
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +103,15 @@ namespace btl_laptrinhweb.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMatKhau;
+
+        /// <summary>
+        /// lblMatKhauError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMatKhauError;
 
         /// <summary>
         /// Label3 control.
@@ -123,6 +150,15 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.TextBox txtSoDienThoai;
 
         /// <summary>
+        /// lblSoDienThoaiError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSoDienThoaiError;
+
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -139,6 +175,24 @@ namespace btl_laptrinhweb.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNgayDangKy;
+
+        /// <summary>
+        /// lblQuyen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQuyen;
+
+        /// <summary>
+        /// ddlQuyen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlQuyen;
 
         /// <summary>
         /// btnThemMoi control.

@@ -27,9 +27,9 @@
         </div>
 
         <div class="form-buttons">
-            <asp:Button ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn" />
-            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn" />
-            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn" />
+            <asp:Button ID="btnThemMoi" runat="server" OnClick="btnThemOnClick" Text="Thêm mới" CssClass="btn" />
+            <asp:Button ID="btnCapNhat" runat="server" OnClick="btnCapNhatClick" Text="Cập nhật" CssClass="btn" />
+            <asp:Button ID="btnXoa" runat="server" OnClick="btnXoaClick" Text="Xóa" CssClass="btn" />
             <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn" />
         </div>
         <asp:Label ID="lblMessage" runat="server" CssClass="message-error"></asp:Label>
@@ -38,15 +38,20 @@
 
 
     <div class="inner-table-result">
-        <asp:GridView ID="gvNhaXuaBan" runat="server"
+        <asp:GridView ID="gvNhaXuatBan" runat="server"
             AutoGenerateColumns="False"
-            DataKeyNames="MaNhaXuatBan"
+            DataKeyNames="PK_iNhaxuatbanID"
+            OnSelectedIndexChanged="gvNhaXuatBan_SelectedIndexChanged"
             SelectedRowStyle-CssClass="selected-row"
             Width="100%">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" SelectText="chọn"
                     ItemStyle-Width="30px" ControlStyle-CssClass="select-button" />
-                <asp:BoundField DataField="" HeaderText="" />
+
+                <asp:BoundField DataField="PK_iNhaxuatbanID" HeaderText="Mã nhà xuất bản " />
+                <asp:BoundField DataField="sTennxb" HeaderText="Tên nhà xuất bản " />
+                <asp:BoundField DataField="sDiachi" HeaderText="Địa Chỉ " />
+                <asp:BoundField DataField="sSodienthoai" HeaderText="SDT" />
             </Columns>
         </asp:GridView>
     </div>

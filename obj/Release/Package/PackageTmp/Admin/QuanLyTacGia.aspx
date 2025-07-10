@@ -20,10 +20,10 @@
         </div>
 
         <div class="form-buttons">
-            <asp:Button ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn" />
-            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn" />
-            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn" />
-            <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn" />
+            <asp:Button ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn" OnClick="btnThemMoi_Click" />
+            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn" OnClick="btnCapNhat_Click" />
+            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn" OnClick="btnXoa_Click" />
+            <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn" OnClick="btnHuy_Click" />
         </div>
         <asp:Label ID="lblMessage" runat="server" CssClass="message-error"></asp:Label>
     </div>
@@ -33,10 +33,15 @@
         <asp:GridView ID="gvTacGia" runat="server"
             AutoGenerateColumns="False"
             SelectedRowStyle-CssClass="selected-row"
-            Width="100%">
+            Width="100%" OnSelectedIndexChanged="gvTacGia_SelectedIndexChanged">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" SelectText="chọn"
                     ItemStyle-Width="30px" ControlStyle-CssClass="select-button" />
+
+                <asp:BoundField DataField="MaTacGia" HeaderText="Mã tác giả" />
+                <asp:BoundField DataField="TenTacGia" HeaderText="Tên tác giả" />
+                <asp:BoundField DataField="NgaySinh" HeaderText="Ngày sinh" />
+
 
             </Columns>
         </asp:GridView>

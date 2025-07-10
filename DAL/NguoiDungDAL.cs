@@ -129,5 +129,91 @@ namespace btl_laptrinhweb.DAL
 
             return nguoiDungs[0];
         }
+
+        public void Them(NguoiDung nd)
+        {
+            try
+            {
+                using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+                {
+                    string query = @"INSERT INTO tblNguoidung 
+                (sTennguoidung, sEmail, sMatkhau, sDiachi, sSodienthoai, dNgaydangky, sQuyen)
+                VALUES (@TenNguoiDung, @Email, @MatKhau, @DiaChi, @SoDienThoai, @NgayDangKy, @Quyen)";
+                    using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@TenNguoiDung", nd.TenNguoiDung);
+                        cmd.Parameters.AddWithValue("@Email", nd.Email);
+                        cmd.Parameters.AddWithValue("@MatKhau", nd.MatKhau);
+                        cmd.Parameters.AddWithValue("@DiaChi", nd.DiaChi);
+                        cmd.Parameters.AddWithValue("@SoDienThoai", nd.SoDienThoai);
+                        cmd.Parameters.AddWithValue("@NgayDangKy", nd.NgayDangKy);
+                        cmd.Parameters.AddWithValue("@Quyen", nd.Quyen);
+                        sqlConnection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new AppException("Lỗi khi thêm người dùng: " + ex.Message);
+            }
+        }
+
+        public void CapNhat(NguoiDung nd)
+        {
+            try
+            {
+                using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+                {
+                    string query = @"UPDATE tblNguoidung SET 
+                sTennguoidung = @TenNguoiDung,
+                sEmail = @Email,
+                sMatkhau = @MatKhau,
+                sDiachi = @DiaChi,
+                sSodienthoai = @SoDienThoai,
+                dNgaydangky = @NgayDangKy,
+                sQuyen = @Quyen
+                WHERE PK_iNguoidungID = @MaNguoiDung";
+                    using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@TenNguoiDung", nd.TenNguoiDung);
+                        cmd.Parameters.AddWithValue("@Email", nd.Email);
+                        cmd.Parameters.AddWithValue("@MatKhau", nd.MatKhau);
+                        cmd.Parameters.AddWithValue("@DiaChi", nd.DiaChi);
+                        cmd.Parameters.AddWithValue("@SoDienThoai", nd.SoDienThoai);
+                        cmd.Parameters.AddWithValue("@NgayDangKy", nd.NgayDangKy);
+                        cmd.Parameters.AddWithValue("@Quyen", nd.Quyen);
+                        cmd.Parameters.AddWithValue("@MaNguoiDung", nd.MaNguoiDung);
+                        sqlConnection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new AppException("Lỗi khi cập nhật người dùng: " + ex.Message);
+            }
+        }
+
+        public void Xoa(int maNguoiDung)
+        {
+            try
+            {
+                using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+                {
+                    string query = "DELETE FROM tblNguoidung WHERE PK_iNguoidungID = @MaNguoiDung";
+                    using (SqlCommand cmd = new SqlCommand(query, sqlConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@MaNguoiDung", maNguoiDung);
+                        sqlConnection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new AppException("Lỗi khi xóa người dùng: " + ex.Message);
+            }
+        }
     }
 }
