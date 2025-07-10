@@ -64,8 +64,8 @@ namespace btl_laptrinhweb
 
         private bool isValid()
         {
-            bool isValid = false    ;
-            if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            bool isValid = false;
+            if (string.IsNullOrEmpty(txtEmailRegister.Text) || string.IsNullOrEmpty(txtPasswordRegister.Text))
             {
                 lblMessage.Text = "Vui lòng nhập đầy đủ thông tin.";
                 lblMessage.Visible = true;
@@ -101,7 +101,7 @@ namespace btl_laptrinhweb
                 nguoiDungDAL.add(nguoiDung);
                 lblMessage.Text = "Đăng ký thành công!";
                 lblMessage.Visible = true;
-
+                SwitchToLogin(sender, e);
             }
             catch (AppException ex)
             {
@@ -121,6 +121,7 @@ namespace btl_laptrinhweb
             pnlRegister.Visible = false;
             btnSwitchLogin.CssClass = "tab-link active";
             btnSwitchRegister.CssClass = "tab-link";
+            lblTitle.Text = "Đăng Nhập";
         }
 
         protected void SwitchToRegister(object sender, EventArgs e)
@@ -129,6 +130,7 @@ namespace btl_laptrinhweb
             pnlRegister.Visible = true;
             btnSwitchLogin.CssClass = "tab-link";
             btnSwitchRegister.CssClass = "tab-link active";
+            lblTitle.Text = "Đăng Ký";
         }
     }
 }

@@ -99,6 +99,7 @@ namespace btl_laptrinhweb.Admin
         {
             try
             {
+                resetMessageValid();
                 lblMessage.Visible = false;
                 GridViewRow row = gvSach.SelectedRow;
                 if (row != null)
@@ -145,6 +146,12 @@ namespace btl_laptrinhweb.Admin
         protected void btnThemMoi_Click(object sender, EventArgs e)
         {
             lblMessage.Visible = false;
+            
+            if (!checkInput())
+            {
+                return;
+            }
+
             string imageUrl = "";
             if (FileUpload1.HasFile)
             {
@@ -198,33 +205,91 @@ namespace btl_laptrinhweb.Admin
             }
         }
 
-        private bool validateInput()
+        private bool checkInput()
         {
+            bool check = true;
             if (string.IsNullOrEmpty(txtTenSach.Text.Trim()))
             {
-                lblMessage.Text = "Tên sách không được để trống.";
-                lblMessage.Visible = true;
-                return false;
+                lblTenSachError.Text = "Tên sách không được để trống.";
+                lblTenSachError.Visible = true;
+                check = false;
+            }
+            else
+            {
+                lblTenSachError.Text = "";
+                lblTenSachError.Visible = false;
             }
             if (string.IsNullOrEmpty(txtGiaBanMoi.Text.Trim()) || !double.TryParse(txtGiaBanMoi.Text.Trim(), out _))
             {
-                lblMessage.Text = "Giá bán mới không hợp lệ.";
-                lblMessage.Visible = true;
-                return false;
+                lblGiaBanMoiError.Text = "Giá bán mới không hợp lệ.";
+                lblGiaBanMoiError.Visible = true;
+                check = false;
+            }
+            else
+            {
+                lblGiaBanMoiError.Text = "";
+                lblGiaBanMoiError.Visible = false;
             }
             if (string.IsNullOrEmpty(txtGiaBanCu.Text.Trim()) || !double.TryParse(txtGiaBanCu.Text.Trim(), out _))
             {
-                lblMessage.Text = "Giá bán cũ không hợp lệ.";
-                lblMessage.Visible = true;
-                return false;
+                lblGiaBanCuError.Text = "Giá bán cũ không hợp lệ.";
+                lblGiaBanCuError.Visible = true;
+                check = false;
+
+            }
+            else
+            {
+                lblGiaBanCuError.Text = "";
+                lblGiaBanCuError.Visible = false;
             }
             if (string.IsNullOrEmpty(txtSoLuong.Text.Trim()) || !int.TryParse(txtSoLuong.Text.Trim(), out _))
             {
-                lblMessage.Text = "Số lượng không hợp lệ.";
-                lblMessage.Visible = true;
-                return false;
+                lblSoLuongError.Text = "Số lượng không hợp lệ.";
+                lblSoLuongError.Visible = true;
+                check = false;
             }
-            return true;
+            else
+            {
+                lblSoLuongError.Text = "";
+                lblSoLuongError.Visible = false;
+            }
+
+            if(ddlTheLoai.SelectedIndex < 1)
+            {
+                lblTheLoaiError.Text = "Vui lòng chọn thể loại";
+                lblTheLoaiError.Visible = true;
+                check = false;
+            }
+            else
+            {
+                lblTheLoaiError.Text = "";
+                lblTheLoaiError.Visible = false;
+            }
+
+            if (ddlNhaXuatBan.SelectedIndex < 1)
+            {
+                lblNhaXuatBanError.Text = "Vui lòng chọn nhà xuất bản";
+                lblNhaXuatBanError.Visible = true;
+                check = false;
+            }
+            else
+            {
+                lblNhaXuatBanError.Text = "";
+                lblNhaXuatBanError.Visible = false;
+            }
+            if (ddlTacGia.SelectedIndex < 1)
+            {
+                lblTacGiaError.Text = "Vui lòng chọn tác giả";
+                lblTacGiaError.Visible = true;
+                check = false;
+            }
+            else
+            {
+                lblTacGiaError.Text = "";
+                lblTacGiaError.Visible = false;
+            }
+
+            return check;
         }
 
         protected void btnHuy_Click(object sender, EventArgs e)
@@ -246,6 +311,31 @@ namespace btl_laptrinhweb.Admin
             ddlNhaXuatBan.SelectedIndex = 0;
 
             lblMessage.Visible = false;
+            gvSach.DataSource = sachDAL.getAll();
+            gvSach.DataBind();
+            txtTimKiem.Text = string.Empty;
+
+            resetMessageValid();
+            gvSach.SelectedIndex = -1; // Bỏ chọn dòng trong GridView
+
+        }
+
+        private void resetMessageValid()
+        {
+            lblTenSachError.Text = string.Empty;
+            lblTenSachError.Visible = false;
+            lblGiaBanMoiError.Text = string.Empty;
+            lblGiaBanMoiError.Visible = false;
+            lblGiaBanCuError.Text = string.Empty;
+            lblGiaBanCuError.Visible = false;
+            lblSoLuongError.Text = string.Empty;
+            lblSoLuongError.Visible = false;
+            lblTheLoaiError.Text = string.Empty;
+            lblTheLoaiError.Visible = false;
+            lblNhaXuatBanError.Text = string.Empty;
+            lblNhaXuatBanError.Visible = false;
+            lblTacGiaError.Text = string.Empty;
+            lblTacGiaError.Visible = false;
         }
 
         protected void btnCapNhat_Click(object sender, EventArgs e)
@@ -257,6 +347,11 @@ namespace btl_laptrinhweb.Admin
                 {
                     lblMessage.Text = " Vui lòng chọn sách cần cập nhật";
                     lblMessage.Visible = true;
+                    return;
+                }
+
+                if (!checkInput())
+                {
                     return;
                 }
 
@@ -285,14 +380,6 @@ namespace btl_laptrinhweb.Admin
                     MaTacGia = int.TryParse(ddlTacGia.SelectedValue, out int maTG) ? maTG : 0,
                     MaNhaXuatBan = int.TryParse(ddlNhaXuatBan.SelectedValue, out int maNXB) ? maNXB : 0
                 };
-
-                // Kiểm tra các khóa ngoại hợp lệ
-                if (sach.MaTheLoai == 0 || sach.MaTacGia == 0 || sach.MaNhaXuatBan == 0)
-                {
-                    lblMessage.Text=" Vui lòng chọn thể loại, tác giả và nhà xuất bản hợp lệ.";
-                    lblMessage.Visible = true;
-                    return;
-                }
 
                 // Gọi hàm cập nhật DAL
                 bool kq = sachDAL.CapNhatSach(sach);
@@ -342,6 +429,35 @@ namespace btl_laptrinhweb.Admin
             catch (Exception ex)
             {
                 lblMessage.Text = "Lỗi khi xóa sách: " + ex.Message;
+                lblMessage.Visible = true;
+            }
+        }
+
+        protected void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Sach> listSach = sachDAL.findByName(txtTimKiem.Text);
+                if (listSach.Count == 0)
+                {
+                    lblMessage.Text = "Không tìm thấy sách nào với tên '" + txtTimKiem.Text + "'";
+                    lblMessage.Visible = true;
+                }
+                else
+                {
+                    gvSach.DataSource = listSach;
+                    gvSach.DataBind();
+                    lblMessage.Visible = false;
+                }
+            }
+            catch (AppException ex)
+            {
+                lblMessage.Text = ex.Message;
+                lblMessage.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                lblMessage.Text = "Lỗi khi tìm kiếm: " + ex.Message;
                 lblMessage.Visible = true;
             }
         }

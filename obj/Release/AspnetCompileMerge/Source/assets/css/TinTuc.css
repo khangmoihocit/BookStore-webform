@@ -1,0 +1,48 @@
+﻿.group-tintuc img {
+    width: 100%;
+    height: 400px;
+}
+
+.group-tintuc {
+    position: relative;
+    flex: 1;
+    margin: 10px;
+}
+
+.ngay {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-color: #9c8350;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 10px;
+    top: -20px;
+    right: 5%;
+    padding: 10px;
+}
+
+.container-1 {
+    max-width: 1200px;
+    overflow: hidden;
+    margin: 10px auto;
+}
+
+.hangngang {
+    display: flex;
+}
+
+.group-tintuc h3 {
+    color: black;
+}
+
+    .group-tintuc h3:hover {
+        color: #9c8350;
+    }
+
+a {
+    text-decoration: none;
+}
+
+.tin {
+    margin-top: 20px;
+}

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="host-Web.config Connection String" description="host Connection String used in web.config by the application to access the database." defaultValue="Data Source=SQL1004.site4now.net;&#xD;&#xA;    Initial Catalog=db_abb96a_login;&#xD;&#xA;    User Id=db_abb96a_login_admin;&#xD;&#xA;    Password=khang18022005" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\C\#\\BTL\\btl-laptrinhweb\\btl-laptrinhweb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='host']/@connectionString" />
+  </parameter>
+  <parameter name="duy-Web.config Connection String" description="duy Connection String used in web.config by the application to access the database." defaultValue="Server = KHANG\SQLEXPRESS02; Database = webbansach;&#xD;&#xA;              Integrated Security = True ;TrustServerCertificate = True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\C\#\\BTL\\btl-laptrinhweb\\btl-laptrinhweb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='duy']/@connectionString" />
+  </parameter>
+  <parameter name="hoang-Web.config Connection String" description="hoang Connection String used in web.config by the application to access the database." defaultValue="Server = KHANG\SQLEXPRESS02; Database = webbansach;&#xD;&#xA;              Integrated Security = True ;TrustServerCertificate = True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\C\#\\BTL\\btl-laptrinhweb\\btl-laptrinhweb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='hoang']/@connectionString" />
+  </parameter>
+  <parameter name="khang-Web.config Connection String" description="khang Connection String used in web.config by the application to access the database." defaultValue="Server = KHANG\SQLEXPRESS02; Database = webbansach;&#xD;&#xA;              Integrated Security = True ;TrustServerCertificate = True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\C\#\\BTL\\btl-laptrinhweb\\btl-laptrinhweb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='khang']/@connectionString" />
+  </parameter>
+  <parameter name="trung-Web.config Connection String" description="trung Connection String used in web.config by the application to access the database." defaultValue="Server = KHANG\SQLEXPRESS02; Database = webbansach;&#xD;&#xA;              Integrated Security = True ;TrustServerCertificate = True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\C\#\\BTL\\btl-laptrinhweb\\btl-laptrinhweb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='trung']/@connectionString" />
+  </parameter>
+</parameters>
