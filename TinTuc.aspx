@@ -18,7 +18,19 @@
 </head>
 <body>
     <uc:Header runat="server" ID="header1" />
-
+     <div class="section-0">
+     <div class="container">
+         <ul class="inner-wrap">
+             <li><a href="TrangChu.aspx">Trang chủ</a></li>
+             <li>/</li>
+             
+             <li class="inner-text-active">Tin tức</li>
+         </ul>
+         <div class="inner-title">
+             <asp:Label ID="lblTitle" runat="server" Text="Tin tức nổi bật"></asp:Label>
+         </div>
+     </div>
+ </div>
     <div class="container-1">
         <div class="tin">
             <div class="hangngang">

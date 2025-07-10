@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChiTietTinTuc.aspx.cs" Inherits="btl_laptrinhweb.ChiTietTinTuc" %>
+
 <%@ Register Src="~/UserControls/Header.ascx" TagPrefix="uc" TagName="Header" %>
 <%@ Register Src="~/UserControls/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
@@ -8,15 +9,29 @@
 <head runat="server">
     <title>Chi tiết tin tức</title>
     <!-- icon -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="assets\css\chitiettintuc.css">
 </head>
 <body>
     <uc:Header runat="server" ID="header1" />
+    <div class="section-0">
+        <div class="container">
+            <ul class="inner-wrap">
+                <li><a href="TrangChu.aspx">Trang chủ</a></li>
+                <li>/</li>
+                <li><a href="TinTuc.aspx">Tin Tức</a></li>
+                <li>/</li>
+                <li class="inner-text-active">Chi tiết tin tức</li>
+            </ul>
+            <div class="inner-title">
+                <asp:Label ID="lblTitle" runat="server" Text="Chi tiết tin tức"></asp:Label>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="khoi">
             <div class="khoi1">
@@ -125,10 +140,10 @@
         </div>
     </div>
     <uc:Footer runat="server" ID="footer" />
-    
+
 </body>
 
-    <script src="assets\js\TinTuc.js"></script>
+<script src="assets\js\TinTuc.js"></script>
 
 <script>
     console.log(dsbaibao);

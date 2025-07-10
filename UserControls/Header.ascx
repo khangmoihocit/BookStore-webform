@@ -38,7 +38,7 @@
                         <a href="../GioHang.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="item">
-                        <a href="../DangNhapDangKy.aspx"><i class="fa-regular fa-circle-user"></i></a>
+                        <a href="../ThongTinNguoiDung.aspx"><i class="fa-regular fa-circle-user"></i></a>
                     </div>
                 </div>
             </div>

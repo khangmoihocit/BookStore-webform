@@ -121,6 +121,7 @@ namespace btl_laptrinhweb
             pnlRegister.Visible = false;
             btnSwitchLogin.CssClass = "tab-link active";
             btnSwitchRegister.CssClass = "tab-link";
+            lblTitle.Text = "Đăng Nhập";
         }
 
         protected void SwitchToRegister(object sender, EventArgs e)
@@ -129,6 +130,7 @@ namespace btl_laptrinhweb
             pnlRegister.Visible = true;
             btnSwitchLogin.CssClass = "tab-link";
             btnSwitchRegister.CssClass = "tab-link active";
+            lblTitle.Text = "Đăng Ký";
         }
     }
 }

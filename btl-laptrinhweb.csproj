@@ -76,8 +76,7 @@
     <Content Include="assets\css\chitiettintuc.css" />
     <Content Include="assets\css\giohang.css" />
     <Content Include="assets\css\LienHe.css" />
-    <Content Include="assets\css\quanlydathang.css" />
-    <Content Include="assets\css\quanlynguoidung.css" />
+    <Content Include="assets\css\thongtinnguoidung.css" />
     <Content Include="assets\css\TinTuc.css" />
     <Content Include="assets\css\trangchu.css" />
     <Content Include="assets\css\reset.css" />

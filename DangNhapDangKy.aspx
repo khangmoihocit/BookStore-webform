@@ -10,9 +10,9 @@
     <meta charset="UTF-8" />
     <title>Đăng nhập</title>
     <!-- icon -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/dangnhapdangky.css" />
@@ -20,6 +20,18 @@
 <body>
 
     <uc:Header runat="server" ID="header1" />
+    <div class="section-0">
+        <div class="container">
+            <ul class="inner-wrap">
+                <li><a href="TrangChu.aspx">Trang chủ</a></li>
+                <li>/</li>
+                <li class="inner-text-active">Đăng nhập-Đăng ký</li>
+            </ul>
+            <div class="inner-title">
+                <asp:Label ID="lblTitle" runat="server" Text="Đăng nhập"></asp:Label>
+            </div>
+        </div>
+    </div>
     <form id="form1" runat="server">
         <asp:Label ID="lblMessage" runat="server" Text="Label" CssClass="message-error" Visible="false"></asp:Label>
         <div class="container-1">

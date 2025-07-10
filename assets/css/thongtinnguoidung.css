@@ -1,23 +1,56 @@
-.inner-wrap{
+.inner-wrap-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     /* background-color: var(--color-primary); */
 }
 
-.inner-wrap .inner-info{
+    .inner-wrap-info .inner-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .inner-wrap-info .form-group {
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+        .inner-wrap-info .form-group .inner-title {
+            margin-right: 50px;
+        }
+
+        .inner-wrap-info .form-group input{
+            width: 220px;
+        }
+
+            .inner-wrap-info .form-group input{
+                outline: none;
+                border: none;
+                border-bottom: 1px solid var(--color-primary);
+            }
+        .inner-info .inner-button {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding: 30px;
+    margin-top: 20px;
 }
 
-.inner-wrap .form-group{
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
-}
+    .inner-info .inner-button .btn {
+        background-color: var(--color-primary);
+        padding: 10px;
+        margin: 0 10px;
+        border: 2px solid var(--color-primary);
+        color: #fff;
+    }
 
-.inner-wrap .form-group .inner-title{
-    margin-right: 150px;
-}
+    .inner-info .inner-button .btn-active {
+        background-color: #fff;
+        color: #000;
+    }
+
+        .inner-info .inner-button .btn-active:hover {
+            background-color: var(--color-primary);
+            color: #fff;
+        }

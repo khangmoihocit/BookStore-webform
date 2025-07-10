@@ -25,9 +25,9 @@
             <ul class="inner-wrap">
                 <li><a href="TrangChu.aspx">Trang chủ</a></li>
                 <li>/</li>
-                <li ><a href="DanhSachSanPham.aspx">Tất cả sản phẩm</a></li>
+                <li><a href="DanhSachSanPham.aspx">Tất cả sản phẩm</a></li>
                 <li>/</li>
-<li class="inner-text-active"><a href="DanhSachSanPham.aspx" class="inner-text-active">Sản phẩm</a></li>
+                <li class="inner-text-active"><a href="DanhSachSanPham.aspx" class="inner-text-active">Sản phẩm</a></li>
             </ul>
             <div class="inner-title">
                 <asp:Label ID="lblHeader" runat="server" Text="Tên sản phẩm"></asp:Label>
