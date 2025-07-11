@@ -105,6 +105,7 @@
     <Content Include="ThanhToan.aspx" />
     <Content Include="ThongTinNguoiDung.aspx" />
     <Content Include="TinTuc.aspx" />
+    <Content Include="TrangMacDinh.aspx" />
     <Content Include="UserControls\Footer.ascx" />
     <Content Include="UserControls\Header.ascx" />
     <Content Include="TrangChu.aspx" />
@@ -245,6 +246,13 @@
     </Compile>
     <Compile Include="TinTuc.aspx.designer.cs">
       <DependentUpon>TinTuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrangMacDinh.aspx.cs">
+      <DependentUpon>TrangMacDinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangMacDinh.aspx.designer.cs">
+      <DependentUpon>TrangMacDinh.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>

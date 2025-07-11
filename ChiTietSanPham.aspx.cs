@@ -39,8 +39,8 @@ namespace btl_laptrinhweb
                     Sach sach = sachDAL.getByMaSach(int.Parse(maSach));
                     lblHeader.Text = sach.TenSach;
                     lblTenSanPham.Text = sach.TenSach;
-                    lblGiaBanMoi.Text = sach.GiaBanMoi.ToString();
-                    lblGiaBanCu.Text = sach.GiaBanCu.ToString();
+                    lblGiaBanMoi.Text = sach.GiaBanMoi.ToString() + "đ";
+                    lblGiaBanCu.Text = sach.GiaBanCu.ToString() + "đ";
                     lblTenTacGia.Text = tacGiaDAL.getByMaTacGia(sach.MaTacGia).TenTacGia;
                     lblThongTinChiTiet.Text = sach.MoTa;
                     img.ImageUrl = sach.URLAnh;
