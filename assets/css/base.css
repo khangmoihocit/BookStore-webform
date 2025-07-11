@@ -105,7 +105,6 @@ a {
         align-items: center;
         margin-bottom: 10px;
         justify-content: center;
-
     }
 
         .product .inner-price .inner-price-new {
@@ -668,5 +667,13 @@ a {
             font-size: 12px;
             display: inline;
             width: 100px;
+        }
+
+        .product .inner-price .inner-price-new {
+            font-size: 12px;
+        }
+
+        .product .inner-price .inner-price-old {
+            font-size: 12px;
         }
 }
