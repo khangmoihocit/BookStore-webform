@@ -157,13 +157,12 @@ namespace btl_laptrinhweb.Admin
                 try
                 {
                     string fileName = Path.GetFileName(FileUpload1.FileName);
-                    //Tránh trùng tên tệp bằng cách thêm Guid
-                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + fileName;
-                    string filePath = Server.MapPath("~/assets/images/") + uniqueFileName;
+                    
+                    string filePath = Server.MapPath("~/assets/images/") + fileName;
                     //lưu ảnh vào trong project
                     FileUpload1.SaveAs(filePath);
 
-                    imageUrl = "/assets/images/" + uniqueFileName;
+                    imageUrl = "/assets/images/" + fileName;
                 }
                 catch(Exception ex)
                 {

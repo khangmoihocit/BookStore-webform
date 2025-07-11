@@ -139,6 +139,9 @@
 }
 
 @media (max-width: 390px) {
+    .section-three{
+        margin-bottom: 200px;
+    }
     .section-three .inner-title img {
         width: 120px;
     }
