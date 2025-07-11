@@ -81,6 +81,11 @@
     <Content Include="assets\css\trangchu.css" />
     <Content Include="assets\css\reset.css" />
     <Content Include="assets\css\danhsachsanpham.css" />
+    <Content Include="assets\images\5bc1c80b-fa48-4d8c-98c5-5e16d6e23738_chuyen-con-meo-va-con-chuot-ban-than-cua-no_139594_1.jpg" />
+    <Content Include="assets\images\7d638a1f-4fe5-42c1-b25b-8b550868e2cb_chu-be-mang-pyjama-soc_139595_1.jpg" />
+    <Content Include="assets\images\d80208e7-462b-4b35-8e1e-900f1437dbaa_chuyen-con-meo-va-con-chuot-ban-than-cua-no_139594_1.jpg" />
+    <Content Include="assets\images\e5993dc2-0782-4074-913d-c62a8a2e7d20_putin_logic-cua-quyen-luc.jpg" />
+    <Content Include="assets\images\hoan-hao-lam-chi-nguoi-muon-hoan-hao-thuong-kho-thanh-thoi_139593_1.jpg" />
     <Content Include="assets\images\icon_service_1.svg" />
     <Content Include="assets\images\icon_service_2.svg" />
     <Content Include="assets\images\icon_service_3.svg" />
@@ -100,6 +105,7 @@
     <Content Include="ThanhToan.aspx" />
     <Content Include="ThongTinNguoiDung.aspx" />
     <Content Include="TinTuc.aspx" />
+    <Content Include="TrangMacDinh.aspx" />
     <Content Include="UserControls\Footer.ascx" />
     <Content Include="UserControls\Header.ascx" />
     <Content Include="TrangChu.aspx" />
@@ -241,6 +247,13 @@
     <Compile Include="TinTuc.aspx.designer.cs">
       <DependentUpon>TinTuc.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TrangMacDinh.aspx.cs">
+      <DependentUpon>TrangMacDinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangMacDinh.aspx.designer.cs">
+      <DependentUpon>TrangMacDinh.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,6 +306,8 @@
     <Content Include="assets\images\backg-footer.webp" />
     <Content Include="assets\images\icon-favorite.webp" />
     <Content Include="assets\images\logo_mb.webp" />
+    <Content Include="assets\images\3512c0fd-5f06-4662-9cad-c3c4f37c87d0_dung_lua_chon_an_nhan_khi_con_tre_tai_ban_.webp" />
+    <Content Include="assets\images\6eec4954-34a2-4f2e-a455-b615164d9d0d_8936107813361.webp" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\khangmoihocit-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\khangmoihocit-001-site1 - Web Deploy.pubxml" />

@@ -20,26 +20,26 @@ namespace btl_laptrinhweb.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            // Kiểm tra quyền truy cập của người dùng
+            if (Session["User"] != null)
             {
-                // Kiểm tra quyền truy cập của người dùng
-                if (Session["User"] != null)
+                NguoiDung nguoiDung = Session["User"] as NguoiDung;
+                if (nguoiDung.Quyen.Equals("ADMIN"))
                 {
-                    NguoiDung nguoiDung = Session["User"] as NguoiDung;
-                    if (nguoiDung.Quyen.Equals("ADMIN"))
-                    {
 
-                    }
-                    else
-                    {
-                        Response.Redirect("~/DangNhapDangKy.aspx");
-                    }
                 }
                 else
                 {
                     Response.Redirect("~/DangNhapDangKy.aspx");
-
                 }
+            }
+            else
+            {
+                Response.Redirect("~/DangNhapDangKy.aspx");
+
+            }
+            if (!IsPostBack)
+            {
                 LoadData();
             }
         }

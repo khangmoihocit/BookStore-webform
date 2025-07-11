@@ -21,20 +21,40 @@
 
             <div class="inner-row">
                 <div class="inner-title">TÌM HIỂU THÊM</div>
-                <div class="inner-text">Trang chủ</div>
-                <div class="inner-text">Giới thiệu</div>
-                <div class="inner-text">Sản phẩm</div>
-                <div class="inner-text">Tin tức</div>
-                <div class="inner-text">Liên hệ</div>
+                <a href="../TrangChu.aspx">
+                    <div class="inner-text">Trang chủ</div>
+                </a>
+                <a href="../TrangMacDinh.aspx">
+                    <div class="inner-text">Giới thiệu</div>
+                </a>
+                <a href="../DanhSachSanPham.aspx">
+                    <div class="inner-text">Sản phẩm</div>
+                </a>
+                <a href="../TinTuc.aspx">
+                    <div class="inner-text">Tin tức</div>
+                </a>
+                <a href="../LienHe.aspx">
+                    <div class="inner-text">Liên hệ</div>
+                </a>
             </div>
 
             <div class="inner-row">
                 <div class="inner-title">HỖ TRỢ KHÁCH HÀNG</div>
-                <div class="inner-text">Trang chủ</div>
-                <div class="inner-text">Giới thiệu</div>
-                <div class="inner-text">Sản phẩm</div>
-                <div class="inner-text">Tin tức</div>
-                <div class="inner-text">Liên hệ</div>
+                <a href="../TrangChu.aspx">
+                    <div class="inner-text">Trang chủ</div>
+                </a>
+                <a href="../TrangMacDinh.aspx">
+                    <div class="inner-text">Giới thiệu</div>
+                </a>
+                <a href="../DanhSachSanPham.aspx">
+                    <div class="inner-text">Sản phẩm</div>
+                </a>
+                <a href="../TinTuc.aspx">
+                    <div class="inner-text">Tin tức</div>
+                </a>
+                <a href="../LienHe.aspx">
+                    <div class="inner-text">Liên hệ</div>
+                </a>
             </div>
 
             <div class="inner-row inner-row-2">

@@ -84,10 +84,10 @@
                                     </div>
                                     <div class="inner-price">
                                         <div class="inner-price-new">
-                                            <%# Eval("GiaBanMoi") %>
+                                            <%# Eval("GiaBanMoi") %>đ
                                         </div>
                                         <div class="inner-price-old">
-                                            <%# Eval("GiaBanCu") %>
+                                            <%# Eval("GiaBanCu") %>đ
                                         </div>
                                     </div>
                                     <asp:LinkButton ID="btnThemGioHang"

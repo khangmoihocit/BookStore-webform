@@ -33,7 +33,9 @@
                 </div>
 
                 <div class="inner-list-item">
-                    <div class="item"><i class="fa-regular fa-heart"></i></div>
+                    <div class="item">
+                        <a href="../TrangMacDinh.aspx"><i class="fa-regular fa-heart"></i></a>
+                    </div>
                     <div class="item">
                         <a href="../GioHang.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
@@ -61,7 +63,7 @@
 
                 <div class="inner-list-item">
                     <div class="item">
-                        <a href="#">
+                        <a href="../TrangMacDinh.aspx">
                             <div class="inner-icon">
                                 <i class="fa-solid fa-fire"></i>
                             </div>
@@ -69,7 +71,7 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="#">
+                        <a href="../TrangMacDinh.aspx">
                             <div class="inner-icon">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
