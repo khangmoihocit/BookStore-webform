@@ -157,7 +157,7 @@
     }
 
         .section-three .product .inner-image {
-            width: 100px;
+            width: 100%;
             height: auto;
         }
 
@@ -231,10 +231,12 @@
 
     .section-four .inner-list-product {
         flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     .section-four .product {
-        width: calc(50% - 30px);
+        width: calc(50% - 5px);
     }
 }
 /* End Section Four*/
@@ -322,7 +324,9 @@
     }
 
         .section-five .inner-list-product .product {
-            width: calc(50% - 50px);
+            width: calc(50%);
+            margin: 0;
+            padding: 0;
         }
 }
 /* End Section Five */

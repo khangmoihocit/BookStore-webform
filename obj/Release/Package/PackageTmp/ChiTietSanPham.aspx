@@ -8,6 +8,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết sản phẩm</title>
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -94,7 +96,8 @@
                         </div>
                         <div class="inner-product-desc">
                             <div class="inner-title">MÔ TẢ SẢN PHẨM</div>
-                            <p class="inner-desc"><asp:Label ID="lblThongTinChiTiet" runat="server" Text="..." ></asp:Label></p>
+                            <p class="inner-desc">
+                                <asp:Label ID="lblThongTinChiTiet" runat="server" Text="..."></asp:Label></p>
                         </div>
                     </div>
                     <div class="inner-content-right">

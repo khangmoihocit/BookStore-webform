@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
-    <History>True|2025-07-12T14:13:18.1153391Z||;True|2025-07-12T20:39:00.7425376+07:00||;True|2025-07-12T20:02:50.1720887+07:00||;True|2025-07-12T12:12:10.3986916+07:00||;False|2025-07-12T12:10:10.7812764+07:00||;False|2025-07-12T07:32:55.1577601+07:00||;False|2025-07-12T07:28:30.2071667+07:00||;False|2025-07-12T06:44:15.3111245+07:00||;False|2025-07-12T06:37:03.2936101+07:00||;</History>
+    <History>True|2025-07-12T15:35:14.6781966Z||;True|2025-07-12T22:28:45.0157445+07:00||;False|2025-07-12T22:27:32.5702495+07:00||;True|2025-07-12T21:13:18.1153391+07:00||;True|2025-07-12T20:39:00.7425376+07:00||;True|2025-07-12T20:02:50.1720887+07:00||;True|2025-07-12T12:12:10.3986916+07:00||;False|2025-07-12T12:10:10.7812764+07:00||;False|2025-07-12T07:32:55.1577601+07:00||;False|2025-07-12T07:28:30.2071667+07:00||;False|2025-07-12T06:44:15.3111245+07:00||;False|2025-07-12T06:37:03.2936101+07:00||;</History>
     <LastFailureDetails />
     <_PublishTargetUrl>ftp://win1034.site4now.net:21/site1</_PublishTargetUrl>
   </PropertyGroup>
@@ -37,10 +37,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/11/2025 13:21:15</publishTime>
     </File>
     <File Include="assets/css/base.css">
-      <publishTime>07/11/2025 22:32:43</publishTime>
+      <publishTime>07/12/2025 22:22:37</publishTime>
     </File>
     <File Include="assets/css/chitietsanpham.css">
-      <publishTime>07/11/2025 13:21:15</publishTime>
+      <publishTime>07/12/2025 22:31:43</publishTime>
     </File>
     <File Include="assets/css/chitiettintuc.css">
       <publishTime>07/11/2025 13:21:15</publishTime>
@@ -70,7 +70,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/11/2025 13:21:15</publishTime>
     </File>
     <File Include="assets/css/trangchu.css">
-      <publishTime>07/11/2025 13:21:15</publishTime>
+      <publishTime>07/12/2025 22:24:57</publishTime>
     </File>
     <File Include="assets/images/3512c0fd-5f06-4662-9cad-c3c4f37c87d0_dung_lua_chon_an_nhan_khi_con_tre_tai_ban_.webp">
       <publishTime>07/11/2025 13:21:15</publishTime>
@@ -199,10 +199,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/11/2025 13:21:15</publishTime>
     </File>
     <File Include="bin/btl-laptrinhweb.dll">
-      <publishTime>07/12/2025 21:12:28</publishTime>
+      <publishTime>07/12/2025 22:34:32</publishTime>
     </File>
     <File Include="bin/btl-laptrinhweb.pdb">
-      <publishTime>07/12/2025 21:12:28</publishTime>
+      <publishTime>07/12/2025 22:34:32</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>03/06/2023 05:41:40</publishTime>
@@ -301,7 +301,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/15/2022 12:38:42</publishTime>
     </File>
     <File Include="ChiTietSanPham.aspx">
-      <publishTime>07/12/2025 20:18:06</publishTime>
+      <publishTime>07/12/2025 21:51:37</publishTime>
     </File>
     <File Include="ChiTietTinTuc.aspx">
       <publishTime>07/11/2025 13:21:15</publishTime>
@@ -334,7 +334,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/11/2025 13:21:15</publishTime>
     </File>
     <File Include="TrangChu.aspx">
-      <publishTime>07/11/2025 13:21:15</publishTime>
+      <publishTime>07/12/2025 22:27:08</publishTime>
     </File>
     <File Include="TrangMacDinh.aspx">
       <publishTime>07/11/2025 13:21:15</publishTime>

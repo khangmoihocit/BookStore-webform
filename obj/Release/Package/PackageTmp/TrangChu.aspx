@@ -282,7 +282,6 @@
         <i class="fa-solid fa-cart-shopping"></i>
         Thêm vào giỏ
     </div>
-    <div class="inner-sold">Đã bán: ${item.sold || 0}</div>
 </div>
 `;
         });
