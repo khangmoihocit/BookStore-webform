@@ -69,6 +69,15 @@ namespace btl_laptrinhweb
         protected global::System.Web.UI.WebControls.TextBox txtSoDienThoai;
 
         /// <summary>
+        /// txtDiaChi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDiaChi;
+
+        /// <summary>
         /// txtNgayDangKy control.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace btl_laptrinhweb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdmin;
+
+        /// <summary>
+        /// ltlLichSuMuaHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlLichSuMuaHang;
 
         /// <summary>
         /// footer control.

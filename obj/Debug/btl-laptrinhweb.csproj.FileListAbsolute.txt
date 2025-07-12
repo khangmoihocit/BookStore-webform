@@ -1,3 +1,5 @@
+D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.csproj.AssemblyReference.cache
+D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.csproj.CoreCompileInputs.cache
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\btl-laptrinhweb.dll.config
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\btl-laptrinhweb.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\btl-laptrinhweb.pdb
@@ -34,8 +36,6 @@ D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\VBCSCompiler.exe
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\roslyn\VBCSCompiler.exe.config
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.csproj.AssemblyReference.cache
-D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.csproj.CoreCompileInputs.cache
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-lapt.FA7370BF.Up2Date
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.dll
 D:\C#\BTL\btl-laptrinhweb\btl-laptrinhweb\obj\Debug\btl-laptrinhweb.pdb

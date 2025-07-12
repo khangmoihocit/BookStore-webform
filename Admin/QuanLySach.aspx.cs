@@ -44,7 +44,6 @@ namespace btl_laptrinhweb.Admin
             }
             if (!IsPostBack)
             {
-                
                 loadData();
             }
         }

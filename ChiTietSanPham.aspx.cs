@@ -47,13 +47,11 @@ namespace btl_laptrinhweb
                     if (sach.SoLuong > 1)
                     {
                         lblTinhTrang.Text = "Còn hàng";
-                        btnMuaNgay.Enabled = true;
                     }
                     else
                     {
                         lblTinhTrang.Text = "Hết hàng";
                         lblTinhTrang.ForeColor = Color.Red;
-                        btnMuaNgay.Enabled = false;
                     }
 
                     //loại bỏ sách đang hiện
@@ -91,6 +89,7 @@ namespace btl_laptrinhweb
 
         protected void btnThemGioHang2_Click(object sender, EventArgs e)
         {
+            lblMessage.Visible = false;
             string maSach = Request.QueryString["MaSach"];
             if (!string.IsNullOrEmpty(maSach))
             {
@@ -124,6 +123,53 @@ namespace btl_laptrinhweb
                     lblMessage.Text = ex.Message;
                     lblMessage.Visible = true;
                 }
+            }
+        }
+
+        protected void btnMuaNgay_Click(object sender, EventArgs e)
+        {
+            lblMessage.Visible = false;
+            Session["DonHang"] = null; // Xóa giỏ hàng cũ nếu có
+            string maSach = Request.QueryString["MaSach"];
+            if (maSach != null)
+            {
+                try
+                {
+                    Sach sach = sachDAL.getByMaSach(int.Parse(maSach));
+                    if(sach.SoLuong < int.Parse(txtSoLuong.Text))
+                    {
+                        lblMessage.Text = "Số lượng đặt hàng vượt quá số lượng có sẵn";
+                        lblMessage.Visible = true;
+                        return;
+                    }
+                    sach.SoLuong = int.Parse(txtSoLuong.Text);
+                    List<Sach> donHang = new List<Sach>();
+                    donHang.Add(sach);
+                    Session["DonHang"] = donHang;
+                    if (Session["User"] == null)
+                    {
+                        Response.Redirect("DangNhapDangKy.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("ThanhToan.aspx");
+                    }
+                }
+                catch (AppException ex)
+                {
+                    lblMessage.Text = ex.Message;
+                    lblMessage.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    lblMessage.Text = ex.Message;
+                    lblMessage.Visible = true;
+                }
+            }
+            else
+            {
+                lblMessage.Text = "Lỗi mã sách không tìm thấy";
+                lblMessage.Visible = true;
             }
         }
     }

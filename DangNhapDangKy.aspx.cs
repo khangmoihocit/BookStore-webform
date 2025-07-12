@@ -3,6 +3,7 @@ using btl_laptrinhweb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,59 +20,120 @@ namespace btl_laptrinhweb
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            loiSDT.Visible = false;
+            Loiemail.Visible = false;
+            loimatkhau.Visible = false;
         }
+        protected bool kiemtradangnhap()
+        {
+            lblMessage.Visible = false;
+            lblMessage2.Visible = false;
+            mess3.Visible = false;
 
+            bool isValid = true;
+            string email = txtEmail.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            if (string.IsNullOrEmpty(email) || !Regex.IsMatch(email, "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"))
+            {
+                lblMessage.Text = "Email không đúng định dạng.";
+                lblMessage.Visible = true;
+                isValid = false;
+            }
+            if (!Regex.IsMatch(password, @"^\S{8,}$"))
+            {
+                lblMessage2.Text = "Mật khẩu phải có ít nhất 8 ký tự.";
+                lblMessage2.Visible = true;
+                isValid = false;
+            }
+
+            return isValid;
+        }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
-            string password = txtPassword.Text;
+            string email = txtEmail.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
-            try
+            if (kiemtradangnhap())
             {
-                NguoiDung user = nguoiDungDAL.login(email, password);
-                if (user != null)
+                try
                 {
-                    if (user.Quyen == "ADMIN")
+                    NguoiDung user = nguoiDungDAL.login(email, password);
+                    if (user != null)
                     {
-                        Session["User"] = user; // Lưu thông tin người dùng vào Session
-                        Response.Redirect("Admin/QuanLySach.aspx");
+                        if (user.Quyen == "ADMIN")
+                        {
+                            Session["User"] = user; // Lưu thông tin người dùng vào Session
+                            Response.Redirect("Admin/QuanLySach.aspx");
+                        }
+                        else
+                        {
+                            Session["User"] = user; // Lưu thông tin người dùng vào Session
+                            if (Session["DonHang"] != null)
+                            {
+                                List<Sach> donHang = (List<Sach>)Session["DonHang"];
+                                if (donHang.Count > 0)
+                                {
+                                    Response.Redirect("ThanhToan.aspx");
+                                }
+                            }
+                            else
+                            {
+                                Response.Redirect("TrangChu.aspx");
+                            }
+                        }
                     }
                     else
                     {
-                        Session["User"] = user; // Lưu thông tin người dùng vào Session
-                        Response.Redirect("TrangChu.aspx");
+                        mess3.Text = "Đăng nhập thất bại, kiểm tra lại thông tin.";
+                        mess3.Visible = true;
                     }
                 }
-                else
+                catch (AppException ex)
                 {
-                    lblMessage.Text = "Đăng nhập thất bại, kiểm tra lại thông tin.";
-                    lblMessage.Visible = true;
+                    mess3.Text = ex.Message;
+                    mess3.Visible = true;
                 }
-            }
-            catch (AppException ex)
-            {
-                lblMessage.Text = ex.Message;
-                lblMessage.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                lblMessage.Text = "Lỗi: " + ex.Message;
-                lblMessage.Visible = true;
-                return;
+                catch (Exception ex)
+                {
+                    mess3.Text = "Lỗi: " + ex.Message;
+                    mess3.Visible = true;
+                    return;
+                }
             }
         }
 
         private bool isValid()
         {
+            loiSDT.Visible = false;
+            Loiemail.Visible = false;
+            loimatkhau.Visible = false;
             bool isValid = false;
-            if (string.IsNullOrEmpty(txtEmailRegister.Text) || string.IsNullOrEmpty(txtPasswordRegister.Text))
+            if (string.IsNullOrEmpty(txtEmailRegister.Text) || string.IsNullOrEmpty(txtPasswordRegister.Text) ||
+                string.IsNullOrEmpty(txtFirstName.Text) || string.IsNullOrEmpty(txtLastName.Text)
+                || string.IsNullOrEmpty(txtPhone.Text))
             {
-                lblMessage.Text = "Vui lòng nhập đầy đủ thông tin.";
-                lblMessage.Visible = true;
+                mess4.Text = "Vui lòng nhập đầy đủ thông tin.";
+                mess4.Visible = true;
+                isValid = true;
             }
-            else
+            if (!Regex.IsMatch(txtEmailRegister.Text.Trim(), "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"))
             {
+                Loiemail.Text = "Email không đúng định dạng ";
+                Loiemail.Visible = true;
+                isValid = true;
+
+            }
+            if (!Regex.IsMatch(txtPasswordRegister.Text.Trim(), @"^\S{8,}$"))
+            {
+                loimatkhau.Text = "Mật khẩu không được nhỏ hơn 8 kí tự và không có khoảng trắng ";
+                loimatkhau.Visible = true;
+                isValid = true;
+            }
+            if (!Regex.IsMatch(txtPhone.Text.Trim(), @"^0[0-9]{9}$"))
+            {
+                loiSDT.Text = "Số điện thoại không hợp lệ";
+                loiSDT.Visible = true;
                 isValid = true;
             }
             return isValid;
@@ -85,7 +147,7 @@ namespace btl_laptrinhweb
             string sdt = txtPhone.Text;
             string email = txtEmailRegister.Text;
             string matkhau = txtPasswordRegister.Text;
-            if (!isValid())
+            if (isValid())
             {
                 return;
             }
@@ -99,19 +161,20 @@ namespace btl_laptrinhweb
             try
             {
                 nguoiDungDAL.add(nguoiDung);
-                lblMessage.Text = "Đăng ký thành công!";
-                lblMessage.Visible = true;
+                Label123.Text = "Đăng ký thành công!";
+                Label123.Visible = true;
+
                 SwitchToLogin(sender, e);
             }
             catch (AppException ex)
             {
-                lblMessage.Text = ex.Message;
-                lblMessage.Visible = true;
+                mess4.Text = "Email đã tồn tại";
+                mess4.Visible = true;
             }
             catch (Exception ex)
             {
-                lblMessage.Text = ex.Message;
-                lblMessage.Visible = true;
+                mess4.Text = ex.Message;
+                mess4.Visible = true;
             }
         }
 

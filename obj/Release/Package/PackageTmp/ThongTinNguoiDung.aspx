@@ -52,6 +52,11 @@
                         <asp:TextBox ID="txtSoDienThoai" runat="server" TextMode="Number"></asp:TextBox>
                     </div>
                     <div class="form-group">
+    <div class="inner-title">Địa chỉ</div>
+    <asp:TextBox ID="txtDiaChi" runat="server"></asp:TextBox>
+</div>
+
+                    <div class="form-group">
                         <div class="inner-title">Ngày đăng ký</div>
                         <asp:TextBox ID="txtNgayDangKy" runat="server" ReadOnly="true" TextMode="Date"></asp:TextBox>
                     </div>
@@ -60,13 +65,14 @@
                         <asp:TextBox ID="txtQuyen" runat="server" ReadOnly="true"></asp:TextBox>
                     </div>
                     <div class="inner-button">
-                        <asp:Button ID="btnLuuThongTin" CssClass="btn" runat="server" Text="Lưu thông tin" />
+                        <asp:Button ID="btnLuuThongTin" CssClass="btn" runat="server" Text="Lưu thông tin" OnClick="btnLuuThongTin_Click" />
                         <asp:Button ID="btnDangXuat" CssClass="btn btn-active" runat="server" Text="Đăng xuất" OnClick="btnDangXuat_Click" />
                          <asp:Button ID="btnAdmin" Visible="false" Eneble="false" CssClass="btn btn-active" runat="server" Text="Trang quản trị" OnClick="btnAdmin_Click" />
                     </div>
                 </div>
 
-                <div class="inner-order">
+                <div class="inner-order" >
+                    <asp:Literal ID="ltlLichSuMuaHang" runat="server"></asp:Literal> 
                 </div>
 
 

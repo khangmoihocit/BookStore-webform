@@ -12,6 +12,7 @@ namespace btl_laptrinhweb.Models
         public int MaSach { get; set; }
         public int SoLuong { get; set; }
         public double GiaBan { get; set; }
+        public string TrangThai { get; set; }   
         public ChiTietDatHang() { }
 
     }
