@@ -41,7 +41,7 @@ namespace btl_laptrinhweb
         }
 
 
-        // Hàm trung tâm để cập nhật số lượng và tính tổng tiền
+        //cập nhật số lượng và tính tổng tiền
         private void CalculateTotal()
         {
             List<Sach> gioHang = Session["GioHang"] as List<Sach>;
@@ -85,7 +85,7 @@ namespace btl_laptrinhweb
             Session["GioHang"] = gioHang; // Lưu lại giỏ hàng đã cập nhật số lượng
 
             lblTotalAmount.Text = tongTienDaChon.ToString("N0") + "đ";
-            btnThanhToan.Enabled = tongTienDaChon > 0;
+            //btnThanhToan.Enabled = tongTienDaChon > 0;
         }
 
         protected void rptGioHang_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -143,31 +143,44 @@ namespace btl_laptrinhweb
 
         protected void btnThanhToan_Click(object sender, EventArgs e)
         {
-            List<Sach> gioHang = Session["GioHang"] as List<Sach>;
-            List<Sach> sanPhamDaChon = new List<Sach>();
-
-            foreach (RepeaterItem item in rptGioHang.Items)
+            try
             {
-                CheckBox chkChon = (CheckBox)item.FindControl("chkChonSanPham");
-                if (chkChon != null && chkChon.Checked)
+                List<Sach> gioHang = Session["GioHang"] as List<Sach>;
+                List<Sach> sanPhamDaChon = new List<Sach>();
+
+                foreach (RepeaterItem item in rptGioHang.Items)
                 {
-                    int maSach = int.Parse(((LinkButton)item.FindControl("LinkButton1")).CommandArgument);
-                    Sach sp = gioHang.FirstOrDefault(s => s.MaSach == maSach);
-                    if (sp != null)
+                    CheckBox chkChon = (CheckBox)item.FindControl("chkChonSanPham");
+                    if (chkChon != null && chkChon.Checked)
                     {
-                        sanPhamDaChon.Add(sp);
+                        int maSach = int.Parse(((LinkButton)item.FindControl("LinkButton1")).CommandArgument);
+                        Sach sp = gioHang.FirstOrDefault(s => s.MaSach == maSach);
+                        if (sp != null)
+                        {
+                            sanPhamDaChon.Add(sp);
+                        }
                     }
                 }
-            }
 
-            if (sanPhamDaChon.Any())
-            {
-                Session["DonHang"] = sanPhamDaChon; // Lưu các sản phẩm được chọn vào Session mới
-                Response.Redirect("ThanhToan.aspx");
+                if (sanPhamDaChon.Count > 0)
+                {
+                    Session["DonHang"] = sanPhamDaChon; // Lưu các sản phẩm được chọn vào Session mới
+                    if (Session["User"] == null)
+                    {
+                        Response.Redirect("DangNhapDangKy.aspx");
+                        return;
+                    }
+                    Response.Redirect("ThanhToan.aspx");
+                }
+                else
+                {
+                    lblMessage.Text = "Bạn chưa chọn sản phẩm nào để thanh toán.";
+                    lblMessage.Visible = true;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblMessage.Text = "Bạn chưa chọn sản phẩm nào để thanh toán.";
+                lblMessage.Text = ex.Message;
                 lblMessage.Visible = true;
             }
         }

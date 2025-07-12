@@ -23,7 +23,7 @@
         }
 
         .inner-wrap-info .form-group input{
-            width: 220px;
+            width: 300px;
         }
 
             .inner-wrap-info .form-group input{
@@ -53,4 +53,23 @@
         .inner-info .inner-button .btn-active:hover {
             background-color: var(--color-primary);
             color: #fff;
+        }
+
+        .inner-order{
+            padding: 0 20px;
+        }
+
+        .inner-order h2{
+            text-align: center;
+        }
+
+        .inner-order table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .inner-order th, td{
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #000;
         }

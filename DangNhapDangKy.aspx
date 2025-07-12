@@ -33,31 +33,37 @@
         </div>
     </div>
     <form id="form1" runat="server">
-        <asp:Label ID="lblMessage" runat="server" Text="Label" CssClass="message-error" Visible="false"></asp:Label>
+       
         <div class="container-1">
             <div class="login-container">
                 <div class="tab">
                     <asp:LinkButton ID="btnSwitchLogin" runat="server" CssClass="tab-link active" OnClick="SwitchToLogin">Đăng nhập</asp:LinkButton>
                     <asp:LinkButton ID="btnSwitchRegister" runat="server" CssClass="tab-link" OnClick="SwitchToRegister">Đăng ký</asp:LinkButton>
-                </div>
+                   
+                
+                    </div>
 
                 <!-- Panel Đăng nhập -->
+
                 <asp:Panel ID="pnlLogin" runat="server">
+                    <asp:Label ID="Label123" runat="server" Text="Label" CssClass="message-error" Visible="false"></asp:Label>
                     <div class="form-group">
                         <label>EMAIL <span class="required">*</span></label>
                         <asp:TextBox ID="txtEmail" runat="server" CssClass="input" TextMode="Email" Placeholder="Nhập Email" />
+                         <asp:Label ID="lblMessage" runat="server" Text="Label" CssClass="message-error1" Visible="false"></asp:Label>
                     </div>
 
                     <div class="form-group">
                         <label>MẬT KHẨU <span class="required">*</span></label>
                         <asp:TextBox ID="txtPassword" runat="server" CssClass="input" TextMode="Password" Placeholder="Nhập Mật khẩu" />
+                         <asp:Label ID="lblMessage2" runat="server" Text="Label" CssClass="message-error1" Visible="false"></asp:Label>
                     </div>
 
                     <div class="forgot-password">
                         <asp:HyperLink runat="server" NavigateUrl="#">Quên mật khẩu?</asp:HyperLink>
                     </div>
-
-                    <asp:Button ID="btnLogin" runat="server" Text="ĐĂNG NHẬP" CssClass="login-button" OnClick="btnLogin_Click" />
+                      <asp:Label ID="mess3" runat="server" Text="Label" CssClass="message-error" Visible="false"></asp:Label>
+                    <asp:Button ID="btnLogin" runat="server" Text="ĐĂNG NHẬP" CssClass="login-button"  OnClick="btnLogin_Click" />
 
                     <p class="note">
                         Template Stationery cam kết bảo mật thông tin của bạn.
@@ -79,18 +85,23 @@
                     <div class="form-group">
                         <label>SỐ ĐIỆN THOẠI <span class="required">*</span></label>
                         <asp:TextBox ID="txtPhone" runat="server" Placeholder="Nhập SĐT" />
+                         <asp:Label ID="loiSDT" runat="server" CssClass="message-error1" Text="Label"></asp:Label>
+                 
                     </div>
 
                     <div class="form-group">
                         <label>EMAIL <span class="required">*</span></label>
                         <asp:TextBox ID="txtEmailRegister" runat="server" TextMode="Email" Placeholder="Nhập Email" />
+                         <asp:Label ID="Loiemail" runat="server" CssClass="message-error1" Text="Label"></asp:Label>
+                 
                     </div>
 
                     <div class="form-group">
                         <label>MẬT KHẨU <span class="required">*</span></label>
                         <asp:TextBox ID="txtPasswordRegister" runat="server" TextMode="Password" Placeholder="Nhập Mật khẩu" />
+                        <asp:Label ID="loimatkhau" runat="server" CssClass="message-error1" Text="Label"></asp:Label>
                     </div>
-
+                        <asp:Label ID="mess4" runat="server" Text="Label" CssClass="message-error" Visible="false"></asp:Label>
                     <asp:Button ID="btnRegister" runat="server" Text="TẠO TÀI KHOẢN" CssClass="login-button" OnClick="btnRegister_Click" />
                 </asp:Panel>
             </div>

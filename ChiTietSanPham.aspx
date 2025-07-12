@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="button-row">
                                     <asp:Button ID="btnThemGioHang2" runat="server" Text="Thêm vào giỏ hàng" CssClass="button button-add-to-cart" OnClick="btnThemGioHang2_Click" />
-                                    <asp:Button ID="btnMuaNgay" runat="server" Text="Mua ngay" CssClass="button button-pay" />
+                                    <asp:Button ID="btnMuaNgay" runat="server" Text="Mua ngay" CssClass="button button-pay" OnClick="btnMuaNgay_Click" />
                                 </div>
                                 <div class="inner-uu-dai">
                                     <div class="inner-desc-title">Ưu đãi liên quan:</div>

@@ -49,6 +49,53 @@ namespace btl_laptrinhweb.DAL
             return listNguoiDung;
         }
 
+        public List<Dictionary<string, object>> getLichSuMuaHang(int maNguoiDung)
+        {
+            List<Dictionary<string, object>> lichSuMuaHangs = new List<Dictionary<string, object>>();
+            string query = "spNguoidung_GetLichSuMuaHang";
+            try
+            {
+                using(SqlConnection sqlConnection = Connection.GetSqlConnection())
+                {
+                    sqlConnection.Open();
+                    using(SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                    {
+                        sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                        sqlCommand.Parameters.AddWithValue("@maNguoiDung", maNguoiDung);
+                        using(SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Dictionary<string, object> dic = new Dictionary<string, object>();
+
+                                dic["tenSach"] = reader["sTensach"] != DBNull.Value ? reader["sTensach"].ToString() : string.Empty;
+                                dic["soLuong"] = reader["iSoluong"] != DBNull.Value ? int.Parse(reader["iSoluong"].ToString()) : -1;
+                                dic["giaBan"] = reader["fGiaban"] != DBNull.Value ? double.Parse(reader["fGiaban"].ToString()): -1;
+                                dic["ngayDatHang"] = reader["dNgaydathang"] != DBNull.Value ? DateTime.Parse(reader["dNgaydathang"].ToString()) : DateTime.MinValue;
+                                dic["phuongThucThanhToan"] = reader["sPhuongThucTT"] != DBNull.Value ? reader["sPhuongThucTT"].ToString(): string.Empty;
+                                dic["diaChiNhanHang"] = reader["sDiachinhanhang"] != DBNull.Value ? reader["sDiachinhanhang"].ToString() : string.Empty;
+                                dic["SDTNhanHang"] = reader["sSDTnhanhang"] != DBNull.Value ? reader["sSDTnhanhang"].ToString() : string.Empty ;
+
+                                lichSuMuaHangs.Add(dic);
+                            }
+                        }
+                    }
+                }
+            }catch (Exception ex)
+            {
+                new AppException("lỗi lịch sử mua hàng: " + ex.Message);
+            }
+            return lichSuMuaHangs;
+        }
+
+        public NguoiDung getByEmail(string email)
+        {
+            string query = "select * form tblNguoidung where sEmail = " + email;
+            NguoiDung nguoiDung = command(query)[0];
+            if (nguoiDung == null) throw new AppException("không tồn tại người dùng có email: " + email);
+            return nguoiDung;
+        }
+
         public List<NguoiDung> getAll()
         {
             string query = "SELECT * FROM tblNguoidung";

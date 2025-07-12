@@ -100,7 +100,7 @@
                             <span>Tổng tiền hàng:</span>
                             <asp:Label ID="lblTotalAmount" runat="server" Text="0đ" CssClass="total-amount-value"></asp:Label>
                         </div>
-                        <asp:Button ID="btnThanhToan" runat="server" Text="Tiến hành thanh toán" Enabled="false" OnClick="btnThanhToan_Click" CssClass="btn-checkout" />
+                        <asp:Button ID="btnThanhToan" runat="server" Text="Tiến hành thanh toán"  Enable="true" OnClick="btnThanhToan_Click" CssClass="btn-checkout" />
                     </div>
 
 

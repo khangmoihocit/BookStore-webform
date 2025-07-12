@@ -7,5 +7,346 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
+    <History>True|2025-07-12T14:13:18.1153391Z||;True|2025-07-12T20:39:00.7425376+07:00||;True|2025-07-12T20:02:50.1720887+07:00||;True|2025-07-12T12:12:10.3986916+07:00||;False|2025-07-12T12:10:10.7812764+07:00||;False|2025-07-12T07:32:55.1577601+07:00||;False|2025-07-12T07:28:30.2071667+07:00||;False|2025-07-12T06:44:15.3111245+07:00||;False|2025-07-12T06:37:03.2936101+07:00||;</History>
+    <LastFailureDetails />
+    <_PublishTargetUrl>ftp://win1034.site4now.net:21/site1</_PublishTargetUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <File Include="Admin/Admin.Master">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="Admin/QuanLyDatHang.aspx">
+      <publishTime>07/12/2025 21:01:32</publishTime>
+    </File>
+    <File Include="Admin/QuanLyNguoiDung.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="Admin/QuanLyNhaXuatBan.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="Admin/QuanLySach.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="Admin/QuanLyTacGia.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="Admin/QuanLyTheLoai.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/css/admin.css">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/css/base.css">
+      <publishTime>07/11/2025 22:32:43</publishTime>
+    </File>
+    <File Include="assets/css/chitietsanpham.css">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/css/chitiettintuc.css">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/css/dangnhapdangky.css">
+      <publishTime>07/10/2025 10:43:06</publishTime>
+    </File>
+    <File Include="assets/css/danhsachsanpham.css">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/css/giohang.css">
+      <publishTime>07/11/2025 21:48:00</publishTime>
+    </File>
+    <File Include="assets/css/LienHe.css">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/css/reset.css">
+      <publishTime>07/03/2025 22:27:09</publishTime>
+    </File>
+    <File Include="assets/css/thanhtoan.css">
+      <publishTime>07/12/2025 06:28:25</publishTime>
+    </File>
+    <File Include="assets/css/thongtinnguoidung.css">
+      <publishTime>07/12/2025 17:39:23</publishTime>
+    </File>
+    <File Include="assets/css/TinTuc.css">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/css/trangchu.css">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/3512c0fd-5f06-4662-9cad-c3c4f37c87d0_dung_lua_chon_an_nhan_khi_con_tre_tai_ban_.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/5bc1c80b-fa48-4d8c-98c5-5e16d6e23738_chuyen-con-meo-va-con-chuot-ban-than-cua-no_139594_1.jpg">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/6eec4954-34a2-4f2e-a455-b615164d9d0d_8936107813361.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/7d638a1f-4fe5-42c1-b25b-8b550868e2cb_chu-be-mang-pyjama-soc_139595_1.jpg">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/8935086857328_2.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/8935092825298.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/8935325011559.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/backg-footer.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/bg-breadcrumb.webp">
+      <publishTime>07/10/2025 10:43:06</publishTime>
+    </File>
+    <File Include="assets/images/bg_dich_vu_chung_toi.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/bg_sp_noibat.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/bia-1_6_6.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/cate_1.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/cate_2.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/cate_3.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/cate_4.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/d80208e7-462b-4b35-8e1e-900f1437dbaa_chuyen-con-meo-va-con-chuot-ban-than-cua-no_139594_1.jpg">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/e5993dc2-0782-4074-913d-c62a8a2e7d20_putin_logic-cua-quyen-luc.jpg">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/hoan-hao-lam-chi-nguoi-muon-hoan-hao-thuong-kho-thanh-thoi_139593_1.jpg">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/icon-favorite.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/icon_after_title.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/icon_service_1.svg">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/icon_service_2.svg">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/icon_service_3.svg">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/icon_service_4.svg">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/image_237646.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/img_aside_banner.webp">
+      <publishTime>07/10/2025 10:43:06</publishTime>
+    </File>
+    <File Include="assets/images/img_people.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/img_title.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/logo.webp">
+      <publishTime>07/03/2025 22:27:09</publishTime>
+    </File>
+    <File Include="assets/images/logo_acb.svg">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/logo_mb.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/logo_msb.svg">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/mac_dinh.jpg">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/slider_1.webp">
+      <publishTime>07/05/2025 09:56:55</publishTime>
+    </File>
+    <File Include="assets/images/t1.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/t2.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/t3.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/t4.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/t5.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/images/t6.webp">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="assets/js/TinTuc.js">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="bin/btl-laptrinhweb.dll">
+      <publishTime>07/12/2025 21:12:28</publishTime>
+    </File>
+    <File Include="bin/btl-laptrinhweb.pdb">
+      <publishTime>07/12/2025 21:12:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>03/06/2023 05:41:40</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>02/15/2022 12:38:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>02/15/2022 12:38:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>02/15/2022 12:21:10</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>02/15/2022 12:38:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>02/15/2022 12:38:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>02/15/2022 12:21:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>02/15/2022 12:33:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>02/15/2022 12:36:00</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>02/15/2022 12:38:34</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>02/15/2022 12:33:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>02/15/2022 12:33:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>02/15/2022 12:34:50</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>02/15/2022 12:21:10</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>10/05/2021 07:47:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>10/05/2021 07:49:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.CurrentVersions.targets">
+      <publishTime>02/15/2022 12:33:08</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>02/15/2022 12:21:10</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>02/15/2022 12:21:10</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Buffers.dll">
+      <publishTime>02/19/2020 17:05:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>10/20/2020 01:37:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Memory.dll">
+      <publishTime>02/19/2020 17:05:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Numerics.Vectors.dll">
+      <publishTime>05/15/2018 20:29:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>10/20/2020 01:45:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>10/20/2020 01:46:30</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>11/29/2018 22:39:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Tasks.Extensions.dll">
+      <publishTime>02/19/2020 17:05:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>02/15/2022 12:34:58</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>02/15/2022 12:34:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>02/15/2022 12:21:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>02/15/2022 12:38:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>02/15/2022 12:38:42</publishTime>
+    </File>
+    <File Include="ChiTietSanPham.aspx">
+      <publishTime>07/12/2025 20:18:06</publishTime>
+    </File>
+    <File Include="ChiTietTinTuc.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="DangNhapDangKy.aspx">
+      <publishTime>07/12/2025 21:10:14</publishTime>
+    </File>
+    <File Include="DanhSachSanPham.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="DatHangThanhCong.aspx">
+      <publishTime>07/12/2025 20:28:18</publishTime>
+    </File>
+    <File Include="GioHang.aspx">
+      <publishTime>07/12/2025 09:15:02</publishTime>
+    </File>
+    <File Include="KetQuaTimKiem.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="LienHe.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="ThanhToan.aspx">
+      <publishTime>07/12/2025 06:23:42</publishTime>
+    </File>
+    <File Include="ThongTinNguoiDung.aspx">
+      <publishTime>07/12/2025 17:16:40</publishTime>
+    </File>
+    <File Include="TinTuc.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="TrangChu.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="TrangMacDinh.aspx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="UserControls/Footer.ascx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="UserControls/Header.ascx">
+      <publishTime>07/11/2025 13:21:15</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/12/2025 20:38:25</publishTime>
+    </File>
+  </ItemGroup>
 </Project>

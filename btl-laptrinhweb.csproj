@@ -76,6 +76,7 @@
     <Content Include="assets\css\chitiettintuc.css" />
     <Content Include="assets\css\giohang.css" />
     <Content Include="assets\css\LienHe.css" />
+    <Content Include="assets\css\thanhtoan.css" />
     <Content Include="assets\css\thongtinnguoidung.css" />
     <Content Include="assets\css\TinTuc.css" />
     <Content Include="assets\css\trangchu.css" />
@@ -99,6 +100,7 @@
     <Content Include="DangNhapDangKy.aspx" />
     <Content Include="DanhSachSanPham.aspx" />
     <Content Include="assets\css\dangnhapdangky.css" />
+    <Content Include="DatHangThanhCong.aspx" />
     <Content Include="GioHang.aspx" />
     <Content Include="KetQuaTimKiem.aspx" />
     <Content Include="LienHe.aspx" />
@@ -198,6 +200,13 @@
     <Compile Include="DanhSachSanPham.aspx.designer.cs">
       <DependentUpon>DanhSachSanPham.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatHangThanhCong.aspx.cs">
+      <DependentUpon>DatHangThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatHangThanhCong.aspx.designer.cs">
+      <DependentUpon>DatHangThanhCong.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GioHang.aspx.cs">
       <DependentUpon>GioHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,6 +230,7 @@
     </Compile>
     <Compile Include="Models\ChiTietDatHang.cs" />
     <Compile Include="Models\DatHang.cs" />
+    <Compile Include="Models\DonHangView.cs" />
     <Compile Include="Models\NguoiDung.cs" />
     <Compile Include="Models\NhaXuatBan.cs" />
     <Compile Include="Models\Sach.cs" />

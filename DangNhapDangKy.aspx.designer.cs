@@ -42,15 +42,6 @@ namespace btl_laptrinhweb
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
-
-        /// <summary>
         /// btnSwitchLogin control.
         /// </summary>
         /// <remarks>
@@ -78,6 +69,15 @@ namespace btl_laptrinhweb
         protected global::System.Web.UI.WebControls.Panel pnlLogin;
 
         /// <summary>
+        /// Label123 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label123;
+
+        /// <summary>
         /// txtEmail control.
         /// </summary>
         /// <remarks>
@@ -87,6 +87,15 @@ namespace btl_laptrinhweb
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
         /// txtPassword control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,24 @@ namespace btl_laptrinhweb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
+
+        /// <summary>
+        /// lblMessage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage2;
+
+        /// <summary>
+        /// mess3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mess3;
 
         /// <summary>
         /// btnLogin control.
@@ -141,6 +168,15 @@ namespace btl_laptrinhweb
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
 
         /// <summary>
+        /// loiSDT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label loiSDT;
+
+        /// <summary>
         /// txtEmailRegister control.
         /// </summary>
         /// <remarks>
@@ -150,6 +186,15 @@ namespace btl_laptrinhweb
         protected global::System.Web.UI.WebControls.TextBox txtEmailRegister;
 
         /// <summary>
+        /// Loiemail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Loiemail;
+
+        /// <summary>
         /// txtPasswordRegister control.
         /// </summary>
         /// <remarks>
@@ -157,6 +202,24 @@ namespace btl_laptrinhweb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPasswordRegister;
+
+        /// <summary>
+        /// loimatkhau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label loimatkhau;
+
+        /// <summary>
+        /// mess4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mess4;
 
         /// <summary>
         /// btnRegister control.
