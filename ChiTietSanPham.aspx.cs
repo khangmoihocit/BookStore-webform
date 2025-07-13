@@ -172,5 +172,40 @@ namespace btl_laptrinhweb
                 lblMessage.Visible = true;
             }
         }
+
+        protected void rptSach_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            lblMessage.Visible = false;
+            if (e.CommandName == "ThemGioHang")
+            {
+                int maSach = int.Parse(e.CommandArgument.ToString());
+                Sach sach = sachDAL.getByMaSach(maSach);
+                if (sach != null)
+                {
+                    List<Sach> gioHang = Session["GioHang"] as List<Sach>;
+                    if (gioHang == null)
+                    {
+                        gioHang = new List<Sach>();
+                    }
+
+                    Sach sachExisted = gioHang.Find(item => item.MaSach == sach.MaSach);
+                    if (sachExisted != null)
+                    {
+                        sachExisted.SoLuong++;
+                    }
+                    else
+                    {
+                        sach.SoLuong = 1;
+                        gioHang.Add(sach);
+                    }
+                    Session["GioHang"] = gioHang;
+                }
+                else
+                {
+                    lblMessage.Text = "Sản phẩm không tồn tại.";
+                    lblMessage.Visible = true;
+                }
+            }
+        }
     }
 }
