@@ -97,7 +97,8 @@
                         <div class="inner-product-desc">
                             <div class="inner-title">MÔ TẢ SẢN PHẨM</div>
                             <p class="inner-desc">
-                                <asp:Label ID="lblThongTinChiTiet" runat="server" Text="..."></asp:Label></p>
+                                <asp:Label ID="lblThongTinChiTiet" runat="server" Text="..."></asp:Label>
+                            </p>
                         </div>
                     </div>
                     <div class="inner-content-right">
@@ -184,7 +185,7 @@
                     <div class="inner-title-1">SẢN PHẨM LIÊN QUAN</div>
                     <div class="list-product">
                         <asp:Label ID="lbltext" runat="server" Text="" Visible="false"></asp:Label>
-                        <asp:Repeater ID="rptSach" runat="server">
+                        <asp:Repeater ID="rptSach" runat="server" OnItemCommand="rptSach_ItemCommand">
                             <ItemTemplate>
                                 <div class="product">
                                     <div class="inner-icon-favourite"><i class="fa-regular fa-heart"></i></div>
@@ -203,10 +204,13 @@
                                             <%# Eval("GiaBanCu") %>đ
                                         </div>
                                     </div>
-                                    <asp:LinkButton ID="btnThemGioHang" runat="server"
+                                    <asp:LinkButton ID="btnThemGioHang"
+                                        CommandName="ThemGioHang"
+                                        CommandArgument='<%# Eval("MaSach") %>'
+                                        runat="server"
                                         CssClass="inner-add-to-cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        Thêm giỏ hàng
+            <i class="fa-solid fa-cart-shopping"></i>
+            Thêm giỏ hàng
                                     </asp:LinkButton>
                                 </div>
                             </ItemTemplate>
