@@ -39,7 +39,7 @@ namespace btl_laptrinhweb.Admin
                     denNgay = DateTime.Parse(txtDenNgay.Text);
                 }
 
-                // Gọi phương thức DAL mới để lọc
+               
                 List<DonHangView> donHangs = datHangDAL.FilterDonHang(tenSach, tuNgay, denNgay);
 
                 gvDonHang.DataSource = donHangs;
@@ -74,7 +74,7 @@ namespace btl_laptrinhweb.Admin
                 if (ddlTrangThai != null)
                 {
                     // Lấy trạng thái từ đối tượng dữ liệu và gán cho DropDownList
-                    string trangThai = DataBinder.Eval(e.Row.DataItem, "TrangThai").ToString();
+                    string trangThai = DataBinder.Eval(e.Row.DataItem, "TrangThai").ToString().Trim();
                     if (ddlTrangThai.Items.FindByValue(trangThai) != null)
                     {
                         ddlTrangThai.SelectedValue = trangThai;

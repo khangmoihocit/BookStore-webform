@@ -41,6 +41,7 @@ namespace btl_laptrinhweb.DAL
 
                                 sach.GiaBanMoi = reader["fGiabanmoi"] != DBNull.Value ? Convert.ToDouble(reader["fGiabanmoi"]) : 0.0;
                                 sach.GiaBanCu = reader["fGiabancu"] != DBNull.Value ? Convert.ToDouble(reader["fGiabancu"]) : 0.0;
+                                sach.truong_moi = reader["truong_moi"] != DBNull.Value ? reader["truong_moi"].ToString() : string.Empty;
 
                                 listSach.Add(sach);
                             }
@@ -136,11 +137,11 @@ namespace btl_laptrinhweb.DAL
             return listSach;
         }
 
-        public void add(Sach sach)
+        public void add(Sach sach, string truong_moi)
         {
-            string query = "insert into tblSach(sTensach, sMota, sURLanh, fGiabanmoi, fGiabancu, iSoluong, FK_iTheloaiID, FK_iTacgiaID, FK_iNhaxuatbanID) " +
+            string query = "insert into tblSach(sTensach, sMota, sURLanh, fGiabanmoi, fGiabancu, iSoluong, FK_iTheloaiID, FK_iTacgiaID, FK_iNhaxuatbanID, truong_moi) " +
                 
-                "values (@TenSach, @MoTa, @URLAnh, @GiaBanMoi, @GiaBanCu, @SoLuong, @MaTheLoai, @MaTacGia, @MaNhaXuatBan)";
+                "values (@TenSach, @MoTa, @URLAnh, @GiaBanMoi, @GiaBanCu, @SoLuong, @MaTheLoai, @MaTacGia, @MaNhaXuatBan, @truong_moi)";
             try
             {
                 using (SqlConnection sqlConnection = Connection.GetSqlConnection())
@@ -158,6 +159,8 @@ namespace btl_laptrinhweb.DAL
                         sqlCommand.Parameters.AddWithValue("@MaTheLoai", sach.MaTheLoai);
                         sqlCommand.Parameters.AddWithValue("@MaTacGia", sach.MaTacGia);
                         sqlCommand.Parameters.AddWithValue("@MaNhaXuatBan", sach.MaNhaXuatBan);
+                        sqlCommand.Parameters.AddWithValue("@truong_moi", truong_moi);
+
                         int rowsAffected = sqlCommand.ExecuteNonQuery();
                         if (rowsAffected <= 0)
                         {
@@ -188,7 +191,8 @@ namespace btl_laptrinhweb.DAL
                 iSoluong = @SoLuong,
                 FK_iTheloaiID = @MaTheLoai,
                 FK_iTacgiaID = @MaTacGia,
-                FK_iNhaxuatbanID = @MaNXB
+                FK_iNhaxuatbanID = @MaNXB,
+truong_moi = @truong_moi
                 WHERE PK_iSachID = @SachID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -203,6 +207,8 @@ namespace btl_laptrinhweb.DAL
                         cmd.Parameters.AddWithValue("@MaTacGia", sach.MaTacGia);
                         cmd.Parameters.AddWithValue("@MaNXB", sach.MaNhaXuatBan);
                         cmd.Parameters.AddWithValue("@SachID", sach.MaSach);
+                        cmd.Parameters.AddWithValue("@truong_moi", sach.truong_moi);
+
 
                         return cmd.ExecuteNonQuery() > 0;
                     }

@@ -104,14 +104,21 @@
 
         <div class="form-row">
             <div class="form-group">
+                <label for="txtTruongMoi">truong_moi</label>
+                <asp:TextBox ClientIDMode="Static" ID="txtTruongMoi" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
                 <label for="txtMoTa">Mô tả</label>
                 <asp:TextBox ID="txtMoTa" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4"></asp:TextBox>
             </div>
         </div>
 
         <div class="form-buttons">
-            <asp:Button ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn " OnClick="btnThemMoi_Click" />
-            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn" OnClick="btnCapNhat_Click" />
+            <asp:Button ClientIDMode="Static" ID="btnThemMoi" runat="server" Text="Thêm mới" CssClass="btn " OnClick="btnThemMoi_Click" OnClientClick="return validateForm();" />
+            <asp:Button ID="btnCapNhat" runat="server" Text="Cập nhật" CssClass="btn" OnClick="btnCapNhat_Click" OnClientClick="return validateForm();" />
             <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btn" OnClick="btnXoa_Click" />
             <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn" OnClick="btnHuy_Click" />
             <asp:Panel ID="pnlTimKiem" runat="server" DefaultButton="btnTimKiem">
@@ -119,11 +126,12 @@
                     <asp:TextBox ID="txtTimKiem" runat="server" placeholder="Tìm kiếm sản phẩm"></asp:TextBox>
                     <asp:LinkButton ID="btnTimKiem" runat="server" CssClass="inner-icon" OnClick="btnTimKiem_Click">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                     </asp:LinkButton>
+                    </asp:LinkButton>
                 </div>
             </asp:Panel>
         </div>
-        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+        <span id="text" style="color: red; margin-top: 20px; font-size: 18px;"></span>
+        <asp:Label ClientIDMode="Static" ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
     </div>
 
     <div class="inner-table-result">
@@ -141,7 +149,25 @@
                 <asp:BoundField DataField="GiaBanMoi" HeaderText="Giá mới" />
                 <asp:BoundField DataField="GiaBanCu" HeaderText="Giá cũ" />
                 <asp:BoundField DataField="SoLuong" HeaderText="Số lượng" />
+                <asp:BoundField DataField="truong_moi" HeaderText="Trường mới" />
+
             </Columns>
         </asp:GridView>
     </div>
+
+    <script>
+        function validateForm() {
+            const inputTruongMoi = document.getElementById('txtTruongMoi');
+            const textSpan = document.getElementById('text');
+            const regex = /^[0-9]{2}[A-Z]{3}$/;
+
+            if (!regex.test(inputTruongMoi.value) || inputTruongMoi.value.trim() === "") {
+                textSpan.innerHTML = "Lỗi trường mới: Sai định dạng hoặc đang bỏ trống.";
+                return false; // Trả về false để HỦY PostBack
+            } else {
+                textSpan.innerHTML = "";
+                return true; // Trả về true để CHO PHÉP PostBack
+            }
+        }
+    </script>
 </asp:Content>

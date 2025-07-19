@@ -36,6 +36,8 @@ namespace btl_laptrinhweb.DAL
                                 nguoiDung.SoDienThoai = reader["sSodienthoai"] != DBNull.Value ? reader["sSodienthoai"].ToString() : string.Empty;
                                 nguoiDung.Quyen = reader["sQuyen"] != DBNull.Value ? reader["sQuyen"].ToString() : string.Empty;
                                 nguoiDung.NgayDangKy = reader["dNgaydangky"] != DBNull.Value ? Convert.ToDateTime(reader["dNgaydangky"]) : DateTime.MinValue;
+                                nguoiDung.QueQuan = reader["sQueQuan"] != DBNull.Value ? reader["sQueQuan"].ToString() : string.Empty;
+                                nguoiDung.CCCD = reader["sCCCD"] != DBNull.Value ? int.Parse(reader["sCCCD"].ToString()) : 00000000;
                                 listNguoiDung.Add(nguoiDung);
                             }
                         }
@@ -126,6 +128,8 @@ namespace btl_laptrinhweb.DAL
                                 nguoiDung.SoDienThoai = reader["sSodienthoai"] != DBNull.Value ? reader["sSodienthoai"].ToString() : string.Empty;
                                 nguoiDung.Quyen = reader["sQuyen"] != DBNull.Value ? reader["sQuyen"].ToString() : string.Empty;
                                 nguoiDung.NgayDangKy = reader["dNgaydangky"] != DBNull.Value ? Convert.ToDateTime(reader["dNgaydangky"]) : DateTime.MinValue;
+                                nguoiDung.QueQuan = reader["sQueQuan"] != DBNull.Value ? reader["sQueQuan"].ToString() : string.Empty ;
+                                nguoiDung.CCCD = reader["sCCCD"] != DBNull.Value ? int.Parse(reader["sCCCD"].ToString()) : 000000000;
                                 return nguoiDung;
                             }
                         }
@@ -141,8 +145,8 @@ namespace btl_laptrinhweb.DAL
 
         public void add(NguoiDung nguoiDung)
         {
-            string query = "INSERT INTO tblNguoidung (sTennguoidung, sMatkhau, sEmail, sSodienthoai, sQuyen) " +
-                           "VALUES (@sTendangnhap, @sMatkhau, @sEmail, @sSodienthoai, @sQuyen)";
+            string query = "INSERT INTO tblNguoidung (sTennguoidung, sMatkhau, sEmail, sSodienthoai, sQuyen, sQueQuan, sCCCD) " +
+                           "VALUES (@sTendangnhap, @sMatkhau, @sEmail, @sSodienthoai, @sQuyen, @quequan, @cccd)";
             try
             {
                 using (SqlConnection sqlConnection = Connection.GetSqlConnection())
@@ -155,6 +159,9 @@ namespace btl_laptrinhweb.DAL
                         sqlCommand.Parameters.AddWithValue("@sEmail", nguoiDung.Email);
                         sqlCommand.Parameters.AddWithValue("@sSodienthoai", nguoiDung.SoDienThoai);
                         sqlCommand.Parameters.AddWithValue("@sQuyen", nguoiDung.Quyen);
+                        sqlCommand.Parameters.AddWithValue("@quequan", nguoiDung.QueQuan);
+                        sqlCommand.Parameters.AddWithValue("@cccd", nguoiDung.CCCD);
+
                         sqlCommand.ExecuteNonQuery();
                     }
                 }

@@ -13,6 +13,12 @@
   width: 23%;
 }
 
+@media (max-width: 992px){
+    .section-one .inner-content-right {
+        width: 30%;
+    }
+}
+
 @media (max-width: 390px) {
   .section-one .inner-wrap {
     display: flex;
@@ -219,21 +225,49 @@
   text-align: justify;
 }
 
+@media (max-width: 922px){
+    .section-one .inner-info-detail .button-row {
+        margin-bottom: 0;
+        flex-direction: column;
+    }
+
+    .section-one .inner-info-detail .button {
+        margin-bottom: 20px;
+    }
+
+}
+
 @media (max-width: 390px) {
-  .section-one .inner-row img {
-    width: 100%;
-    height: auto;
-  }
+    .section-one .inner-row img {
+        width: 100%;
+        height: auto;
+    }
 
-  .section-one .inner-uu-dai .inner-desc-item .inner-desc {
-    text-align: justify;
-  }
+    .section-one .inner-info-detail .button-row {
+        display: flex;
+        align-content: center;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-  .section-one .inner-uu-dai .inner-icon-1 {
-    width: 40px;
-    height: auto;
-    margin-right: 20px;
-  }
+    .section-one .inner-info-detail .button {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .section-one .inner-info-detail .button-pay {
+    }
+
+    .section-one .inner-uu-dai .inner-desc-item .inner-desc {
+        text-align: justify;
+    }
+
+    .section-one .inner-uu-dai .inner-icon-1 {
+        width: 40px;
+        height: auto;
+        margin-right: 20px;
+    }
 }
 /* End Product info */
 
@@ -262,13 +296,24 @@
   width: calc(30% - 100px);
   margin: 17px 21.5px;
 }
-@media (max-width: 390px) {
-    .section-two .list-product .product .inner-image{
-        width: 100%;
+
+@media (max-width: 922px) {
+    .section-two .list-product .product {
+        margin: 0;
+        width: calc(30% + 22px);
+        margin-bottom: 20px;
     }
-  .section-two .list-product .product {
-    width: calc(50%);
-    margin: 0;
-  }
+
 }
-/* End Section two */
+
+    @media (max-width: 390px) {
+        .section-two .list-product .product .inner-image {
+            width: 100%;
+        }
+
+        .section-two .list-product .product {
+            width: calc(50%);
+            margin: 0;
+        }
+    }
+    /* End Section two */

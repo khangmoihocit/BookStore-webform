@@ -1,12 +1,14 @@
-﻿using System;
+﻿using btl_laptrinhweb.DAL;
+using btl_laptrinhweb.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using btl_laptrinhweb.DAL;
-using btl_laptrinhweb.Models;
 
 namespace btl_laptrinhweb.Admin
 {
@@ -115,6 +117,7 @@ namespace btl_laptrinhweb.Admin
                         ddlTheLoai.SelectedValue = sach.MaTheLoai.ToString();
                         ddlTacGia.SelectedValue = sach.MaTacGia.ToString();
                         ddlNhaXuatBan.SelectedValue = sach.MaNhaXuatBan.ToString();
+                        txtTruongMoi.Text = sach.truong_moi.ToString();
                     }
 
                 }
@@ -172,6 +175,18 @@ namespace btl_laptrinhweb.Admin
 
             try
             {
+                if(!Regex.IsMatch(txtTruongMoi.Text, @"/^[0 - 9]{ 2}[A-Z]{ 3}$/")){
+                    lblMessage.Text = "looi truong moi";
+                    lblMessage.Visible = true;
+                    return;
+                }
+                else
+                {
+                    lblMessage.Text = "";
+                    lblMessage.Visible = false;
+                }
+
+
                 Sach sach = new Sach();
                 sach.TenSach = txtTenSach.Text.Trim();
                 sach.MoTa = txtMoTa.Text.Trim();
@@ -182,7 +197,7 @@ namespace btl_laptrinhweb.Admin
                 sach.MaTheLoai = int.Parse(ddlTheLoai.SelectedValue);
                 sach.MaTacGia = int.Parse(ddlTacGia.SelectedValue);
                 sach.MaNhaXuatBan = int.Parse(ddlNhaXuatBan.SelectedValue);
-                sachDAL.add(sach);
+                sachDAL.add(sach, txtTruongMoi.Text);
 
                 imgPreview.ImageUrl = sach.URLAnh;
                 lblMessage.Text = "Thêm sách thành công!";
@@ -311,6 +326,7 @@ namespace btl_laptrinhweb.Admin
             gvSach.DataSource = sachDAL.getAll();
             gvSach.DataBind();
             txtTimKiem.Text = string.Empty;
+            txtTruongMoi.Text = string.Empty;
 
             resetMessageValid();
             gvSach.SelectedIndex = -1; // Bỏ chọn dòng trong GridView
@@ -375,7 +391,8 @@ namespace btl_laptrinhweb.Admin
                     SoLuong = int.TryParse(txtSoLuong.Text, out int soLuong) ? soLuong : 0,
                     MaTheLoai = int.TryParse(ddlTheLoai.SelectedValue, out int maTL) ? maTL : 0,
                     MaTacGia = int.TryParse(ddlTacGia.SelectedValue, out int maTG) ? maTG : 0,
-                    MaNhaXuatBan = int.TryParse(ddlNhaXuatBan.SelectedValue, out int maNXB) ? maNXB : 0
+                    MaNhaXuatBan = int.TryParse(ddlNhaXuatBan.SelectedValue, out int maNXB) ? maNXB : 0,
+                    truong_moi = txtTruongMoi.Text
                 };
 
                 // Gọi hàm cập nhật DAL

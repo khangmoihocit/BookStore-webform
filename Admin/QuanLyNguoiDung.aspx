@@ -86,6 +86,11 @@
         <asp:BoundField DataField="SoDienThoai" HeaderText="Số điện thoại" />
         <asp:BoundField DataField="NgayDangKy" HeaderText="Ngày đăng ký" DataFormatString="{0:yyyy-MM-dd}" />
         <asp:BoundField DataField="Quyen" HeaderText="Quyền" />
+        <asp:BoundField DataField="QueQuan" HeaderText="Quê quán" />
+        <asp:BoundField DataField="CCCD" HeaderText="CCCD" />
+
+
+
     </Columns>
 
 </asp:GridView>

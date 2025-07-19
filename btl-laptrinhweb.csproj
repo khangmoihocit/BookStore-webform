@@ -104,6 +104,7 @@
     <Content Include="GioHang.aspx" />
     <Content Include="KetQuaTimKiem.aspx" />
     <Content Include="LienHe.aspx" />
+    <Content Include="test.aspx" />
     <Content Include="ThanhToan.aspx" />
     <Content Include="ThongTinNguoiDung.aspx" />
     <Content Include="TinTuc.aspx" />
@@ -236,6 +237,13 @@
     <Compile Include="Models\Sach.cs" />
     <Compile Include="Models\TacGia.cs" />
     <Compile Include="Models\TheLoai.cs" />
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ThanhToan.aspx.cs">
       <DependentUpon>ThanhToan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
