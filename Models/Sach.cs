@@ -17,6 +17,7 @@ namespace btl_laptrinhweb.Models
         public int MaTheLoai { get; set; }
         public int MaTacGia {get; set; }
         public int MaNhaXuatBan { get; set; }
+        public string truong_moi { get; set; }
         public Sach() { }
     }
 }

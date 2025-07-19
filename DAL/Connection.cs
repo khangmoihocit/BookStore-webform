@@ -9,7 +9,7 @@ namespace btl_laptrinhweb.DAL
 {
     public class Connection
     {
-        public static string connectionString = ConfigurationManager.ConnectionStrings["host"].ConnectionString;
+        public static string connectionString = ConfigurationManager.ConnectionStrings["duy"].ConnectionString;
 
         public static SqlConnection GetSqlConnection()
         {

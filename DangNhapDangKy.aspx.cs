@@ -147,6 +147,8 @@ namespace btl_laptrinhweb
             string sdt = txtPhone.Text;
             string email = txtEmailRegister.Text;
             string matkhau = txtPasswordRegister.Text;
+            string quequan = ddlQueQuan.SelectedItem.Text;
+            int cccd = int.Parse(txtCCCD.Text);
             if (isValid())
             {
                 return;
@@ -157,6 +159,8 @@ namespace btl_laptrinhweb
             nguoiDung.Email = email;
             nguoiDung.SoDienThoai = sdt;
             nguoiDung.Quyen = "USER";
+            nguoiDung.QueQuan = quequan;
+            nguoiDung.CCCD = cccd;
 
             try
             {

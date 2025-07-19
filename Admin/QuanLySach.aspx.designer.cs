@@ -168,6 +168,15 @@ namespace btl_laptrinhweb.Admin
         protected global::System.Web.UI.WebControls.Label lblSoLuongError;
 
         /// <summary>
+        /// txtTruongMoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTruongMoi;
+
+        /// <summary>
         /// txtMoTa control.
         /// </summary>
         /// <remarks>

@@ -15,6 +15,8 @@ namespace btl_laptrinhweb.Models
         public DateTime NgayDangKy { get; set; }
         public string DiaChi { get; set; }
         public string Quyen { get; set; } 
+        public string QueQuan { get; set; }
+        public int CCCD { get; set; }
         public NguoiDung() { }
 
     }
